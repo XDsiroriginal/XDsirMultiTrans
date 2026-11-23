@@ -3,7 +3,7 @@
    ======================================================== */
 
 .page_container {
-    max-width: 1440px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -183,7 +183,6 @@
 }
 
 .country_card:hover {
-    transform: translateY(-5px);
     box-shadow: var(--shadow-card-hover);
     border-color: #D8D8DE;
 }
@@ -325,7 +324,6 @@
 }
 
 .adv_card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
 }
 
@@ -379,7 +377,6 @@
 }
 
 .compare_card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
 }
 
@@ -512,7 +509,7 @@
 
 .shop_pill:hover {
     border-color: var(--color-graphite);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .shop_pill img {

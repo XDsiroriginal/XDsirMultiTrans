@@ -120,8 +120,9 @@ header {
 }
 
 .main_button img {
-    width: 32px;
     height: 32px;
+    width: auto;
+    max-width: 65px;
     object-fit: contain;
 }
 
@@ -199,7 +200,6 @@ header {
 
 .header_registration_button:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
     box-shadow: 0 6px 18px var(--color-accent-glow);
     color: #FFFFFF;
 }
@@ -242,7 +242,6 @@ header {
 .btn-primary:hover {
     background-color: var(--color-accent-hover);
     color: #FFFFFF;
-    transform: translateY(-2px);
     box-shadow: 0 12px 28px var(--color-accent-glow);
 }
 
@@ -266,7 +265,6 @@ header {
 .btn-secondary:hover {
     background-color: var(--color-graphite-hover);
     color: #FFFFFF;
-    transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -282,6 +280,33 @@ header {
     font-size: 16px;
     font-family: var(--font-semibold), sans-serif;
     transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--color-graphite);
+    background: var(--color-bg-subtle);
+}
+
+.btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    font-family: var(--font-semibold), sans-serif;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.btn-outline-white:hover {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
 }
 
 .btn-outline:hover {
@@ -388,8 +413,33 @@ header {
 }
 
 .card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
+}
+
+.page_container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flag_icon_sm {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 6px;
+}
+
+.flag_icon_md {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
 }
 
 /* ========================================================
@@ -433,6 +483,13 @@ footer {
     font-family: var(--font-bold), sans-serif;
     font-size: 22px;
     color: #FFFFFF;
+}
+
+.footer_brand_logo img {
+    height: 28px;
+    width: auto;
+    max-width: 65px;
+    object-fit: contain;
 }
 
 .footer_brand_desc {

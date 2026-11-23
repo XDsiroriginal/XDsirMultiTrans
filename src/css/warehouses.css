@@ -9,13 +9,9 @@
     margin-bottom: 50px;
 }
 
-.suite_id_banner {
-    max-width: 1440px;
-    margin: 0 auto 40px;
-    padding: 0 40px;
-}
-
 .suite_id_card {
+    width: 100%;
+    box-sizing: border-box;
     background: var(--color-graphite);
     color: #FFFFFF;
     border-radius: var(--radius-md);
@@ -25,6 +21,7 @@
     align-items: center;
     gap: 24px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .suite_id_box {
@@ -41,9 +38,9 @@
 }
 
 .warehouses_grid {
-    max-width: 1440px;
+    width: 100%;
+    box-sizing: border-box;
     margin: 0 auto 70px;
-    padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
@@ -58,12 +55,12 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
 .warehouse_card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
+    border-color: #D8D8DE;
 }
 
 .warehouse_card_top {
@@ -167,9 +164,11 @@
 }
 
 .warehouse_perk_item::before {
-    content: '✓';
+    content: '•';
     color: var(--color-accent);
     font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
 }
 
 /* GUIDE SECTION */

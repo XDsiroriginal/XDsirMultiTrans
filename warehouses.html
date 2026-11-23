@@ -46,8 +46,8 @@
         </div>
     </section>
 
-    <!-- SUITE ID BANNER -->
-    <div class="suite_id_banner">
+    <!-- SUITE ID & WAREHOUSES CONTAINER -->
+    <div class="page_container">
         <div class="suite_id_card">
             <div>
                 <h3 style="font-size: 18px; font-family: var(--font-bold), sans-serif; margin-bottom: 6px;">Ваш персональный номер ячейки (Suite ID):</h3>
@@ -60,18 +60,17 @@
                 <button class="btn_copy_field" onclick="navigator.clipboard.writeText('Suite #MT-84920'); alert('Suite ID скопирован!');">Копировать</button>
             </div>
         </div>
-    </div>
 
-    <!-- WAREHOUSES CARDS -->
-    <div class="warehouses_grid">
-        <!-- 1. USA DELAWARE -->
-        <div class="warehouse_card">
-            <div class="warehouse_card_top">
-                <span class="warehouse_flag">🇺🇸</span>
-                <span class="badge badge-accent">0% Sales Tax</span>
-            </div>
-            <h2 class="warehouse_country">США (Делавэр)</h2>
-            <div class="warehouse_city">New Castle, Delaware • Безналоговый штат</div>
+        <!-- WAREHOUSES CARDS -->
+        <div class="warehouses_grid">
+            <!-- 1. USA DELAWARE -->
+            <div class="warehouse_card">
+                <div class="warehouse_card_top">
+                    <img src="src/img/america-flag.png" alt="США" class="flag_icon_md">
+                    <span class="badge badge-accent">0% Sales Tax</span>
+                </div>
+                <h2 class="warehouse_country">США (Делавэр)</h2>
+                <div class="warehouse_city">New Castle, Delaware • Безналоговый штат</div>
 
             <div class="address_field_list">
                 <div class="address_field_item">
@@ -141,7 +140,7 @@
         <!-- 2. CHINA GUANGZHOU -->
         <div class="warehouse_card">
             <div class="warehouse_card_top">
-                <span class="warehouse_flag">🇨🇳</span>
+                <img src="src/img/china_price_flag.png" alt="Китай" class="flag_icon_md">
                 <span class="badge badge-accent">Хаб Taobao & Poizon</span>
             </div>
             <h2 class="warehouse_country">Китай (Гуанчжоу)</h2>
@@ -199,7 +198,7 @@
         <!-- 3. INDIA MUMBAI -->
         <div class="warehouse_card">
             <div class="warehouse_card_top">
-                <span class="warehouse_flag">🇮🇳</span>
+                <img src="src/img/india_price_flag.png" alt="Индия" class="flag_icon_md">
                 <span class="badge badge-accent">Аюрведа & Текстиль</span>
             </div>
             <h2 class="warehouse_country">Индия (Мумбаи)</h2>
@@ -261,6 +260,7 @@
                 <div class="warehouse_perk_item">Усиленная влагозащитная упаковка</div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- GUIDE SECTION: HOW TO FILL IN SHOP -->
@@ -327,7 +327,7 @@
         <div class="footer_links-block">
             <div class="footer_brand_block">
                 <div class="footer_brand_logo">
-                    <img src="src/img/logo.png" alt="MultiTrans" style="width: 28px; height: 28px;">
+                    <img src="src/img/logo.png" alt="MultiTrans">
                     <p>MultiTrans</p>
                 </div>
                 <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
@@ -358,7 +358,7 @@
         <div class="footer_bottom-block">
             <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
             <div class="footer_socials">
-                <a href="#"><img src="src/img/telegram-svgrepo-com 1.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/max-messenger-horizontal-logo 1.png" alt="MAX" class="footer_social-icon"></a>
                 <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
             </div>
         </div>
