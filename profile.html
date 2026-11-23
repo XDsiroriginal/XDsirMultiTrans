@@ -36,7 +36,7 @@
 
 <main>
     <div class="page_container">
-        <!-- USER PROFILE HEADER -->
+        
         <section class="profile_header_card">
             <div class="profile_user_left">
                 <div class="profile_avatar_box">
@@ -57,7 +57,6 @@
             </div>
         </section>
 
-        <!-- STAT METRICS -->
         <section class="dashboard_stats_grid">
             <div class="stat_metric_card">
                 <span class="stat_metric_num">0</span>
@@ -77,9 +76,8 @@
             </div>
         </section>
 
-        <!-- DASHBOARD MAIN GRID -->
         <section class="dashboard_main_grid">
-            <!-- LEFT: ORDERS & PARCELS -->
+            
             <div class="parcels_panel">
                 <div class="panel_top_row">
                     <h2 class="panel_title">Активные заказы и посылки</h2>
@@ -88,7 +86,6 @@
                     </div>
                 </div>
 
-                <!-- Package 1: In transit -->
                 <div class="parcel_item">
                     <div class="parcel_info_left">
                         <div class="parcel_icon">
@@ -105,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Package 2: Delivered -->
                 <div class="parcel_item">
                     <div class="parcel_info_left">
                         <div class="parcel_icon">
@@ -122,7 +118,6 @@
                     </div>
                 </div>
 
-                <!-- EMPTY STATE BOX -->
                 <div style="background: var(--color-bg-subtle); border-radius: var(--radius-md); padding: 28px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
                     <p style="font-size: 15px; font-family: var(--font-semibold), sans-serif; color: var(--color-graphite);">Купили товар сами в зарубежном магазине?</p>
                     <p style="font-size: 13px; color: var(--color-text-secondary); max-width: 480px;">Добавьте ожидаемый трек-номер магазина, чтобы мы сразу идентифицировали вашу посылку при поступлении на склад.</p>
@@ -130,14 +125,12 @@
                 </div>
             </div>
 
-            <!-- RIGHT: WAREHOUSE ADDRESSES SIDEBAR -->
             <div class="warehouse_addresses_sidebar">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <h3 style="font-size: 18px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite);">Ваши склады</h3>
                     <a href="warehouses.html" style="font-size: 13px; color: var(--color-accent); font-family: var(--font-semibold), sans-serif;">Все склады →</a>
                 </div>
 
-                <!-- USA Warehouse -->
                 <div class="warehouse_mini_card">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <strong style="font-size: 15px;"><img src="src/img/america-flag.png" class="flag_icon_sm" alt="США"> США (Делавэр)</strong>
@@ -152,7 +145,6 @@
                     <button type="button" class="copy_btn" onclick="alert('Адрес скопирован в буфер обмена!');">Скопировать адрес</button>
                 </div>
 
-                <!-- China Warehouse -->
                 <div class="warehouse_mini_card">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <strong style="font-size: 15px;"><img src="src/img/china_price_flag.png" class="flag_icon_sm" alt="Китай"> Китай (Гуанчжоу)</strong>

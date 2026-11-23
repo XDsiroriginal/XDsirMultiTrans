@@ -1,16 +1,11 @@
-/* ========================================================
-   HOME / INDEX STYLES (V2 Minimalist)
-   ======================================================== */
+
 
 .page_container {
-    max-width: 1320px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-/* ========================================================
-   HERO / PREVIEW SECTION
-   ======================================================== */
 .hero_section {
     padding: 80px 0 60px;
     display: grid;
@@ -129,9 +124,6 @@
     transform: scale(1.03);
 }
 
-/* ========================================================
-   COUNTRIES / WAREHOUSES SECTION
-   ======================================================== */
 .section_header {
     text-align: center;
     max-width: 680px;
@@ -239,9 +231,6 @@
     color: var(--color-graphite);
 }
 
-/* ========================================================
-   EXPRESS CALCULATOR BAR
-   ======================================================== */
 .calc_widget {
     background: #FFFFFF;
     border: var(--border-hairline);
@@ -295,9 +284,6 @@
     border-color: var(--color-accent);
 }
 
-/* ========================================================
-   ADVANTAGES SECTION
-   ======================================================== */
 .advantages_section {
     padding: 80px 0;
     background-color: var(--color-bg-subtle);
@@ -355,9 +341,6 @@
     color: var(--color-text-secondary);
 }
 
-/* ========================================================
-   PRICE COMPARISON SECTION
-   ======================================================== */
 .compare_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -447,9 +430,6 @@
     color: var(--color-graphite);
 }
 
-/* ========================================================
-   HOW IT WORKS SECTION
-   ======================================================== */
 .steps_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -486,9 +466,6 @@
     color: var(--color-text-secondary);
 }
 
-/* ========================================================
-   SHOPS SHOWCASE
-   ======================================================== */
 .shops_strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -529,9 +506,6 @@
     color: var(--color-text-secondary);
 }
 
-/* ========================================================
-   CALL TO ACTION PROMO BLOCK
-   ======================================================== */
 .promo_banner {
     background: var(--color-graphite);
     border-radius: var(--radius-lg);
@@ -563,9 +537,6 @@
     line-height: 1.6;
 }
 
-/* ========================================================
-   RESPONSIVE
-   ======================================================== */
 @media (max-width: 1140px) {
     .hero_section {
         grid-template-columns: 1fr;

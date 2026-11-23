@@ -1,6 +1,4 @@
-/* ========================================================
-   FAQ PAGE STYLES (V2 Minimalist)
-   ======================================================== */
+
 
 .faq_header_section {
     padding: 60px 0 40px;
@@ -43,7 +41,6 @@
     font-size: 18px;
 }
 
-/* CATEGORY PILLS */
 .faq_nav_pills {
     display: flex;
     flex-wrap: wrap;
@@ -75,7 +72,6 @@
     color: #FFFFFF;
 }
 
-/* FAQ LIST / ACCORDION */
 .faq_container {
     max-width: 980px;
     margin: 0 auto 80px;
@@ -164,7 +160,6 @@
     margin-bottom: 6px;
 }
 
-/* CONTACT BANNER */
 .faq_support_card {
     background: var(--color-graphite);
     color: #FFFFFF;

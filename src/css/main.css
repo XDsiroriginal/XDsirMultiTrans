@@ -23,30 +23,26 @@
 }
 
 :root {
-    /* 1. Основные фоновые цвета (Светлый минимализм) */
+    
     --color-bg-main: #FFFFFF;
     --color-bg-subtle: #F8F8F9;
     --color-bg-card: #FFFFFF;
     --color-bg-surface: #F2F2F5;
 
-    /* 2. Акцентный цвет (Неоновый розовый из палитры) */
     --color-accent: #FF77DE;
     --color-accent-hover: #E861C7;
     --color-accent-soft: rgba(255, 119, 222, 0.12);
     --color-accent-glow: rgba(255, 119, 222, 0.25);
 
-    /* 3. Фирменный графит */
     --color-graphite: #313131;
     --color-graphite-hover: #1F1F1F;
     --color-graphite-card: #272727;
 
-    /* 4. Типографика */
     --color-text-primary: #1A1A1A;
     --color-text-secondary: #6E6E73;
     --color-text-muted: #BEBEBE;
     --color-text-inverse: #FFFFFF;
 
-    /* 5. Границы и тени */
     --border-hairline: 1px solid #EAEAEA;
     --border-subtle: 1px solid #DFDFE3;
     --border-focus: 1px solid #FF77DE;
@@ -54,18 +50,15 @@
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
     --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
 
-    /* 6. Скругления */
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-full: 9999px;
 
-    /* 7. Шрифты */
     --font-bold: 'montserrat alternates-bold', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-semibold: 'montserrat alternates-semibold', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-regular: 'montserrat alternates-regular', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Совместимость с предыдущими переменными */
     --color-base-accent: var(--color-accent);
     --color-dop-accent: var(--color-graphite);
     --color-base: var(--color-bg-main);
@@ -93,9 +86,6 @@ a, a:hover, a:focus, a:active {
     transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* ========================================================
-   HEADER / NAVIGATION
-   ======================================================== */
 header {
     width: 100%;
     max-width: 1440px;
@@ -215,9 +205,6 @@ header {
     height: 24px;
 }
 
-/* ========================================================
-   BUTTONS & UI KIT
-   ======================================================== */
 .order-button,
 .btn-primary {
     display: inline-flex;
@@ -314,9 +301,6 @@ header {
     background: var(--color-bg-subtle);
 }
 
-/* ========================================================
-   INPUTS & FORMS
-   ======================================================== */
 .input_field,
 .input-field {
     width: 100%;
@@ -372,9 +356,6 @@ header {
     box-shadow: inset 0 0 0 3px #FFFFFF;
 }
 
-/* ========================================================
-   BADGES & PILLS
-   ======================================================== */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -400,9 +381,6 @@ header {
     color: var(--color-text-secondary);
 }
 
-/* ========================================================
-   CARDS
-   ======================================================== */
 .card {
     background-color: var(--color-bg-card);
     border: var(--border-hairline);
@@ -417,7 +395,7 @@ header {
 }
 
 .page_container {
-    max-width: 1320px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -442,9 +420,6 @@ header {
     display: inline-block;
 }
 
-/* ========================================================
-   FOOTER (Sleek Graphite Minimalist)
-   ======================================================== */
 footer {
     width: 100%;
     background-color: var(--color-graphite);
@@ -583,9 +558,6 @@ footer {
     opacity: 1;
 }
 
-/* ========================================================
-   RESPONSIVENESS & BREAKPOINTS
-   ======================================================== */
 @media (max-width: 1140px) {
     header,
     .footer_container {

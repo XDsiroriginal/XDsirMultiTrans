@@ -1,6 +1,4 @@
-/* ========================================================
-   WAREHOUSES PAGE STYLES (V2 Minimalist)
-   ======================================================== */
+
 
 .warehouses_header_section {
     padding: 60px 0 40px;
@@ -42,11 +40,15 @@
     box-sizing: border-box;
     margin: 0 auto 70px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 32px;
+    justify-content: center;
 }
 
 .warehouse_card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
     background: #FFFFFF;
     border: var(--border-hairline);
     border-radius: var(--radius-lg);
@@ -171,7 +173,6 @@
     line-height: 1;
 }
 
-/* GUIDE SECTION */
 .guide_section {
     background: var(--color-bg-subtle);
     padding: 80px 0;
