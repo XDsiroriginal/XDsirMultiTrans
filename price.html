@@ -57,7 +57,19 @@
 
                 <div class="form_group">
                     <label class="form_label" for="ship-city">Город доставки в России</label>
-                    <input type="text" id="ship-city" class="input_field" value="Москва" placeholder="Укажите город">
+                    <select id="ship-city" class="input_field" style="cursor: pointer;">
+                        <option value="moscow" selected>Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="ekb">Екатеринбург</option>
+                        <option value="nsk">Новосибирск</option>
+                        <option value="kzn">Казань</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="smr">Самара</option>
+                        <option value="ufa">Уфа</option>
+                        <option value="rostov">Ростов-на-Дону</option>
+                        <option value="other">Другой город РФ (ПВЗ СДЭК / Boxberry)</option>
+                    </select>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">

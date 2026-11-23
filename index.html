@@ -89,7 +89,16 @@
                 </div>
                 <div class="calc_field_group">
                     <label class="calc_field_label" for="calc-city">Город назначения в РФ</label>
-                    <input type="text" id="calc-city" class="input_field" placeholder="Москва, Санкт-Петербург...">
+                    <select id="calc-city" class="calc_select">
+                        <option value="moscow" selected>Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="ekb">Екатеринбург</option>
+                        <option value="nsk">Новосибирск</option>
+                        <option value="kzn">Казань</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="other">Другой город РФ</option>
+                    </select>
                 </div>
                 <div class="calc_field_group">
                     <label class="calc_field_label" for="calc-weight">Вес посылки (кг)</label>
