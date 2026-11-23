@@ -420,6 +420,14 @@ header {
     display: inline-block;
 }
 
+.page_header_banner {
+    padding: 60px 0 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-subtle) 100%);
+    border-bottom: var(--border-hairline);
+    margin-bottom: 60px;
+}
+
 footer {
     width: 100%;
     background-color: var(--color-graphite);
