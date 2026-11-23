@@ -5,49 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/login.css">
-    <title>Вход в аккаунт</title>
+    <title>Вход в аккаунт — MultiTrans</title>
 </head>
 <body>
-<div class="body">
-    <section class="main">
-        <div class="main_content">
-            <div class="main_content_img">
-                <img src="src/img/log.png" alt="картинка логина" class="main_content_img_img">
+
+<div class="auth_wrapper">
+    <header class="auth_header">
+        <a href="index.html" class="main_button">
+            <img src="src/img/logo.png" alt="MultiTrans Logo">
+            <p class="logo_name">MultiTrans</p>
+        </a>
+        <a href="index.html" class="back_link">← На главную</a>
+    </header>
+
+    <main class="auth_main">
+        <div class="auth_card">
+            <div class="auth_title_box">
+                <h1 class="auth_title">Вход в кабинет</h1>
+                <p class="auth_subtitle">Управляйте вашими посылками и заказами</p>
             </div>
-            <div class="main_content_registration">
-                <div class="main_content_registration_text">
-                    <h1 class="main_content_registration_text_h1">Логин</h1>
-                    <h2 class="main_content_registration_text_h2">Войди в свой личный кабинет</h2>
+
+            <form class="auth_form" action="profile.html">
+                <div class="form_group">
+                    <label class="form_label" for="login-email">Электронная почта</label>
+                    <input type="email" id="login-email" class="input_field" placeholder="name@example.com" required>
                 </div>
 
-                <div class="main_content_registration_form">
-                    <label for="email">
-                        <input id="email" type="email" class="main_content_registration_form_input"
-                               placeholder="E-mail">
-                    </label>
-                    <label for="password">
-                        <input id="password" type="password" class="main_content_registration_form_input"
-                               placeholder="password">
-                    </label>
+                <div class="form_group">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <label class="form_label" for="login-password">Пароль</label>
+                        <a href="#" style="font-size: 12px; color: var(--color-text-secondary);">Забыли пароль?</a>
+                    </div>
+                    <input type="password" id="login-password" class="input_field" placeholder="••••••••" required>
                 </div>
 
-                <div class="main_content_registration_line_block">
-                    <div class="main_content_registration_line_block_line"></div>
-                    <p class="main_content_registration_line_block_p">или</p>
-                    <div class="main_content_registration_line_block_line"></div>
-                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; height: 52px; font-size: 16px;">Войти</button>
+            </form>
 
-                <div class="main_content_social_login">
-                    <img src="src/img/vk-log-logo%201.png" alt="вк" class="main_content_social_login_img">
-                    <img src="src/img/tg-log-logo.png" alt="телеграмм" class="main_content_social_login_img">
-                </div>
+            <div class="divider_row">
+                <span class="divider_line"></span>
+                <span class="divider_text">или через соцсети</span>
+                <span class="divider_line"></span>
+            </div>
 
-                <a href="profile.html" class="order-button">Войти</a>
+            <div class="social_auth_row">
+                <button type="button" class="social_btn">
+                    <img src="src/img/vk-log-logo 1.png" alt="VK">
+                    ВКонтакте
+                </button>
+                <button type="button" class="social_btn">
+                    <img src="src/img/telegram-svgrepo-com 1.png" alt="TG">
+                    Telegram
+                </button>
+            </div>
 
-                <a href="registration.html" class="main_content_registration_a">Еще нет личного кабинета? Создайте его</a>
+            <div class="auth_switch">
+                Еще нет аккаунта? <a href="registration.html">Зарегистрироваться</a>
             </div>
         </div>
-    </section>
+    </main>
 </div>
+
 </body>
 </html>

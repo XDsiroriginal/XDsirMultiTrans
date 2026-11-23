@@ -5,413 +5,418 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/index.css">
-    <title>Главная</title>
+    <title>MultiTrans — Доставка из интернет-магазинов США, Китая и Индии</title>
 </head>
 <body>
-<header>
-    <div class="main_button">
-        <img src="src/img/logo.png" alt="логотип">
-        <p class="logo_name">MultiTrans</p>
-    </div>
-    <a href="price.html"><p class="header_text">стоимость</p></a>
-    <a href="tarif.html"><p class="header_text">тариф</p></a>
-        <a href="shop.html"> <p class="header_text">магазины</p></a>
-    <p></p>
-    <a href="login.html" class="header_login_button">Войти</a>
-    <a href="registration.html" class="header_registration_button">регистрация</a>
 
-    <div class="burger">
-        <img src="src/img/burger.png" alt="Бургер меню">
+<header>
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text active">Главная</a>
+        <a href="shop.html" class="header_text">Магазины</a>
+        <a href="price.html" class="header_text">Тарифы</a>
+        <a href="order.html" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="login.html" class="header_login_button">Войти</a>
+        <a href="registration.html" class="header_registration_button">Регистрация</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
     </div>
 </header>
 
 <main>
-    <section class="preview_section">
-        <div class="preview_section_right">
-            <div class="preview_section_text-block">
-                <h1 class="preview_section_h1">Закажи с внутренних рынков без наценок перекупов!</h1>
-                <p class="preview_section_p">
-                    MultiTrans – сервис по доставке из зарубежных интернет-магазинов.
-                    После регистрации вам доступны склады в 3 крупнейших странах мира.
-                    Покупайте товары из местных интернет-магазинов, а мы получим и доставим в ваш город.
+    <!-- HERO SECTION -->
+    <div class="page_container">
+        <section class="hero_section">
+            <div class="hero_content">
+                <div class="hero_badge">
+                    <span class="hero_badge_dot"></span>
+                    Склады в США, Китае и Индии • Без налога штата
+                </div>
+                <h1 class="hero_title">
+                    Заказывайте с зарубежных рынков <span>без наценок перекупов</span>
+                </h1>
+                <p class="hero_desc">
+                    MultiTrans предоставляет вам персональный адрес за границей, выкупает товары картами зарубежных банков и безопасно доставляет покупки в любой город России.
                 </p>
-            </div>
-            <a href="login.html" class="order-button">Заказать</a>
-        </div>
-        <div class="preview_section_image-block">
-            <img src="src/img/preview.png" alt="preview фото">
-        </div>
-    </section>
-
-    <section class="countries_section">
-
-        <div class="countries_section_card india-card">
-            <div class="countries_section_card_info">
-                <div class="countries_section_card_info_image">
-                    <img src="src/img/india-flag-mini.png" alt="индийский флаг">
+                <div class="hero_actions">
+                    <a href="order.html" class="order-button">Оформить выкуп</a>
+                    <a href="price.html" class="btn-outline">Калькулятор тарифов</a>
                 </div>
-                <div class="countries_section_card_info_text">
-                    <p class="countries_section_card_info_text_country-name">
-                        Индия
-                    </p>
-                    <p class="countries_section_card_info_text_dop-info">
-                        От 15 дней, от 2000₹
-                    </p>
+                <div class="hero_metrics">
+                    <div class="metric_item">
+                        <span class="metric_val">0%</span>
+                        <span class="metric_label">Налог с продаж в США (Delaware)</span>
+                    </div>
+                    <div class="metric_item">
+                        <span class="metric_val">от 12 дней</span>
+                        <span class="metric_label">Быстрая авиадоставка</span>
+                    </div>
+                    <div class="metric_item">
+                        <span class="metric_val">100%</span>
+                        <span class="metric_label">Страхование и проверка</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="countries_section_card main usa-card">
-            <div class="countries_section_card_info">
-                <div class="countries_section_card_info_image-main">
-                    <img src="src/img/america-flag.png" alt="американский флаг">
-                </div>
-                <div class="countries_section_card_info_text">
-                    <p class="countries_section_card_info_text_country-name">
-                        США
-                    </p>
-                    <p class="countries_section_card_info_text_dop-info">
-                        От 12 дней, от 20$
-                    </p>
+            <div class="hero_image_wrap">
+                <div class="hero_image_card">
+                    <img src="src/img/preview.png" alt="Доставка MultiTrans">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="countries_section_card china-card">
-            <div class="countries_section_card_info">
-                <div class="countries_section_card_info_image china-card">
-                    <img src="src/img/cina-flag-mini.png" alt="китайский флаг">
+        <!-- FAST CALCULATOR WIDGET -->
+        <section class="calc_widget">
+            <h2 class="calc_widget_title">Быстрый расчет стоимости доставки</h2>
+            <form class="calc_widget_form" onsubmit="event.preventDefault();">
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-country">Страна отправления</label>
+                    <select id="calc-country" class="calc_select">
+                        <option value="usa">США (склад в Делавэре)</option>
+                        <option value="china">Китай (склад в Гуанчжоу)</option>
+                        <option value="india">Индия (склад в Мумбаи)</option>
+                    </select>
                 </div>
-                <div class="countries_section_card_info_text">
-                    <p class="countries_section_card_info_text_country-name">
-                        Китай
-                    </p>
-                    <p class="countries_section_card_info_text_dop-info">
-                        От 17 дней, от 40¥
-                    </p>
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-city">Город назначения в РФ</label>
+                    <input type="text" id="calc-city" class="input_field" placeholder="Москва, Санкт-Петербург...">
+                </div>
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-weight">Вес посылки (кг)</label>
+                    <input type="number" id="calc-weight" class="input_field" placeholder="Например, 1.5" step="0.1" value="1.5">
+                </div>
+                <a href="price.html" class="btn-primary" style="height: 52px;">Рассчитать</a>
+            </form>
+        </section>
+
+        <!-- COUNTRIES SECTION -->
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">География доставки</span>
+                <h2 class="section_title">Наши зарубежные склады</h2>
+                <p class="section_desc">Доступны сразу после бесплатной регистрации. Хранение посылок до 60 дней бесплатно.</p>
+            </div>
+
+            <div class="countries_grid">
+                <!-- USA -->
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="src/img/america-flag.png" alt="Флаг США" class="country_flag">
+                        <span class="country_tag badge-accent">Безналоговый склад</span>
+                    </div>
+                    <h3 class="country_name">США (Делавэр)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Wilmington, Delaware. Покупки на Amazon, eBay, Nike, Apple без налога штата.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 12 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от $20</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Выкуп картой:</span>
+                            <span class="country_spec_val">Да (+10%)</span>
+                        </div>
+                    </div>
+                    <a href="warehouses.html" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
+                </div>
+
+                <!-- CHINA -->
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="src/img/cina-flag-mini.png" alt="Флаг Китая" class="country_flag">
+                        <span class="country_tag">Хаб электроники</span>
+                    </div>
+                    <h3 class="country_name">Китай (Гуанчжоу)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Baiyun District, Guangzhou. Заказы с Taobao, 1688, Poizon и прямых фабрик.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 17 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от 40 ¥</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Выкуп WeChat/Alipay:</span>
+                            <span class="country_spec_val">Да</span>
+                        </div>
+                    </div>
+                    <a href="warehouses.html" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
+                </div>
+
+                <!-- INDIA -->
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="src/img/india-flag-mini.png" alt="Флаг Индии" class="country_flag">
+                        <span class="country_tag">Аюрведа и текстиль</span>
+                    </div>
+                    <h3 class="country_name">Индия (Мумбаи)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Maharashtra, Mumbai. Натуральная косметика, одежда, оригинальные специи.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 15 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от 2000 ₹</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Проверка качества:</span>
+                            <span class="country_spec_val">Включена</span>
+                        </div>
+                    </div>
+                    <a href="warehouses.html" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
                 </div>
             </div>
-        </div>
+        </section>
+    </div>
 
-    </section>
-
-    <section class="price_section">
-        <div class="price_section_text">
-            <h2 class="price_section_title">Стоимость доставки из США</h2>
-            <p class="price_section_subtitle">
-                Доставка осуществляется компанией MultiTrans по стандартному тарифу. Подробнее
-            </p>
-        </div>
-        <div class="input_group" style="grid-column: 1/3">
-            <img src="src/img/map.png" alt="Иконка карты">
-            <label>
-                <input type="text" id="city-input" class="input_field" placeholder="ВАШ ГОРОД">
-            </label>
-        </div>
-
-        <div class="input_group" style="grid-column: 3/5">
-            <img src="src/img/weight.png" alt="Иконка веса">
-            <label>
-                <input type="text" id="weight-input" class="input_field" placeholder="ВЕС ПОСЫЛКИ (КГ.)">
-            </label>
-        </div>
-
-
-        <label class="radio_label" for="delivery_option_1" style="grid-column: 5/6">
-            <input type="radio" id="delivery_option_1" name="delivery_option" checked>
-            <span class="radio"></span>
-            <p class="radio_dot">стандарт</p>
-        </label>
-
-        <label class="radio_label" for="delivery_option_2" style="grid-column: 6/7">
-            <input type="radio" id="delivery_option_2" name="delivery_option">
-            <span class="radio"></span>
-            <p class="radio_dot">быстрая</p>
-        </label>
-
-        <label class="radio_label" for="delivery_option_3" style="grid-column: 7/8">
-            <input type="radio" id="delivery_option_3" name="delivery_option">
-            <span class="radio"></span>
-            <p class="radio_dot">экспресс</p>
-        </label>
-
-    </section>
-
+    <!-- ADVANTAGES FULL WIDTH STRIP -->
     <section class="advantages_section">
-
-        <div class="advantages_section_card">
-            <img src="src/img/protect.png" alt="Иконка защиты">
-            <div class="advantages_section_card_text">
-                <h3 class="advantages_section_card_title">0.75%</h3>
-                <p class="advantages_section_card_text_text">Страховка товара</p>
+        <div class="page_container">
+            <div class="section_header" style="margin-bottom: 40px;">
+                <span class="section_subtitle">Наши преимущества</span>
+                <h2 class="section_title">Шопинг без границ и рисков</h2>
             </div>
-        </div>
 
-        <div class="advantages_section_card">
-            <img src="src/img/eyes.png" alt="Иконка глаза">
-            <div class="advantages_section_card_text">
-                <h3 class="advantages_section_card_title">Полное </h3>
-                <p class="advantages_section_card_text_text">Отслеживание посылки</p>
-            </div>
-        </div>
-
-        <div class="advantages_section_card">
-            <img src="src/img/cooperative-handshake.png" alt="Иконка рукопожатия">
-            <div class="advantages_section_card_text">
-                <h3 class="advantages_section_card_title">B2B</h3>
-                <p class="advantages_section_card_text_text">Работаем с компаниями</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="advantage_price_section">
-        <div class="advantage_price_section_text-block">
-            <h2 class="advantage_price_section_title">Покупайте выгодно прямо из США</h2>
-            <p class="advantage_price_section_p">
-                Мы даже не представляем, во сколько раз переплачиваем, покупая известные бренды в России, через непонятных
-                перекупов. Конкуренция на рынке США высока, поэтому даже без распродаж большинство товаров стоят ощутимо
-                дешевле, чем перекупы просят в России.
-            </p>
-            <p class="advantage_price_section_source">
-                <span class="advantage_price_section_source_text">Цены взяты с сайта</span>
-                <span class="advantage_price_section_source_link"> amazon.com</span>
-            </p>
-        </div>
-
-        <div class="advantage_price_section_cards-block">
-
-            <div class="advantage_price_section_card">
-                <img src="src/img/nike.png" alt="Кроссовки Nike Air Max 1 Premium">
-                <div class="advantage_price_section_card_info">
-                    <p class="advantage_price_section_card_title">Кроссовки Nike Air Max 1 Premium</p>
-                    <p class="advantage_price_section_card_price_russia">В России от 22990 ₽</p>
-                    <p class="advantage_price_section_card_price_usa">В США от 8530 ₽</p>
+            <div class="advantages_grid">
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="src/img/protect.png" alt="Страховка">
+                    </div>
+                    <h3 class="adv_title">0.75% Страховка товара</h3>
+                    <p class="adv_desc">Полная защита посылки на всем пути от склада отправления до пункта выдачи в вашем городе.</p>
                 </div>
-            </div>
 
-            <div class="advantage_price_section_card">
-                <img src="src/img/lacost.png" alt="Поло Lacoste">
-                <div class="advantage_price_section_card_info">
-                    <p class="advantage_price_section_card_title">Поло Lacoste</p>
-                    <p class="advantage_price_section_card_price_russia">В России от 15900 ₽</p>
-                    <p class="advantage_price_section_card_price_usa">В США от 7777 ₽</p>
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="src/img/eyes.png" alt="Трекинг">
+                    </div>
+                    <h3 class="adv_title">Прозрачный трекинг 24/7</h3>
+                    <p class="adv_desc">Контролируйте перемещение груза на каждом этапе: приемка, упаковка, таможня и доставка курьером.</p>
                 </div>
-            </div>
 
-            <div class="advantage_price_section_card">
-                <img src="src/img/rolex.png" alt="Часы Tissot">
-                <div class="advantage_price_section_card_info">
-                    <p class="advantage_price_section_card_title">Часы Tissot</p>
-                    <p class="advantage_price_section_card_price_russia">В России от 54400 ₽</p>
-                    <p class="advantage_price_section_card_price_usa">В США от 21943 ₽</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="delivery_usa_section">
-        <div class="delivery_usa_image-block">
-            <img src="src/img/global.png" alt="Красивая картинка с пакетами и картой мира">
-        </div>
-        <div class="delivery_usa_content">
-            <h2 class="delivery_usa_title">Доставляем из магазинов США</h2>
-            <div class="delivery_usa_text-block">
-                <p class="delivery_usa_text">
-                    <span class="delivery_usa_text_bold">Для частных клиентов</span><span>: </span>
-                    <span class="delivery_usa_text_regular">доставим ваши посылки от 12 дней и от $20, дадим возможность следить за процессом 24/7, проведем через таможню. Доставим покупки вам или вашим друзьям: в ближайший пункт выдачи или лично в руки.</span>
-                </p>
-                <p class="delivery_usa_text">
-                    <span class="delivery_usa_text_bold">Для оптовых клиентов</span><span>: </span>
-                    <span class="delivery_usa_text_regular">рассортируем посылки, соберем паспортные данные ваших клиентов и организуем доставку напрямую конечным заказчикам. По сниженным ценам: от $18</span>
-                </p>
-            </div>
-            <a href="login.html" class="order-button delivery_usa_order-button">Заказать</a>
-        </div>
-    </section>
-
-    <section class="advantage_offer_section">
-        <div class="advantage_offer_content">
-            <div class="advantage_offer_text-block">
-                <h2 class="advantage_offer_title">Мы знаем о лучших предложениях в США и поделимся с вами</h2>
-                <p class="advantage_offer_subtitle">Узнай и ты!</p>
-            </div>
-            <div class="advantage_offer_icons">
-                <div class="advantage_offer_card">
-                    <img src="src/img/ad-product.png" alt="Иконка продукта">
-                    <p class="advantage_offer_card_text">Как найти cкидки 60%-90%?</p>
-                </div>
-                <div class="advantage_offer_card">
-                    <img src="src/img/gift.png" alt="Иконка подарка">
-                    <p class="advantage_offer_card_text">Что можно выгодно купить в США?</p>
-                </div>
-            </div>
-            <a href="login.html" class="order-button advantage_offer_button">Заказать</a>
-        </div>
-        <div class="advantage_offer_image-block">
-            <img src="src/img/multi.png" alt="Красивая картинка с коробками и девушкой с зеркалом">
-        </div>
-    </section>
-
-    <section class="partner_usa_section">
-        <div class="partner_usa_text-block">
-            <h2 class="partner_usa_title">Надежный посредник в США</h2>
-            <p class="partner_usa_p">
-                MultiTrans – удобный сервис, с помощью которого легко делать покупки в любых американских, и не только
-                интернет-магазинах, ваш надежный посредник по доставке в Россию. Амазон, eBay, 6pm, Victoria’s Secret –
-                покупайте любимые вещи без наценок на этих и других торговых площадках. Быстро доставим ваши заказы, а если
-                нужно, поможем с выкупом.
-            </p>
-            <p class="partner_usa_dop-info">
-                <span>Покупать брендовые товары напрямую в США и при этом экономить – реально со MultiTrans.</span>
-                <span class="partner_usa_dop-info_bold"> Получайте удовольствие от выгодного шопинга!</span>
-            </p>
-        </div>
-        <div class="partner_usa_image-block">
-            <img src="src/img/usa%20flag.png" alt="Флаг США">
-        </div>
-    </section>
-
-    <section class="how-it-works_section">
-        <h2 class="how-it-works_title">Как это работает?</h2>
-        <div class="how-it-works_cards-block">
-            <div class="how-it-works_card">
-                <div class="how-it-works_card_icon-wrapper">
-                    <img src="src/img/people-bottom.png" alt="Иконка регистрации">
-                </div>
-                <div class="how-it-works_card_text-block">
-                    <h3 class="how-it-works_card_title">1. Регистрируйтесь</h3>
-                    <p class="how-it-works_card_text">Укажите адрес для доставки ваших покупок купленных за рубежом</p>
-                </div>
-            </div>
-
-            <div class="how-it-works_card">
-                <div class="how-it-works_card_icon-wrapper">
-                    <img src="src/img/buy.png" alt="Иконка покупки">
-                </div>
-                <div class="how-it-works_card_text-block">
-                    <h3 class="how-it-works_card_title">2. Покупайте</h3>
-                    <p class="how-it-works_card_text">Заказывайте товары из интернет-магазинов Северной Америки, Европы и Азии и отправляйте их к нам на склад</p>
-                </div>
-            </div>
-
-            <div class="how-it-works_card">
-                <div class="how-it-works_card_icon-wrapper">
-                    <img src="src/img/like.png" alt="Иконка получения">
-                </div>
-                <div class="how-it-works_card_text-block">
-                    <h3 class="how-it-works_card_title">3. Получайте</h3>
-                    <p class="how-it-works_card_text">Посылку доставят лично в руки или в ближайший пункт выдачи</p>
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="src/img/cooperative-handshake.png" alt="B2B">
+                    </div>
+                    <h3 class="adv_title">B2B и оптовые партии</h3>
+                    <p class="adv_desc">Специальные тарифы и индивидуальное сопровождение для интернет-магазинов и селлеров маркетплейсов.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="where-to-buy_section">
-        <div class="where-to-buy_text-block">
-            <h2 class="where-to-buy_title">Где покупать товары?</h2>
-            <p class="where-to-buy_subtitle">
-                Сотни магазинов и миллионы товаров, которые не продаются в России. Мы собрали для вас лучшие магазины в
-                каждой категории. Выбирайте и наслаждайтесь онлайн шоппингом в США!
-            </p>
-        </div>
+    <!-- PRICE COMPARISON -->
+    <div class="page_container">
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Реальная выгода</span>
+                <h2 class="section_title">Сравните цены и убедитесь сами</h2>
+                <p class="section_desc">Разница стоимости оригинальных брендовых товаров в РФ и США даже с учетом доставки.</p>
+            </div>
 
-        <div class="where-to-buy_navbar">
-            <p class="where-to-buy_navbar_link active">Маркетплейсы</p>
-            <p class="where-to-buy_navbar_link">Универмаги</p>
-            <p class="where-to-buy_navbar_link">Одежда</p>
-            <p class="where-to-buy_navbar_link">Обувь</p>
-            <p class="where-to-buy_navbar_link">Масс маркет</p>
-            <p class="where-to-buy_navbar_link">Товары для детей</p>
-            <p class="where-to-buy_navbar_link">БАДы, витамины</p>
-        </div>
+            <div class="compare_grid">
+                <!-- Nike -->
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="src/img/nike.png" alt="Кроссовки Nike Air Max 1">
+                    </div>
+                    <h4 class="compare_title">Nike Air Max 1 Premium</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">22 990 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">8 530 ₽</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="where-to-buy_cards-block">
-            <div class="where-to-buy_card">
-                <div class="where-to-buy_card_content">
-                    <img src="src/img/ebay.png" alt="Логотип Ebay" class="where-to-buy_card_img">
-                    <div class="where-to-buy_card_info">
-                        <h3 class="where-to-buy_card_title">Ebay</h3>
-                        <p class="where-to-buy_card_text">
-                            Всемирно известный маркетплейс с миллионами товаров от магазинов и частных лиц.
-                        </p>
+                <!-- Lacoste -->
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="src/img/lacost.png" alt="Поло Lacoste Classic">
+                    </div>
+                    <h4 class="compare_title">Поло Lacoste Classic Fit</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">15 900 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">7 777 ₽</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rolex/Tissot -->
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="src/img/rolex.png" alt="Часы Tissot Classic">
+                    </div>
+                    <h4 class="compare_title">Часы Tissot Swiss Quartz</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">54 400 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">21 943 ₽</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="where-to-buy_card">
-                <div class="where-to-buy_card_content">
-                    <img src="src/img/amazon.png" alt="Логотип Amazon" class="where-to-buy_card_img">
-                    <div class="where-to-buy_card_info">
-                        <h3 class="where-to-buy_card_title">Amazon</h3>
-                        <p class="where-to-buy_card_text">
-                            Крупнейший маркетплейс в США и в мире, здесь вы найдете точно абсолютно все.
-                        </p>
-                    </div>
-                </div>
+        <!-- HOW IT WORKS -->
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Простой процесс</span>
+                <h2 class="section_title">Как работает MultiTrans</h2>
             </div>
 
-            <div class="where-to-buy_card">
-                <div class="where-to-buy_card_content">
-                    <img src="src/img/walmart.png" alt="Логотип Walmart" class="where-to-buy_card_img">
-                    <div class="where-to-buy_card_info">
-                        <h3 class="where-to-buy_card_title">Walmart</h3>
-                        <p class="where-to-buy_card_text">
-                            Онлайн маркетплейс от знаменитой сети магазинов Walmart.
-                        </p>
-                    </div>
+            <div class="steps_grid">
+                <div class="step_card">
+                    <span class="step_num">01</span>
+                    <h3 class="step_title">Зарегистрируйтесь</h3>
+                    <p class="step_desc">Получите персональный Suite ID и адреса наших складов в США, Китае и Индии бесплатно за 1 минуту.</p>
+                </div>
+                <div class="step_card">
+                    <span class="step_num">02</span>
+                    <h3 class="step_title">Купите или закажите выкуп</h3>
+                    <p class="step_desc">Покупайте самостоятельно с указанием адреса нашего склада или пришлите ссылку на товар — мы выкупим его за рубли.</p>
+                </div>
+                <div class="step_card">
+                    <span class="step_num">03</span>
+                    <h3 class="step_title">Получите заказ</h3>
+                    <p class="step_desc">Мы бережно упакуем, снимем фотоотчет и доставим посылку прямо к вашей двери или в ближайший пункт выдачи.</p>
                 </div>
             </div>
-        </div>
-        <div class="where-to-buy_section_button-content">
-            <a href="login.html" class="order-button where-to-buy_order-button">Заказать</a>
-        </div>
-    </section>
+        </section>
+
+        <!-- POPULAR STORES -->
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Партнеры</span>
+                <h2 class="section_title">Где покупать товары</h2>
+            </div>
+
+            <div class="shops_strip">
+                <a href="shop.html" class="shop_pill">
+                    <img src="src/img/ebay.png" alt="Ebay">
+                    <div>
+                        <p class="shop_pill_name">Ebay</p>
+                        <p class="shop_pill_cat">Маркетплейс • США</p>
+                    </div>
+                </a>
+                <a href="shop.html" class="shop_pill">
+                    <img src="src/img/amazon.png" alt="Amazon">
+                    <div>
+                        <p class="shop_pill_name">Amazon</p>
+                        <p class="shop_pill_cat">Мировой каталог • США</p>
+                    </div>
+                </a>
+                <a href="shop.html" class="shop_pill">
+                    <img src="src/img/walmart.png" alt="Walmart">
+                    <div>
+                        <p class="shop_pill_name">Walmart</p>
+                        <p class="shop_pill_cat">Гипермаркет • США</p>
+                    </div>
+                </a>
+                <a href="shop.html" class="shop_pill">
+                    <img src="src/img/stockx.png" alt="StockX">
+                    <div>
+                        <p class="shop_pill_name">StockX</p>
+                        <p class="shop_pill_cat">Аутентичный стритвер</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- PROMO BANNER -->
+        <section class="promo_banner">
+            <div class="promo_text">
+                <h2 class="promo_title">Готовы начать шопинг без границ?</h2>
+                <p class="promo_desc">Создайте бесплатный аккаунт и получите адреса зарубежных складов уже через минуту.</p>
+            </div>
+            <a href="registration.html" class="order-button" style="white-space: nowrap;">Зарегистрироваться</a>
+        </section>
+    </div>
 </main>
 
 <footer>
     <div class="footer_container">
         <div class="footer_links-block">
-            <div class="footer_section">
-                <p class="footer_title">ОБЩАЯ ИНФОРМАЦИЯ</p>
-                <div class="footer_links">
-                    <a href="price.html" class="footer_link">стоимость услуг</a>
-                    <a href="#" class="footer_link">политика конфиденциальности</a>
-                    <a href="#" class="footer_link">заключение договора</a>
-                    <a href="#" class="footer_link">запрещенные товары</a>
-                    <a href="#" class="footer_link">правила отправки электроники</a>
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans" style="width: 28px; height: 28px;">
+                    <p>MultiTrans</p>
                 </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров из США, Китая и Индии без наценок посредников.</p>
             </div>
-            <div class="footer_section">
-                <p class="footer_title">ПОМОЩЬ</p>
-                <div class="footer_links">
-                    <a href="#" class="footer_link">вопрос-ответ</a>
-                    <a href="shop.html" class="footer_link">список магазинов</a>
-                    <a href="#" class="footer_link">диагностика проблемы</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="footer_contacts-block">
-            <p class="footer_hotline-text">Горячая линия по вопросам доставки из зарубежных интернет-магазинов:</p>
-            <p class="footer_phone">+7 800 555 35 35</p>
-            <p class="footer_schedule">С 7:00 до 19:00 (MSK)</p>
-            <p class="footer_support-service">Служба поддержки</p>
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="order.html" class="footer_link">Заявка на выкуп</a>
+                    <a href="tracking.html" class="footer_link">Отслеживание посылок</a>
+                </div>
+            </div>
+
+            <div class="footer_section">
+                <p class="footer_title">Информация</p>
+                <div class="footer_links">
+                    <a href="warehouses.html" class="footer_link">Адреса складов</a>
+                    <a href="faq.html" class="footer_link">Частые вопросы (FAQ)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
+                    <a href="faq.html" class="footer_link">Запрещенные товары</a>
+                </div>
+            </div>
+
+            <div class="footer_contacts-block">
+                <p class="footer_hotline-text">Служба заботы о клиентах:</p>
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+                <a href="order.html" class="header_registration_button" style="margin-top: 8px;">Оставить заявку</a>
+            </div>
         </div>
 
         <hr class="footer_divider">
 
         <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
             <div class="footer_socials">
-                <a href="#"><img src="src/img/icons8-youtube%201.png" alt="YouTube" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/vk-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/max-messenger-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/telegram-svgrepo-com%201.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/telegram-svgrepo-com 1.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/icons8-youtube 1.png" alt="YouTube" class="footer_social-icon"></a>
             </div>
-            <p class="footer_copyright">© 2025, Курьерская компания МультиТранс</p>
         </div>
-
     </div>
 </footer>
+
 </body>
 </html>

@@ -5,324 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/shop.css">
-    <title>Магазины партнеры</title>
+    <title>Каталог зарубежных магазинов — MultiTrans</title>
 </head>
 <body>
-<header>
-    <div class="main_button">
-        <img src="src/img/logo.png" alt="логотип">
-        <p class="logo_name">MultiTrans</p>
-    </div>
-    <a href="price.html"><p class="header_text">стоимость</p></a>
-    <a href="tarif.html"><p class="header_text">тариф</p></a>
-    <a href="shop.html"><p class="header_text">магазины</p></a>
-    <p></p>
-    <a href="login.html" class="header_login_button">Войти</a>
-    <a href="registration.html" class="header_registration_button">регистрация</a>
 
-    <div class="burger">
-        <img src="src/img/burger.png" alt="Бургер меню">
+<header>
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text">Главная</a>
+        <a href="shop.html" class="header_text active">Магазины</a>
+        <a href="price.html" class="header_text">Тарифы</a>
+        <a href="order.html" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="login.html" class="header_login_button">Войти</a>
+        <a href="registration.html" class="header_registration_button">Регистрация</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
     </div>
 </header>
 
 <main>
-
-    <section class="hi_section">
-
-        <div class="hi_section_text">
-
-            <h1 class="hi_section_text_title">
-                Популярные магазины США для онлайн шопинга
-            </h1>
-
-            <p class="hi_section_text_text">
-                MultiTrans – сервис по доставке из зарубежных интернет-магазинов.
-                После регистрации вам доступны адреса наших складов в 3 странах мира.
-                Отправляйте на них товары из местных интернет-магазинов,
-                а мы получим и объединим ваши посылки.
-            </p>
-
+    <div class="page_header_banner">
+        <div class="page_container">
+            <span class="badge badge-accent" style="margin-bottom: 12px;">Официальные ритейлеры</span>
+            <h1 class="hero_title" style="font-size: 38px; margin-bottom: 12px;">Популярные зарубежные магазины</h1>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">Выбирайте товары в онлайн-магазинах США, Китая и Индии. Мы выкупим их и доставим прямо вам.</p>
         </div>
+    </div>
 
-        <div class="hi_section_img_block">
+    <div class="page_container">
+        <!-- FILTER BAR -->
+        <section class="shop_filter_bar">
+            <div class="shop_search_row">
+                <input type="text" class="shop_search_input" placeholder="Поиск магазина или бренда (например, Nike, Apple, Amazon, Zara)...">
+                <a href="order.html" class="btn-primary" style="height: 50px; font-size: 15px; white-space: nowrap;">Заказать по ссылке</a>
+            </div>
 
-            <img src="src/img/man_on_sofa.png" alt="Мужчина на диване" class="hi_section_img_block_img">
+            <div class="filter_pills_row">
+                <span class="filter_pill active">Все категории</span>
+                <span class="filter_pill">Маркетплейсы</span>
+                <span class="filter_pill">Одежда и Обувь</span>
+                <span class="filter_pill">Электроника</span>
+                <span class="filter_pill">Премиум & Часы</span>
+                <span class="filter_pill">Спорт</span>
+                <span class="filter_pill">Косметика и БАДы</span>
+            </div>
 
-        </div>
+            <div class="filter_pills_row" style="border-top: var(--border-hairline); padding-top: 14px;">
+                <span style="font-size: 13px; color: var(--color-text-muted); align-self: center; margin-right: 6px;">Страна:</span>
+                <span class="filter_pill active">Все страны</span>
+                <span class="filter_pill">🇺🇸 США</span>
+                <span class="filter_pill">🇨🇳 Китай</span>
+                <span class="filter_pill">🇮🇳 Индия</span>
+            </div>
+        </section>
 
-    </section>
-
-    <section class="countries_section">
-
-        <div class="countries_section_content">
-
-            <div class="countries_section_content_blok">
-
-                <div class="countries_section_content_blok_block">
-                    <img src="src/img/india_price_flag.png" alt="флаг индии" class="countries_section_content_blok_img">
-                    <h3 class="countries_section_content_blok_block_text">Индия</h3>
+        <!-- STORES GRID -->
+        <section class="stores_catalog_grid">
+            <!-- Amazon -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/amazon.png" alt="Amazon">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Amazon</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Маркетплейс</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Крупнейший мировой интернет-магазин: электроника, книги, одежда, товары для дома и редкие новинки.</p>
                 </div>
-                <div class="countries_section_content_blok_block">
-                    <img src="src/img/usa_price_flag.png" alt="флаг сша" class="countries_section_content_blok_img main">
-                    <h3 class="countries_section_content_blok_block_text main">США</h3>
-                </div>
-                <div class="countries_section_content_blok_block">
-                    <img src="src/img/china_price_flag.png" alt="флаг китая" class="countries_section_content_blok_img">
-                    <h3 class="countries_section_content_blok_block_text">Китай</h3>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ Выкуп картой РФ</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
                 </div>
             </div>
 
-            <div class="countries_section_content_line"></div>
-
-        </div>
-
-    </section>
-
-    <section class="shop_section">
-
-        <div class="shop_section_navigation_content">
-
-            <div class="shop_section_navigation_content_text-blok">
-
-                <p class="shop_section_navigation_content_text-blok-text active">Маркетплейсы</p>
-                <p class="shop_section_navigation_content_text-blok-text">Увермаги</p>
-                <p class="shop_section_navigation_content_text-blok-text">Одежда</p>
-                <p class="shop_section_navigation_content_text-blok-text">Обувь</p>
-                <p class="shop_section_navigation_content_text-blok-text">Массмаркет</p>
-                <p class="shop_section_navigation_content_text-blok-text">Товары для детей</p>
-                <p class="shop_section_navigation_content_text-blok-text">БАДы и витамины</p>
-
+            <!-- Ebay -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/ebay.png" alt="Ebay">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">eBay</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Аукцион & Сток</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Миллионы предложений от официальных дилеров и частных продавцов по оптовым ценам и аукционам.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ Выкуп картой РФ</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
             </div>
 
-            <div class="shop_section_navigation_content_text-blok_line"></div>
-
-        </div>
-
-
-        <div class="shop_section_shop-content">
-
-            <div class="shop_section_shop_content_block">
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/ebay.png" alt="ebay" class="shop_section_shop_content_block_block_img">
+            <!-- Walmart -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/walmart.png" alt="Walmart">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Walmart</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Гипермаркет</span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Ebay
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Всемирноизвестный маркетплейс с миллионами товаров от магазинов и частных лиц.
-                        </p>
-                    </div>
-
+                    <p class="store_desc" style="margin-top: 16px;">Низкие цены на бытовую технику, видеоигры, игрушки, одежду базовых брендов и спорттовары.</p>
                 </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/amazon.png" alt="amazon" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Amazon
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Крупнейший маркетплейс в США и в мире, здесь вы найдете точно абсолютно все.
-                        </p>
-                    </div>
-
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ Скидки до 70%</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
                 </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/jet.png" alt="jet" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Jet
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Новый маркетплейс с множеством товаров по множеству категорий.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/walmart.png" alt="walmart" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Walmart
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Онлайн маркетплейс от знаменитой сети магазинов Walmart.
-                        </p>
-                    </div>
-
-                </div>
-
             </div>
 
-            <div class="shop_section_shop_content_block">
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/stockx.png" alt="stockx" class="shop_section_shop_content_block_block_img">
+            <!-- Nike -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/nike.png" alt="Nike">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Nike US</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Спорт & Обувь</span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            StockX
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Аукцион, где можно купить уникальные и редкие вещи.
-                        </p>
-                    </div>
-
+                    <p class="store_desc" style="margin-top: 16px;">Официальный магазин Nike в США: эксклюзивные расцветки Jordan, Air Max, беговая и тренинговая экипировка.</p>
                 </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/egg.png" alt="Newegg" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Newegg
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Специализируется на компьютерном оборудовании и бытовой электронике
-                        </p>
-                    </div>
-
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ Оригиналы 100%</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
                 </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/target.png" alt="target" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Target
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Магазин c широким ассортиментом товаров по доступным ценам.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="shop_section_shop_content_block_block">
-
-                    <div class="shop_section_shop_content_block_block_img">
-                        <img src="src/img/wish.png" alt="wish" class="shop_section_shop_content_block_block_img">
-                    </div>
-
-                    <div class="shop_section_shop_content_block_block_text">
-                        <h3 class="shop_section_shop_content_block_block_text_shop-name">
-                            Wish
-                        </h3>
-                        <p class="shop_section_shop_content_block_block_text_shop-description">
-                            Wish — американская онлайн-платформа электронной коммерции.
-                        </p>
-                    </div>
-
-                </div>
-
             </div>
 
-        </div>
-
-    </section>
-
-    <section class="end_section">
-
-        <div class="end_section_content">
-
-            <div class="end_section_content_img">
-
-                <img src="src/img/happy_man.png" alt="Счастливый покупатель" class="end_section_content_img_img">
-
+            <!-- Lacoste -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/lacost.png" alt="Lacoste">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Lacoste</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Одежда & Обувь</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Классические поло, толстовки, обувь и кожаные аксессуары легендарного французского бренда.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ В 2 раза дешевле РФ</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
             </div>
 
-            <div class="end_section_content_text">
-
-                <h3 class="end_section_content_title">
-                    Закажи подарок себе в США прямо сейчас!
-                </h3>
-                <p class="end_section_content_text">
-                    Выбирайте товары в интернет-магазинах США, Европы и Азии. Оформляйте доставку на ваш персональный
-                    адрес.
-                </p>
-
-                <a href="login.html" class="order-button">Заказать</a>
-
+            <!-- StockX -->
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/stockx.png" alt="StockX">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">StockX</h3>
+                            <div class="store_meta">
+                                <span>🇺🇸 США</span> • <span>Стритвер & Сникеры</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Биржа аутентичной обуви, одежды Supreme, сумок и коллекционной электроники со строгой проверкой подлинности.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">✓ Проверка подлинности</span>
+                    <a href="order.html" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
             </div>
-
-        </div>
-
-    </section>
+        </section>
+    </div>
 </main>
 
 <footer>
     <div class="footer_container">
         <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans" style="width: 28px; height: 28px;">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
             <div class="footer_section">
-                <p class="footer_title">ОБЩАЯ ИНФОРМАЦИЯ</p>
+                <p class="footer_title">Навигация</p>
                 <div class="footer_links">
-                    <a href="price.html" class="footer_link">стоимость услуг</a>
-                    <a href="#" class="footer_link">политика конфиденциальности</a>
-                    <a href="#" class="footer_link">заключение договора</a>
-                    <a href="#" class="footer_link">запрещенные товары</a>
-                    <a href="#" class="footer_link">правила отправки электроники</a>
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="order.html" class="footer_link">Заявка на выкуп</a>
                 </div>
             </div>
             <div class="footer_section">
-                <p class="footer_title">ПОМОЩЬ</p>
+                <p class="footer_title">Склады</p>
                 <div class="footer_links">
-                    <a href="#" class="footer_link">вопрос-ответ</a>
-                    <a href="shop.html" class="footer_link">список магазинов</a>
-                    <a href="#" class="footer_link">диагностика проблемы</a>
+                    <a href="warehouses.html" class="footer_link">США (Делавэр)</a>
+                    <a href="warehouses.html" class="footer_link">Китай (Гуанчжоу)</a>
+                    <a href="warehouses.html" class="footer_link">Индия (Мумбаи)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
                 </div>
             </div>
+            <div class="footer_contacts-block">
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
         </div>
-
-        <div class="footer_contacts-block">
-            <p class="footer_hotline-text">Горячая линия по вопросам доставки из зарубежных интернет-магазинов:</p>
-            <p class="footer_phone">+7 800 555 35 35</p>
-            <p class="footer_schedule">С 7:00 до 19:00 (MSK)</p>
-            <p class="footer_support-service">Служба поддержки</p>
-        </div>
-
         <hr class="footer_divider">
-
         <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
             <div class="footer_socials">
-                <a href="#"><img src="src/img/icons8-youtube%201.png" alt="YouTube" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/vk-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/max-messenger-horizontal-logo%201.png" alt="VK"
-                                 class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/telegram-svgrepo-com%201.png" alt="Telegram"
-                                 class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/telegram-svgrepo-com 1.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
             </div>
-            <p class="footer_copyright">© 2025, Курьерская компания МультиТранс</p>
         </div>
-
     </div>
 </footer>
+
 </body>
 </html>

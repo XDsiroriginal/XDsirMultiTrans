@@ -1,1775 +1,628 @@
-.preview_section {
-    width: auto;
-    max-width: 1762px;
+/* ========================================================
+   HOME / INDEX STYLES (V2 Minimalist)
+   ======================================================== */
+
+.page_container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ========================================================
+   HERO / PREVIEW SECTION
+   ======================================================== */
+.hero_section {
+    padding: 80px 0 60px;
     display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
     align-items: center;
 }
 
-.preview_section_h1 {
-    font-size: 40px;
-    font-family: var(--font-bold), serif;
-}
-
-.preview_section_p {
-    font-size: 24px;
-}
-
-.preview_section_image-block {
-    width: 100%;
-    max-width: 509px;
-    aspect-ratio: 1/1;
-    grid-column: 6/8;
-}
-
-.preview_section_image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.preview_section_text-block {
+.hero_content {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 28px;
 }
 
-.preview_section_right {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    grid-column: 1/4;
-}
-
-.countries_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
+.hero_badge {
+    align-self: flex-start;
+    display: inline-flex;
     align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background-color: var(--color-accent-soft);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-accent);
 }
 
-.countries_section_card {
-    width: 100%;
-    max-width: 449px;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-    height: 700px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.countries_section_card_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-bottom: 35px;
-    margin-left: 35px;
-    gap: 18px;
-}
-
-.countries_section_card_info_image,
-.countries_section_card_info_image-main {
-    border-radius: 100%;
-}
-
-.countries_section_card_info_image {
-    width: 110px;
-    height: 110px;
-}
-
-.countries_section_card_info_image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 100%;
-}
-
-.countries_section_card_info_image-main {
-    width: 130px;
-    height: 130px;
-}
-
-.countries_section_card_info_image-main img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 100%;
-}
-
-.india-card {
-    background-image: url("../img/india-man-mini.png");
-    grid-column: 1/3;
-}
-
-.countries_section_card_info_text {
-    display: flex;
-    flex-direction: column;
-}
-
-.countries_section_card_info_text_country-name {
-    font-family: var(--font-bold), serif;
-    font-size: 32px;
-}
-
-.countries_section_card_info_text_dop-info {
-    font-family: var(--font-semibold), serif;
-    font-size: 24px;
-}
-
-.main {
-    grid-column: 3/6;
-    max-width: 702px;
-}
-
-.usa-card {
-    background-image: url("../img/america-man.png");
-}
-
-.china-card {
-    background-image: url("../img/cina-man-mini.png");
-    grid-column: 6/8;
-}
-
-.price_section {
-    display: grid;
-    column-gap: 60px;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(2, auto);
-    width: auto;
-    max-width: 1762px;
-    margin: auto;
-    margin-top: 140px;
-    text-align: center;
-}
-
-.price_section_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-    margin-bottom: 20px;
-}
-
-.price_section_subtitle {
-    font-size: 24px;
-    margin-bottom: 60px;
-}
-
-.input_group {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
-    position: relative;
-    border-bottom: 2px solid var(--color-dop-accent);
-    align-items: center;
-    transition: 0.3s;
-}
-
-.input_group:hover, .input_group:focus {
-    border-bottom: 2px solid var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.input_field {
-    border: none;
-    outline: none;
-    font-size: 24px;
-    padding-bottom: 5px;
-    width: 300px;
-    text-align: left;
-    height: 51px;
-}
-
-.radio_label .radio {
-    width: 35px;
-    height: 35px;
+.hero_badge_dot {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background-color: var(--color-dop-accent);
+    background-color: var(--color-accent);
 }
 
-.radio_label input {
-    appearance: none;
+.hero_title {
+    font-size: 48px;
+    line-height: 1.15;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+    letter-spacing: -1px;
 }
 
-.radio_label input:checked + .radio {
-    background-color: var(--color-base-accent);
+.hero_title span {
+    color: var(--color-accent);
 }
 
-.radio:hover {
-    background-color: var(--color-base-accent);
-    transition: 0.3s;
+.hero_desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 580px;
 }
 
-.radio_label {
+.hero_actions {
     display: flex;
     align-items: center;
-    cursor: pointer;
-    font-size: 24px;
-    gap: 18px;
-}
-
-.radio_dot {
-    font-size: 24px;
-}
-
-.price_section_text {
-    grid-column: 1/8;
-    grid-row: 1;
-}
-
-.advantages_section {
-    display: flex;
-    width: auto;
-    max-width: 1762px;
-    margin: auto;
-    margin-top: 140px;
-    justify-content: space-between;
-}
-
-.advantages_section_card {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-}
-
-.advantages_section_card img {
-    width: 140px;
-    height: 140px;
-}
-
-.advantages_section_card_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-}
-
-.advantages_section_card_text_text {
-    font-size: 20px;
-}
-
-.advantages_section_card_text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-.advantage_price_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
-    align-items: center;
-    padding: 70px 0;
-}
-
-.advantage_price_section_text-block {
-    grid-column: 1/3;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-left: auto;
-}
-
-.advantage_price_section_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-    width: 449px;
-}
-
-.advantage_price_section_p {
-    font-size: 24px;
-    width: 449px;
-}
-
-.advantage_price_section_source {
-    font-size: 24px;
-    width: 449px;
-    margin-top: 12px;
-}
-
-.advantage_price_section_source_link {
-    font-family: var(--font-bold), serif;
-}
-
-.advantage_price_section_cards-block {
-    grid-column: 4/8;
-    display: flex;
-    gap: 60px;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.advantage_price_section_card {
-    width: 254px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.advantage_price_section_card img {
-    width: 100%;
-    height: 254px;
-    object-fit: contain;
-}
-
-.advantage_price_section_card_info {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 17px;
-}
-
-.advantage_price_section_card_title {
-    font-size: 20px;
-    font-family: var(--font-semibold), serif;
-}
-
-.advantage_price_section_card_price_russia {
-    font-size: 16px;
-    margin-top: 1px;
-}
-
-.advantage_price_section_card_price_usa {
-    font-size: 24px;
-    font-family: var(--font-bold), serif;
-    color: var(--color-base-accent);
-}
-
-.delivery_usa_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
-    align-items: center;
-    padding: 0;
-}
-
-.delivery_usa_image-block {
-    grid-column: 1/4;
-    width: 100%;
-    max-width: 509px;
-    height: 509px;
-}
-
-.delivery_usa_image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.delivery_usa_content {
-    grid-column: 5/8;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 49px;
-}
-
-.delivery_usa_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-    margin-bottom: 0;
-}
-
-.delivery_usa_text-block {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.delivery_usa_text {
-    font-size: 24px;
-    line-height: 1.5;
-}
-
-.delivery_usa_text_bold {
-    font-family: var(--font-bold), serif;
-}
-
-.delivery_usa_text_regular {
-    font-family: var(--font-regular), sans-serif;
-}
-
-.delivery_usa_order-button {
-    width: 509px;
-    max-width: 509px;
-}
-
-.advantage_offer_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid var(--color-dop);
-    padding: 0;
-    height: 929px;
-}
-
-.advantage_offer_content {
-    grid-column: 1/5;
-    margin-left: 192px;
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-}
-
-.advantage_offer_text-block {
-    display: flex;
-    flex-direction: column;
-    gap: 47px;
-    width: 573px;
-}
-
-.advantage_offer_title {
-    font-size: 36px;
-    line-height: 1.2;
-    font-family: var(--font-bold), serif;
-}
-
-.advantage_offer_subtitle {
-    font-size: 36px;
-}
-
-.advantage_offer_icons {
-    display: flex;
-    gap: 118px;
-    width: 510px;
-}
-
-.advantage_offer_card {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    width: 197px;
-}
-
-.advantage_offer_card img {
-    width: 195px;
-    height: 195px;
-    aspect-ratio: 1;
-}
-
-.advantage_offer_card_text {
-    font-size: 20px;
-}
-
-.advantage_offer_button {
-    width: 510px;
-    height: 70px;
-}
-
-.advantage_offer_image-block {
-    grid-column: 5/8;
-    height: 929px;
-}
-
-.advantage_offer_image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 10px 10px 0;
-}
-
-.partner_usa_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
-    align-items: center;
-    padding: 70px 0;
-}
-
-.partner_usa_text-block {
-    grid-column: 2/5;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    height: 332px;
-    justify-content: center;
-}
-
-.partner_usa_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-}
-
-.partner_usa_p {
-    font-size: 20px;
-}
-
-.partner_usa_dop-info {
-    font-size: 20px;
-}
-
-.partner_usa_dop-info_bold {
-    font-family: var(--font-bold), serif;
-}
-
-.partner_usa_image-block {
-    grid-column: 6/8;
-    width: 100%;
-    max-width: 315px;
-    height: 315px;
+    gap: 16px;
     margin-top: 8px;
 }
 
-.partner_usa_image-block img {
+.hero_metrics {
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+    padding-top: 24px;
+    border-top: var(--border-hairline);
+}
+
+.metric_item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric_val {
+    font-size: 22px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
+
+.metric_label {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.hero_image_wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_image_card {
     width: 100%;
-    height: 100%;
+    max-width: 540px;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #F8F8FA 0%, #F1F1F5 100%);
+    border: var(--border-hairline);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_image_card img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.hero_image_card:hover img {
+    transform: scale(1.03);
+}
+
+/* ========================================================
+   COUNTRIES / WAREHOUSES SECTION
+   ======================================================== */
+.section_header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.section_subtitle {
+    font-size: 14px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section_title {
+    font-size: 36px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+    letter-spacing: -0.5px;
+}
+
+.section_desc {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+.countries_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 90px;
+}
+
+.country_card {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.country_card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: #D8D8DE;
+}
+
+.country_card_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.country_flag {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.how-it-works_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 87px 60px;
-    align-items: flex-start;
-}
-
-.how-it-works_title {
-    grid-column: 1/8;
-    text-align: center;
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-    margin-bottom: 0;
-}
-
-.how-it-works_cards-block {
-    grid-column: 1/8;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.how-it-works_card {
-    width: 315px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    align-items: center;
-    text-align: center;
-}
-
-.how-it-works_card_icon-wrapper {
-    width: 210px;
-    height: 210px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.how-it-works_card_icon-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.how-it-works_card_text-block {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    align-items: center;
-}
-
-.how-it-works_card_title {
-    font-size: 24px;
+.country_tag {
+    font-size: 12px;
     font-family: var(--font-semibold), sans-serif;
-    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-surface);
+    color: var(--color-graphite);
 }
 
-.how-it-works_card_text {
-    font-size: 20px;
-    line-height: 1.5;
-}
-
-.where-to-buy_section {
-    width: auto;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    margin-top: 140px;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0 60px;
-    align-items: flex-start;
-}
-
-.where-to-buy_text-block {
-    grid-column: 1/8;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    text-align: center;
-    max-width: 1216px;
-    margin: 0 auto 43px;
-}
-
-.where-to-buy_title {
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-}
-
-.where-to-buy_subtitle {
+.country_name {
     font-size: 24px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
 }
 
-.where-to-buy_navbar {
-    grid-column: 1/8;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 60px;
-    border-bottom: 2px solid var(--color-dop-accent);
-}
-
-.where-to-buy_navbar_link {
-    font-size: 20px;
-    padding-bottom: 12px;
-    color: var(--color-dop-accent);
-    cursor: pointer;
-    text-align: center;
-    width: 200px;
-    flex-shrink: 0;
-    transition: 0.3s;
-}
-
-.where-to-buy_navbar_link:hover {
-    color: var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.where-to-buy_navbar_link.active {
-    color: var(--color-base-accent);
-}
-
-.where-to-buy_cards-block {
-    grid-column: 1/8;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 60px;
-}
-
-.where-to-buy_card {
-    width: 547px;
-    max-width: 449px;
-    background-color: var(--color-base);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    height: 419px;
-}
-
-.where-to-buy_card_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 35px;
-    margin-top: 35px;
-}
-
-.where-to-buy_card_img {
-    width: 195px;
-    height: 195px;
-    object-fit: contain;
-}
-
-.where-to-buy_card_info {
+.country_specs {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 195px;
+    padding-top: 16px;
+    border-top: var(--border-hairline);
 }
 
-.where-to-buy_card_title {
-    font-size: 20px;
-    font-family: var(--font-semibold), serif;
-}
-
-.where-to-buy_card_text {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.where-to-buy_order-button {
-    width: 100%;
-    margin-top: 70px;
-}
-
-.where-to-buy_section_button-content {
+.country_spec_row {
     display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.country_spec_label {
+    color: var(--color-text-secondary);
+}
+
+.country_spec_val {
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-graphite);
+}
+
+/* ========================================================
+   EXPRESS CALCULATOR BAR
+   ======================================================== */
+.calc_widget {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 32px 40px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 90px;
+}
+
+.calc_widget_title {
+    font-size: 22px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+    margin-bottom: 24px;
+}
+
+.calc_widget_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr auto;
+    gap: 20px;
+    align-items: end;
+}
+
+.calc_field_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calc_field_label {
+    font-size: 13px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-text-secondary);
+}
+
+.calc_select {
+    height: 52px;
+    padding: 0 16px;
+    background-color: var(--color-bg-surface);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.calc_select:focus {
+    background: #FFFFFF;
+    border-color: var(--color-accent);
+}
+
+/* ========================================================
+   ADVANTAGES SECTION
+   ======================================================== */
+.advantages_section {
+    padding: 80px 0;
+    background-color: var(--color-bg-subtle);
+    border-top: var(--border-hairline);
+    border-bottom: var(--border-hairline);
+    margin-bottom: 90px;
+}
+
+.advantages_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.adv_card {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 36px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.25s ease;
+}
+
+.adv_card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.adv_icon_wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-surface);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    grid-column: 1/8;
 }
 
-@media (max-width: 1762px) {
-    main {
-        width: 90vw;
-        margin: auto;
-    }
-    .preview_section {
-        margin-top: 100px;
-    }
-
-    .preview_section_h1 {
-        font-size: 32px;
-    }
-
-    .preview_section_p {
-        font-size: 20px;
-    }
-
-    .preview_section_image-block {
-        max-width: 450px;
-    }
-
-    .preview_section_text-block {
-        gap: 25px;
-    }
-
-    .countries_section {
-        margin-top: 100px;
-    }
-
-    .countries_section_card {
-        height: 600px;
-    }
-
-    .countries_section_card_info {
-        margin-bottom: 25px;
-        margin-left: 25px;
-        gap: 15px;
-    }
-
-    .countries_section_card_info_image {
-        width: 90px;
-        height: 90px;
-    }
-
-    .countries_section_card_info_image-main {
-        width: 110px;
-        height: 110px;
-    }
-
-    .countries_section_card_info_text_country-name {
-        font-size: 28px;
-    }
-
-    .countries_section_card_info_text_dop-info {
-        font-size: 20px;
-    }
-
-    .price_section {
-        margin-top: 100px;
-    }
-
-    .price_section_title {
-        font-size: 30px;
-        margin-bottom: 15px;
-    }
-
-    .price_section_subtitle {
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
-
-    .input_group {
-        gap: 25px;
-    }
-
-    .input_field {
-        font-size: 16px;
-        height: 40px;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .radio_label .radio {
-        width: 30px;
-        height: 30px;
-    }
-
-    .radio_label {
-        font-size: 20px;
-        gap: 15px;
-    }
-
-    .radio_dot {
-        font-size: 20px;
-    }
-
-    .advantages_section {
-        margin-top: 100px;
-    }
-
-    .advantages_section_card img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .advantages_section_card_title {
-        font-size: 30px;
-    }
-
-    .advantages_section_card_text_text {
-        font-size: 18px;
-    }
-
-    .advantage_price_section {
-        margin-top: 100px;
-        padding: 50px 0;
-    }
-
-    .advantage_price_section_text-block {
-        gap: 30px;
-    }
-
-    .advantage_price_section_title,
-    .advantage_price_section_p,
-    .advantage_price_section_source {
-        font-size: 16px;
-        width: 100%;
-    }
-
-    .advantage_price_section_p,
-    .advantage_price_section_source {
-        font-size: 16px;
-    }
-
-    .advantage_price_section_cards-block {
-        gap: 40px;
-    }
-
-    .advantage_price_section_card {
-        width: 200px;
-        gap: 25px;
-    }
-
-    .advantage_price_section_card img {
-        height: 200px;
-    }
-
-    .advantage_price_section_card_title {
-        font-size: 18px;
-    }
-
-    .advantage_price_section_card_price_russia {
-        font-size: 14px;
-    }
-
-    .advantage_price_section_card_price_usa {
-        font-size: 20px;
-    }
-
-    .delivery_usa_section {
-        margin-top: 100px;
-    }
-
-    .delivery_usa_image-block {
-        max-width: 450px;
-        height: 450px;
-    }
-
-    .delivery_usa_content {
-        gap: 30px;
-    }
-
-    .delivery_usa_title {
-        font-size: 30px;
-    }
-
-    .delivery_usa_text-block {
-        gap: 20px;
-    }
-
-    .delivery_usa_text {
-        font-size: 20px;
-    }
-
-    .delivery_usa_order-button {
-        width: 450px;
-        max-width: 450px;
-    }
-
-    .advantage_offer_section {
-        margin-top: 100px;
-        height: 750px;
-    }
-
-    .advantage_offer_content {
-        margin-left: 100px;
-        gap: 50px;
-    }
-
-    .advantage_offer_text-block {
-        gap: 30px;
-        width: 450px;
-    }
-
-    .advantage_offer_title {
-        font-size: 30px;
-    }
-
-    .advantage_offer_subtitle {
-        font-size: 30px;
-    }
-
-    .advantage_offer_icons {
-        gap: 80px;
-        width: 450px;
-    }
-
-    .advantage_offer_card {
-        gap: 25px;
-        width: 170px;
-    }
-
-    .advantage_offer_card img {
-        width: 170px;
-        height: 170px;
-    }
-
-    .advantage_offer_card_text {
-        font-size: 18px;
-    }
-
-    .advantage_offer_button {
-        width: 450px;
-        height: 60px;
-    }
-
-    .advantage_offer_image-block {
-        height: 750px;
-    }
-
-    .partner_usa_section {
-        margin-top: 100px;
-        padding: 50px 0;
-    }
-
-    .partner_usa_text-block {
-        gap: 25px;
-        height: auto;
-    }
-
-    .partner_usa_title {
-        font-size: 30px;
-    }
-
-    .partner_usa_p {
-        font-size: 18px;
-    }
-
-    .partner_usa_dop-info {
-        font-size: 18px;
-    }
-
-    .partner_usa_image-block {
-        max-width: 250px;
-        height: 250px;
-    }
-
-    .how-it-works_section {
-        margin-top: 100px;
-        gap: 60px 40px;
-    }
-
-    .how-it-works_title {
-        font-size: 30px;
-    }
-
-    .how-it-works_card {
-        width: 250px;
-        gap: 25px;
-    }
-
-    .how-it-works_card_icon-wrapper {
-        width: 180px;
-        height: 180px;
-    }
-
-    .how-it-works_card_text-block {
-        gap: 10px;
-    }
-
-    .how-it-works_card_title {
-        font-size: 20px;
-    }
-
-    .how-it-works_card_text {
-        font-size: 16px;
-    }
-
-    .where-to-buy_section {
-        margin-top: 100px;
-    }
-
-    .where-to-buy_text-block {
-        gap: 15px;
-        margin: 0 auto 30px;
-    }
-
-    .where-to-buy_title {
-        font-size: 30px;
-    }
-
-    .where-to-buy_subtitle {
-        font-size: 20px;
-    }
-
-    .where-to-buy_navbar {
-        gap: 40px;
-        justify-content: space-evenly;
-    }
-
-    .where-to-buy_navbar_link {
-        font-size: 18px;
-        width: auto;
-        flex-shrink: 1;
-    }
-
-    .where-to-buy_cards-block {
-        gap: 40px;
-    }
-
-    .where-to-buy_card {
-        width: calc((100% - 2 * 40px) / 3);
-        max-width: 400px;
-        height: 380px;
-    }
-
-    .where-to-buy_card_content {
-        gap: 25px;
-        margin-top: 25px;
-    }
-
-    .where-to-buy_card_img {
-        width: 170px;
-        height: 170px;
-    }
-
-    .where-to-buy_card_info {
-        gap: 8px;
-        max-width: 170px;
-    }
-
-    .where-to-buy_card_title {
-        font-size: 18px;
-    }
-
-    .where-to-buy_card_text {
-        font-size: 14px;
-    }
-
-    .where-to-buy_order-button {
-        width: 400px;
-        height: 60px;
-        margin-top: 50px;
-    }
+.adv_icon_wrap img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
-@media (max-width: 1440px) {
-    main {
-        width: 90vw;
-    }
-    .preview_section_h1 {
-        font-size: 28px;
-    }
-
-    .preview_section_p {
-        font-size: 18px;
-    }
-
-    .countries_section_card {
-        height: 500px;
-    }
-
-    .countries_section_card_info_image {
-        width: 80px;
-        height: 80px;
-    }
-
-    .countries_section_card_info_image-main {
-        width: 100px;
-        height: 100px;
-    }
-
-    .countries_section_card_info_text_country-name {
-        font-size: 24px;
-    }
-
-    .countries_section_card_info_text_dop-info {
-        font-size: 18px;
-    }
-
-    .price_section .input_group {
-        gap: 20px;
-    }
-
-    .advantage_price_section_cards-block {
-        gap: 30px;
-    }
-
-    .advantage_price_section_card {
-        width: 180px;
-    }
-
-    .advantage_price_section_card img {
-        height: 180px;
-    }
-
-
-    .advantage_offer_content {
-        margin-left: 80px;
-        gap: 40px;
-    }
-
-    .advantage_offer_text-block {
-        width: 400px;
-    }
-
-    .advantage_offer_title {
-        font-size: 26px;
-    }
-
-    .advantage_offer_subtitle {
-        font-size: 26px;
-    }
-
-    .advantage_offer_icons {
-        gap: 60px;
-        width: 400px;
-    }
-
-    .advantage_offer_card {
-        width: 160px;
-    }
-
-    .advantage_offer_card img {
-        width: 160px;
-        height: 160px;
-    }
-
-    .advantage_offer_button {
-        width: 400px;
-    }
-
-    .partner_usa_text-block {
-        grid-column: 1/4;
-    }
-
-    .partner_usa_image-block {
-        grid-column: 5/8;
-    }
-
-    .how-it-works_cards-block {
-        gap: 40px;
-        justify-content: space-around;
-    }
-
-    .how-it-works_card {
-        width: 200px;
-    }
-
-    .how-it-works_card_icon-wrapper {
-        width: 160px;
-        height: 160px;
-    }
-
-    .where-to-buy_navbar {
-        gap: 30px;
-    }
+.adv_title {
+    font-size: 20px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
 }
 
-@media (max-width: 1280px) {
-    main {
-        width: 90vw;
-    }
-    .preview_section_h1 {
-        font-size: 24px;
-    }
-
-    .preview_section_p {
-        font-size: 16px;
-    }
-
-    .countries_section_card {
-        height: 450px;
-    }
-
-    .countries_section_card_info_image {
-        width: 70px;
-        height: 70px;
-    }
-
-    .countries_section_card_info_image-main {
-        width: 90px;
-        height: 90px;
-    }
-
-    .countries_section_card_info_text_country-name {
-        font-size: 20px;
-    }
-
-    .countries_section_card_info_text_dop-info {
-        font-size: 16px;
-    }
-
-    .price_section {
-        column-gap: 40px;
-    }
-
-    .advantage_price_section_cards-block {
-        gap: 20px;
-    }
-
-    .advantage_price_section_card {
-        width: 150px;
-    }
-
-    .advantage_price_section_card img {
-        height: 150px;
-    }
-
-    .delivery_usa_text {
-        font-size: 18px;
-    }
-
-    .advantage_offer_content {
-        margin-left: 50px;
-        gap: 30px;
-    }
-
-    .advantage_offer_text-block {
-        width: 350px;
-    }
-
-    .advantage_offer_title {
-        font-size: 24px;
-    }
-
-    .advantage_offer_subtitle {
-        font-size: 24px;
-    }
-
-    .advantage_offer_icons {
-        gap: 50px;
-        width: 350px;
-    }
-
-    .advantage_offer_card {
-        width: 140px;
-    }
-
-    .advantage_offer_card img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .advantage_offer_button {
-        width: 350px;
-    }
-
-    .partner_usa_text-block {
-        gap: 20px;
-    }
-
-    .partner_usa_p,
-    .partner_usa_dop-info {
-        font-size: 16px;
-    }
-
-    .how-it-works_card {
-        width: 180px;
-    }
-
-    .how-it-works_card_icon-wrapper {
-        width: 140px;
-        height: 140px;
-    }
-
-    .how-it-works_card_text {
-        font-size: 14px;
-    }
-
-    .where-to-buy_navbar {
-        gap: 20px;
-    }
-
-    .where-to-buy_card {
-        height: 350px;
-    }
-
-    .where-to-buy_card_img {
-        width: 150px;
-        height: 150px;
-    }
+.adv_desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
 }
 
-@media (max-width: 1024px) {
-    .preview_section,
-    .countries_section,
-    .price_section,
-    .advantage_price_section,
-    .delivery_usa_section,
-    .advantage_offer_section,
-    .partner_usa_section,
-    .how-it-works_section,
-    .where-to-buy_section {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 80px;
-        max-width: 90vw;
-    }
+/* ========================================================
+   PRICE COMPARISON SECTION
+   ======================================================== */
+.compare_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 90px;
+}
 
-    .preview_section_image-block {
-        display: none;
-    }
+.compare_card {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: all 0.25s ease;
+}
 
-    .preview_section_right {
-        grid-column: 1/8;
-        width: 100%;
-        gap: 30px;
-    }
+.compare_card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
 
-    .preview_section_h1 {
-        font-size: 30px;
-    }
+.compare_img_box {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
 
-    .preview_section_p {
-        font-size: 18px;
-    }
+.compare_img_box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
 
-    .order-button {
-        width: 100%;
-        max-width: 100%;
-        height: 60px;
-        font-size: 24px;
-    }
+.compare_title {
+    font-size: 17px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .countries_section {
-        gap: 30px;
-    }
+.compare_prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: var(--border-hairline);
+}
 
-    .countries_section_card {
-        grid-column: 1/8;
-        max-width: 100%;
-        height: 350px;
-        background-size: cover;
-        background-position: top center;
-    }
+.price_block_ru {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
-    .countries_section_card.main {
-        grid-column: 1/8;
-        max-width: 100%;
-    }
+.price_block_ru span {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
 
-    .india-card, .usa-card, .china-card {
-        background-image: none;
-        background-color: var(--color-dop-accent);
-        color: var(--color-base);
-    }
+.price_val_ru {
+    font-size: 15px;
+    text-decoration: line-through;
+    color: var(--color-text-secondary);
+}
 
-    .countries_section_card_info {
-        margin-left: 20px;
-        margin-bottom: 20px;
-    }
+.price_block_usa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
 
-    .price_section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
+.price_block_usa span {
+    font-size: 12px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-accent);
+}
 
-    .price_section_title {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+.price_val_usa {
+    font-size: 20px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .price_section_subtitle {
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
+/* ========================================================
+   HOW IT WORKS SECTION
+   ======================================================== */
+.steps_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 90px;
+}
 
-    .input_group {
-        grid-column: 1/8;
-        width: 100%;
-    }
+.step_card {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
 
-    .input_field {
-        font-size: 18px;
-        width: 100%;
-        max-width: none;
-    }
+.step_num {
+    font-size: 32px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-accent);
+}
 
-    .radio_label {
-        grid-column: span 3;
-        font-size: 18px;
-        gap: 10px;
-    }
+.step_title {
+    font-size: 20px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .advantages_section {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    }
+.step_desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
 
-    .advantages_section_card {
-        flex-direction: row;
-        text-align: left;
-        width: 100%;
-        max-width: 450px;
-    }
+/* ========================================================
+   SHOPS SHOWCASE
+   ======================================================== */
+.shops_strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 90px;
+}
 
-    .advantages_section_card img {
-        width: 90px;
-        height: 90px;
-        flex-shrink: 0;
-    }
+.shop_pill {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
 
-    .advantages_section_card_title {
-        font-size: 28px;
-    }
+.shop_pill:hover {
+    border-color: var(--color-graphite);
+    transform: translateY(-2px);
+}
 
-    .advantages_section_card_text_text {
-        font-size: 18px;
-    }
+.shop_pill img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
 
-    .advantage_price_section {
-        flex-direction: column;
-    }
+.shop_pill_name {
+    font-size: 16px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .advantage_price_section_text-block {
-        grid-column: 1/8;
-        margin-left: 0;
-        width: 100%;
-        gap: 20px;
-        align-items: flex-start;
-    }
+.shop_pill_cat {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
 
-    .advantage_price_section_title,
-    .advantage_price_section_p,
-    .advantage_price_section_source {
-        width: 100%;
-    }
+/* ========================================================
+   CALL TO ACTION PROMO BLOCK
+   ======================================================== */
+.promo_banner {
+    background: var(--color-graphite);
+    border-radius: var(--radius-lg);
+    padding: 64px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
 
-    .advantage_price_section_title {
-        font-size: 24px;
-    }
+.promo_text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 650px;
+}
 
-    .advantage_price_section_p,
-    .advantage_price_section_source {
-        font-size: 18px;
-    }
+.promo_title {
+    font-size: 38px;
+    font-family: var(--font-bold), sans-serif;
+    line-height: 1.2;
+}
 
-    .advantage_price_section_cards-block {
-        grid-column: 1/8;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 30px 20px;
-    }
+.promo_desc {
+    font-size: 17px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
 
-    .advantage_price_section_card {
-        width: 45%;
-        max-width: 250px;
-        gap: 20px;
-    }
-
-    .delivery_usa_section {
-        flex-direction: column-reverse;
-    }
-
-    .delivery_usa_image-block {
-        display: none;
-    }
-
-    .delivery_usa_content {
-        grid-column: 1/8;
-        gap: 30px;
-    }
-
-    .delivery_usa_title {
-        font-size: 24px;
-    }
-
-    .delivery_usa_text {
-        font-size: 18px;
-    }
-
-    .delivery_usa_order-button {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .advantage_offer_section {
-        height: auto;
-        padding: 30px;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .advantage_offer_image-block {
-        display: none;
-    }
-
-    .advantage_offer_content {
-        grid-column: 1/8;
-        margin-left: 0;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .advantage_offer_text-block {
-        width: 100%;
-        max-width: 450px;
-        gap: 30px;
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+@media (max-width: 1140px) {
+    .hero_section {
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .advantage_offer_title,
-    .advantage_offer_subtitle {
-        font-size: 24px;
-        width: 100%;
+    .hero_content {
+        align-items: center;
     }
 
-    .advantage_offer_icons {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        width: auto;
+    .hero_desc {
+        max-width: 100%;
     }
 
-    .advantage_offer_card {
-        width: 45%;
-        max-width: 197px;
+    .hero_badge {
+        align-self: center;
     }
 
-    .advantage_offer_card img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1;
+    .hero_image_card {
+        max-width: 400px;
     }
 
-    .advantage_offer_card_text {
-        font-size: 18px;
+    .countries_grid,
+    .advantages_grid,
+    .compare_grid,
+    .steps_grid {
+        grid-template-columns: 1fr;
     }
 
-    .advantage_offer_button {
-        width: 100%;
-        max-width: 450px;
+    .calc_widget_form {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .partner_usa_section {
-        flex-direction: column-reverse;
+    .shops_strip {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .partner_usa_image-block {
-        display: none;
-    }
-
-    .partner_usa_text-block {
-        grid-column: 1/8;
-        height: auto;
+    .promo_banner {
+        flex-direction: column;
         text-align: center;
-        gap: 20px;
-    }
-
-    .partner_usa_title {
-        font-size: 24px;
-    }
-
-    .partner_usa_p,
-    .partner_usa_dop-info {
-        font-size: 18px;
-    }
-
-    .how-it-works_cards-block {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .how-it-works_card {
-        width: 100%;
-        max-width: 400px;
-        flex-direction: row;
-        text-align: left;
-        gap: 20px;
-    }
-
-    .how-it-works_title {
-        font-size: 28px;
-    }
-
-    .how-it-works_card_icon-wrapper {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-
-    .how-it-works_card_title {
-        font-size: 20px;
-    }
-
-    .how-it-works_card_text {
-        font-size: 16px;
-    }
-
-    .where-to-buy_navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 15px;
-    }
-
-    .where-to-buy_cards-block {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .where-to-buy_card {
-        max-width: 400px;
-        width: 100%;
-        height: auto;
+        padding: 40px 24px;
     }
 }
 
 @media (max-width: 768px) {
-    .preview_section,
-    .countries_section,
-    .price_section,
-    .advantage_price_section,
-    .delivery_usa_section,
-    .advantage_offer_section,
-    .partner_usa_section,
-    .how-it-works_section,
-    .where-to-buy_section {
-        margin-top: 60px;
-        gap: 30px;
+    .hero_title {
+        font-size: 34px;
     }
 
-    .preview_section_h1 {
-        font-size: 24px;
+    .calc_widget_form {
+        grid-template-columns: 1fr;
     }
 
-    .preview_section_p {
-        font-size: 16px;
-    }
-
-    .order-button {
-        height: 50px;
-        font-size: 20px;
-    }
-
-    .countries_section_card {
-        height: 300px;
-    }
-
-    .countries_section_card_info_text_country-name {
-        font-size: 24px;
-    }
-
-    .countries_section_card_info_text_dop-info {
-        font-size: 18px;
-    }
-
-    .price_section_title {
-        font-size: 20px;
-    }
-
-    .price_section_subtitle {
-        font-size: 16px;
-    }
-
-    .input_field {
-        font-size: 16px;
-    }
-
-    .radio_label {
-        grid-column: span 7;
-        font-size: 16px;
-        justify-content: flex-start;
-    }
-
-    .advantages_section_card {
-        flex-direction: column;
-        text-align: center;
-        max-width: 250px;
-    }
-
-    .advantages_section_card_title {
-        font-size: 24px;
-    }
-
-    .advantages_section_card_text_text {
-        font-size: 16px;
-    }
-
-    .advantage_price_section_cards-block {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .advantage_price_section_card {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .delivery_usa_title {
-        font-size: 20px;
-    }
-
-    .delivery_usa_text {
-        font-size: 16px;
-    }
-
-    .advantage_offer_card {
-        width: 100%;
-        max-width: 150px;
-    }
-
-    .advantage_offer_button {
-        height: 50px;
-    }
-
-    .how-it-works_card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .where-to-buy_navbar_link {
-        font-size: 16px;
+    .shops_strip {
+        grid-template-columns: 1fr;
     }
 }

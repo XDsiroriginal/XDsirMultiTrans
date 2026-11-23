@@ -1,191 +1,171 @@
-.body {
-    display: flex;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
+/* ========================================================
+   AUTH STYLES: LOGIN & REGISTRATION (V2 Minimalist)
+   ======================================================== */
 
-.main {
-    width: 80%;
-    display: flex;
-    margin: auto;
-}
-
-.main_content{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.main_content_img{
-    width: 60%;
-}
-
-.main_content_registration {
-    display: flex;
-    width: 450px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
-.main_content_registration_text {
+.auth_wrapper {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 390px;
-    justify-content: center;
+    background-color: var(--color-bg-subtle);
 }
 
-.main_content_registration_text_h1 {
-    text-align: center;
-    font-size: 40px;
-    font-family: var(--font-bold), sans-serif;
-}
-
-.main_content_registration_text_h2{
-    font-size: 22px;
-}
-
-.main_content_registration_form {
+.auth_header {
+    height: 76px;
+    padding: 0 40px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 35px;
-}
-
-.main_content_registration_form_input {
-    width: 350px;
-    color: var(--color-base-accent);
-    background-color: var(--color-dop);
-    border: none;
-    border-radius: 10px;
-    transition: 0.3s;
-    height: 60px;
-    padding-left: 18px;
-}
-
-.main_content_registration_form_input:hover, .main_content_registration_form_input:focus {
-    border: none;
-}
-.main_content_registration_form_input::placeholder {
-    color: var(--color-dop-accent);
-    font-size: 14px;
-}
-.main_content_registration_form_input::placeholder:hover, .main_content_registration_form_input:focus {
-    color: var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.main_content_registration_checkbox {
-    width: 350px;
-    display: flex;
-    gap: 18px;
-}
-
-.main_content_registration_a {
-    color: var(--color-dop-accent);
-    transition: 0.3s;
-}
-
-.main_content_registration_a:hover, .main_content_registration_a:focus, .main_content_registration_a:active {
-    color: var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.main_content_registration_checkbox_text {
-    font-size: 12px;
-}
-
-.order-button {
-    width: 350px;
-    font-size: 26px;
-}
-
-.main_content_registration_checkbox_input {
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-dop);
-    transition: 0.3s;
-    appearance: none;
-}
-
-.main_content_registration_checkbox_input:hover, .main_content_registration_checkbox_input:focus {
-    border: 1px solid var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.main_content_registration_checkbox_input:active, .main_content_registration_checkbox_input:checked {
-    background-color: var(--color-base-accent);
-    transition: 0.3s;
-}
-
-.main_content_img_img {
-    width: 100%;
-}
-
-.main_content_registration_line_block {
-    display: flex;
-    width: 400px;
     justify-content: space-between;
     align-items: center;
+    background-color: #FFFFFF;
+    border-bottom: var(--border-hairline);
 }
 
-.main_content_registration_line_block_line {
-    width: 45%;
-    height: 1px;
-    background-color: var(--color-base-accent);
+.back_link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-text-secondary);
 }
 
-.main_content_registration_line_block_p {
-    color: var(--color-base-accent);
-    font-size: 16px;
+.back_link:hover {
+    color: var(--color-graphite);
 }
 
-.main_content_social_login {
+.auth_main {
+    flex: 1;
     display: flex;
-    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
+.auth_card {
+    width: 100%;
+    max-width: 480px;
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 44px 40px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
 
-@media (max-width: 1024px) {
-    .main_content_social_login_img {
-        width: 40px;
-    }
-    .main_content_img {
-        display: none;
-    }
+.auth_title_box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-    .main {
-        width: 90%;
-    }
+.auth_title {
+    font-size: 28px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .main_content_registration {
-        width: 100%;
-    }
+.auth_subtitle {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+}
 
-    .main_content_registration_text {
-        width: 100%;
-    }
+.auth_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-    .main_content_registration_text_h1 {
-        font-size: 36px;
-    }
-    .main_content_registration_text_h2 {
-        font-size: 20px;
-    }
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
-    .main_content_registration_a {
-        font-size: 12px;
-    }
+.form_label {
+    font-size: 13px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-graphite);
+}
 
-    .main_content_registration_form {
-        width: 100%;
-    }
-    .main_content_registration_form_input {
-        width: 100%;
-    }
+.divider_row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 4px 0;
+}
+
+.divider_line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-bg-surface);
+}
+
+.divider_text {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.social_auth_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.social_btn {
+    height: 46px;
+    border-radius: var(--radius-sm);
+    border: var(--border-hairline);
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-graphite);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.social_btn:hover {
+    background-color: var(--color-bg-subtle);
+    border-color: #DCDCE0;
+}
+
+.social_btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.auth_switch {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.auth_switch a {
+    color: var(--color-accent);
+    font-family: var(--font-semibold), sans-serif;
+}
+
+.auth_switch a:hover {
+    text-decoration: underline;
+}
+
+.checkbox_label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.checkbox_label input {
+    margin-top: 2px;
+    accent-color: var(--color-accent);
 }

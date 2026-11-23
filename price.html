@@ -1,353 +1,240 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="src/css/main.css">
-  <link rel="stylesheet" href="src/css/price.css">
-  <title>Цены</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/price.css">
+    <title>Тарифы и калькулятор доставки — MultiTrans</title>
 </head>
 <body>
-<header>
-  <div class="main_button">
-    <img src="src/img/logo.png" alt="логотип">
-    <p class="logo_name">MultiTrans</p>
-  </div>
-  <a href="price.html"><p class="header_text">стоимость</p></a>
-  <a href="tarif.html"><p class="header_text">тариф</p></a>
-  <a href="shop.html"> <p class="header_text">магазины</p></a>
-  <p></p>
-  <a href="login.html" class="header_login_button">Войти</a>
-  <a href="registration.html" class="header_registration_button">регистрация</a>
 
-  <div class="burger">
-    <img src="src/img/burger.png" alt="Бургер меню">
-  </div>
+<header>
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text">Главная</a>
+        <a href="shop.html" class="header_text">Магазины</a>
+        <a href="price.html" class="header_text active">Тарифы</a>
+        <a href="order.html" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="login.html" class="header_login_button">Войти</a>
+        <a href="registration.html" class="header_registration_button">Регистрация</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
+    </div>
 </header>
 
 <main>
-  <section class="delivery_countries_section">
-    <div class="delivery_countries_header">
-      <h2 class="delivery_countries_title">Стоимость доставки - США</h2>
+    <div class="page_header_banner">
+        <div class="page_container">
+            <span class="badge badge-accent" style="margin-bottom: 12px;">Прозрачные цены</span>
+            <h1 class="hero_title" style="font-size: 38px; margin-bottom: 12px;">Тарифы и калькулятор доставки</h1>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">Точный расчет стоимости авиадоставки из США, Китая и Индии без скрытых комиссий.</p>
+        </div>
     </div>
-    <div class="delivery_countries_cards-block">
-      <div class="delivery_countries_card india-card">
-        <div class="delivery_countries_card_info">
-          <div class="delivery_countries_card_info_image">
-            <img class="ellipse" src="src/img/india_price_flag.png" alt="Флаг Индии" />
-          </div>
-          <div class="delivery_countries_card_info_text">
-            <p class="delivery_countries_card_info_text_country-name">Индия</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="delivery_countries_card main usa-card">
-        <div class="delivery_countries_card_info">
-          <div class="delivery_countries_card_info_image-main">
-            <img class="img" src="src/img/usa_price_flag.png" alt="Флаг США" />
-          </div>
-          <div class="delivery_countries_card_info_text">
-            <p class="delivery_countries_card_info_text_country-name main-country">США</p>
-          </div>
-        </div>
-      </div>
+    <div class="page_container">
+        <!-- CALCULATOR -->
+        <section class="calc_container">
+            <div class="calc_box">
+                <h2 style="font-size: 22px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite);">Параметры отправления</h2>
 
-      <div class="delivery_countries_card china-card">
-        <div class="delivery_countries_card_info">
-          <div class="delivery_countries_card_info_image">
-            <img class="ellipse-2" src="src/img/china_price_flag.png" alt="Флаг Китая" />
-          </div>
-          <div class="delivery_countries_card_info_text">
-            <p class="delivery_countries_card_info_text_country-name">Китай</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="delivery_countries_line"></div>
-  </section>
+                <div class="calc_tabs">
+                    <button type="button" class="calc_tab_btn active">США 🇺🇸</button>
+                    <button type="button" class="calc_tab_btn">Китай 🇨🇳</button>
+                    <button type="button" class="calc_tab_btn">Индия 🇮🇳</button>
+                </div>
 
-  <section class="additional_services_section">
-    <div class="additional_services_cards-block">
+                <div class="form_group">
+                    <label class="form_label" for="ship-city">Город доставки в России</label>
+                    <input type="text" id="ship-city" class="input_field" value="Москва" placeholder="Укажите город">
+                </div>
 
-      <div class="additional_services_card returns-card">
-        <div class="additional_services_card_icon-wrapper">
-          <div class="additional_services_card_icon">
-            <img src="src/img/return.png" alt="иконка возврата">
-          </div>
-        </div>
-        <div class="additional_services_card_info">
-          <p class="additional_services_card_price">От 400 ₽</p>
-          <h3 class="additional_services_card_title">Возвраты</h3>
-          <p class="additional_services_card_text">
-            Поможем вернуть товар в магазин. Дополнительно оплачивается стоимость доставки до магазина если магазин не
-            предоставил возвратную накладную
-          </p>
-          <a href="#" class="additional_services_card_link">ПОДРОБНЕЕ</a>
-        </div>
-      </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form_group">
+                        <label class="form_label" for="ship-weight">Вес посылки (кг)</label>
+                        <input type="number" id="ship-weight" class="input_field" value="1.5" step="0.1">
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label" for="ship-speed">Скорость доставки</label>
+                        <select id="ship-speed" class="input_field" style="cursor: pointer;">
+                            <option>Стандартная авиа (12-16 дней)</option>
+                            <option>Экспресс (7-10 дней)</option>
+                        </select>
+                    </div>
+                </div>
 
-      <div class="additional_services_card dop-services-card">
-        <div class="additional_services_card_icon-wrapper">
-          <div class="additional_services_card_icon">
-            <img src="src/img/camera.png" alt="иконка фотоаппарата">
-          </div>
-        </div>
-        <div class="additional_services_card_info">
-          <p class="additional_services_card_price">От 150 ₽</p>
-          <h3 class="additional_services_card_title">Дополнительные услуги</h3>
-          <p class="additional_services_card_text">
-            Сделаем фотографии товара, поможем вернуть его в магазин и разделим ваши посылки на несколько частей для
-            отправки на нескольких получателей
-          </p>
-          <a href="#" class="additional_services_card_link">ПОДРОБНЕЕ</a>
-        </div>
-      </div>
-
-      <div class="additional_services_card consolidation-card">
-        <div class="additional_services_card_icon-wrapper">
-          <div class="additional_services_card_icon">
-            <img src="src/img/dropbox.png" alt="иконка коробки">
-          </div>
-        </div>
-        <div class="additional_services_card_info">
-          <p class="additional_services_card_price">От 250 ₽</p>
-          <h3 class="additional_services_card_title">Консолидация и упаковка</h3>
-          <p class="additional_services_card_text">
-            Мы бесплатно объединим ваши покупки и отправим их вам, вашим друзьям или клиентам по выгодной стоимости.
-          </p>
-          <a href="#" class="additional_services_card_link">ПОДРОБНЕЕ</a>
-        </div>
-      </div>
-
-      <div class="additional_services_card acceptance-card">
-        <div class="additional_services_card_icon-wrapper">
-          <div class="additional_services_card_icon">
-            <img src="src/img/time.png" alt="иконка часов">
-          </div>
-        </div>
-        <div class="additional_services_card_info">
-          <p class="additional_services_card_price">От 100 ₽</p>
-          <h3 class="additional_services_card_title">Прием посылок</h3>
-          <p class="additional_services_card_text">
-            Мы бесплатно примем ваши покупки на склад и предоставим возможность хранения товаров до 60 дней
-          </p>
-          <a href="#" class="additional_services_card_link">ПОДРОБНЕЕ</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="delivery_info_section">
-    <div class="delivery_info_container">
-      <div class="delivery_info_text-block">
-        <div class="delivery_info_text-group-1">
-          <div class="delivery_info_icon-wrapper">
-            <img src="src/img/world.png" alt="иконка земного шара" class="delivery_info_icon">
-          </div>
-          <div class="delivery_info_content">
-            <h3 class="delivery_info_title">Отправка посылок</h3>
-            <p class="delivery_info_description-1">
-              Прием и доставка посылок производится компанией MultiTrans от нашего склада в США и до вашей двери, что
-              гарантирует полный контроль над грузом на всем пути.
-            </p>
-            <p class="delivery_info_description-2">
-              Высокая скорость доставки 4-6 дней за счет собственной налаженной логистики. Вылеты из США каждую пятницу.
-            </p>
-          </div>
-        </div>
-        <div class="delivery_info_text-group-2">
-          <h3 class="delivery_info_title">Тариф</h3>
-          <p class="delivery_info_description-1">Этот тариф подходит тем, кто делает покупки в США несколько раз в месяц</p>
-          <a href="tarif.html" class="delivery_info_link">СТОИМОСТЬ ДОСТАВКИ</a>
-        </div>
-      </div>
-      <div class="delivery_info_divider"></div>
-      <div class="delivery_info_calculator-block">
-        <h3 class="delivery_info_calculator-title">Стоимость доставки из США</h3>
-        <div class="delivery_info_input-group city-input">
-          <img src="src/img/map.png" alt="иконка местоположения" class="delivery_info_input-icon">
-          <label>
-            <input type="text" id="city-input" class="input_field" placeholder="ВАШ ГОРОД">
-          </label>
-        </div>
-        <div class="delivery_info_input-group weight-input">
-          <img src="src/img/weight.png" alt="иконка веса" class="delivery_info_input-icon">
-          <label>
-            <input type="text" id="weight-input" class="input_field" placeholder="ВЕС ПОСЫЛКИ (КГ.)">
-          </label>
-        </div>
-        <div class="delivery_info_radio-buttons">
-          <label class="radio_label" for="delivery_option_1">
-            <input type="radio" id="delivery_option_1" name="delivery_option" checked>
-            <span class="radio"></span>
-            <p class="radio_dot">стандарт</p>
-          </label>
-          <label class="radio_label" for="delivery_option_2">
-            <input type="radio" id="delivery_option_2" name="delivery_option">
-            <span class="radio"></span>
-            <p class="radio_dot">быстрая</p>
-          </label>
-          <label class="radio_label" for="delivery_option_3">
-            <input type="radio" id="delivery_option_3" name="delivery_option">
-            <span class="radio"></span>
-            <p class="radio_dot">экспресс</p>
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="volume_weight_section">
-    <div class="volume_weight_container">
-      <div class="volume_weight_header">
-        <img class="volume_weight_icon" src="src/img/cube-three.png" alt="Иконка куба">
-        <h2 class="volume_weight_title">Объемный вес</h2>
-      </div>
-      <p class="volume_weight_text">
-        Мы знаем как важны правила расчета объемного веса, поэтому постараемся максимально подробно рассказать в каких случаях мы его считаем:
-      </p>
-      <div class="volume_weight_rules">
-        <p class="volume_weight_rule_item">1. Физический вес превышает объемный вес = расчет по физическому весу.</p>
-        <p class="volume_weight_rule_item">2. Объемный вес превышает физический не более, чем на 150% = расчет по физическому весу.</p>
-        <p class="volume_weight_rule_item volume_weight_rule_item_last">3. Объемный вес превышает физический более, чем на 150% = расчет по объемному весу.</p>
-      </div>
-      <p class="volume_weight_discount">Объемный вес будет считаться со скидкой 50% от вашего тарифа.</p>
-      <div class="volume_weight_examples">
-        <h3 class="volume_weight_examples_title">примеры</h3>
-        <div class="volume_weight_examples_list">
-          <p class="volume_weight_example_item">Физический вес посылки 3 кг., объемный вес 4 кг. = расчет стоимости как за 3 кг.</p>
-          <p class="volume_weight_example_item">Физический вес посылки 3 кг., объемный вес 1 кг. = расчет стоимости как за 3 кг.</p>
-          <p class="volume_weight_example_item volume_weight_example_item_last">Физический вес посылки 3 кг., объемный вес 10 кг. = расчет стоимости 3 кг. По физическому весу, объемный вес 10 кг. - 3 кг. = 7 кг. * 50% от вашего тарифа</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="oversized_cargo_section">
-    <div class="oversized_cargo_container">
-      <div class="oversized_cargo_title-block">
-        <div class="oversized_cargo_icon">
-          <img src="src/img/elephant.png" alt="Негабаритный груз иконка">
-        </div>
-        <p class="oversized_cargo_title">Негабаритный груз</p>
-      </div>
-      <p class="oversized_cargo_text-one">
-        <span class="oversized_cargo_text_bold">Негабаритный груз</span>
-        <span class="oversized_cargo_text_regular"> — это посылки, где длина одной из сторон превышает 150 см. Такие посылки авиакомпании принимают, как правило, с дополнительной доплатой на всем пути следования груза.</span>
-      </p>
-      <p class="oversized_cargo_text-two">
-        <span class="oversized_cargo_text_regular">Если одна из сторон вашей посылки после упаковки будет более 150 см., расчет стоимости доставки будет производиться</span>
-        <span class="oversized_cargo_text_bold"> с доплатой 70% от вашего тарифа.</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="additional_services_section storage_section">
-    <div class="storage_container">
-      <div class="storage_block storage_inbound">
-        <div class="storage_header-group">
-          <img src="src/img/ad-product.png" alt="Иконка продукта" class="storage_icon">
-          <h3 class="storage_title">Хранение посылок</h3>
-        </div>
-
-        <div class="storage_info-group">
-          <p class="storage_subtitle storage_subtitle-bold">Входящие - 30 дней бесплатно</p>
-          <p class="storage_text">Далее 150 ₽ в день, максимальный срок хранения — 60 дней.</p>
-          <div class="storage_timeline">
-            <div class="timeline_labels timeline_labels-inbound">
-              <span class="timeline_label">0 ДН.</span>
-              <span class="timeline_label">30 ДН.</span>
-              <span class="timeline_label">60 ДН.</span>
+                <div style="display: flex; gap: 20px; padding: 12px 0;">
+                    <label class="radio_label">
+                        <input type="checkbox" checked>
+                        <span>Страховка посылки (0.75%)</span>
+                    </label>
+                    <label class="radio_label">
+                        <input type="checkbox" checked>
+                        <span>Фотоотчет при приемке</span>
+                    </label>
+                </div>
             </div>
-            <div class="timeline_bar">
-              <div class="timeline_bar-free timeline_bar-inbound-free"></div>
-              <div class="timeline_bar-paid timeline_bar-inbound-paid"></div>
-            </div>
-            <div class="timeline_prices timeline_prices-inbound">
-              <span class="timeline_price">0 ₽</span>
-              <span class="timeline_price">150 ₽ в день</span>
-            </div>
-          </div>
-        </div>
 
-        <p class="storage_description">Хранение входящих посылок на складе: 30 дней бесплатно, на следующий день и далее 150 ₽ в день за одну посылку. Максимальный срок хранения груза — 60 дней. Далее посылка утилизируется.</p>
-      </div>
+            <!-- RESULT CARD -->
+            <div class="calc_result_card">
+                <div>
+                    <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFF; margin-bottom: 20px;">Предварительный расчет</span>
+                    <p style="font-size: 14px; color: var(--color-text-muted); margin-bottom: 8px;">Ориентировочная стоимость доставки:</p>
+                    <p class="calc_price_val">от 2 450 <span>₽</span></p>
+                    <p style="font-size: 14px; color: var(--color-text-muted); margin-top: 6px;">≈ $24.50 • Срок: 12-14 дней</p>
+                </div>
 
-      <div class="storage_divider"></div>
+                <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--color-text-muted);">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Базовый вес:</span>
+                        <strong style="color: #FFF;">1.5 кг</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Хранение на складе:</span>
+                        <strong style="color: #FFF;">Бесплатно (до 60 дней)</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Таможенное оформление:</span>
+                        <strong style="color: #FFF;">Включено</strong>
+                    </div>
+                </div>
 
-      <div class="storage_block storage_outbound">
-        <div class="storage_info-group storage_info-group-outbound">
-          <p class="storage_subtitle">Исходящие - 7 дней бесплатно</p>
-          <p class="storage_text">Далее 150 ₽ в день, максимальный срок хранения — 21 день.</p>
-          <div class="storage_timeline">
-            <div class="timeline_labels timeline_labels-outbound">
-              <span class="timeline_label">0 ДН.</span>
-              <span class="timeline_label">7 ДН.</span>
-              <span class="timeline_label">21 ДН.</span>
+                <a href="order.html" class="order-button" style="width: 100%; height: 52px; font-size: 16px;">Перейти к оформлению</a>
             </div>
-            <div class="timeline_bar">
-              <div class="timeline_bar-free timeline_bar-outbound-free"></div>
-              <div class="timeline_bar-paid timeline_bar-outbound-paid"></div>
-            </div>
-            <div class="timeline_prices timeline_prices-outbound">
-              <span class="timeline_price">0 ₽</span>
-              <span class="timeline_price">150 ₽ в день</span>
-            </div>
-          </div>
-        </div>
+        </section>
 
-        <p class="storage_description">Хранение исходящей посылки со статусом «ожидает оплаты»: 7 дней бесплатно, на следующий день и далее 150 ₽ в день за одну посылку. Максимальный срок хранения груза — 21 день. Далее посылка утилизируется.</p>
-      </div>
+        <!-- RATES TABLE -->
+        <section class="rates_table_section">
+            <div class="section_header" style="margin-bottom: 32px;">
+                <span class="section_subtitle">Сетка тарифов</span>
+                <h2 class="section_title">Сравнение по странам</h2>
+            </div>
+
+            <table class="rates_table">
+                <thead>
+                    <tr>
+                        <th>Направление</th>
+                        <th>Срок доставки</th>
+                        <th>Базовая стоимость (до 1 кг)</th>
+                        <th>Каждые след. 500 г</th>
+                        <th>Спецуслуги</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>США (Wilmington, Delaware)</strong></td>
+                        <td>от 12 дней</td>
+                        <td>$20 (~2 000 ₽)</td>
+                        <td>$6 (~600 ₽)</td>
+                        <td>0% налог штата, фото, удаление коробок</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Китай (Guangzhou)</strong></td>
+                        <td>от 17 дней</td>
+                        <td>40 ¥ (~560 ₽)</td>
+                        <td>15 ¥ (~210 ₽)</td>
+                        <td>Проверка брака, выкуп на Poizon/1688</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Индия (Mumbai)</strong></td>
+                        <td>от 15 дней</td>
+                        <td>2 000 ₹ (~2 200 ₽)</td>
+                        <td>600 ₹ (~660 ₽)</td>
+                        <td>Проверка упаковки, специи, косметика</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ADDITIONAL SERVICES -->
+        <section style="margin-bottom: 80px;">
+            <div class="section_header" style="margin-bottom: 40px;">
+                <span class="section_subtitle">Складские опции</span>
+                <h2 class="section_title">Дополнительные услуги</h2>
+            </div>
+
+            <div class="services_grid">
+                <div class="service_item">
+                    <span class="service_price">от 400 ₽</span>
+                    <h3 class="service_name">Возврат в магазин</h3>
+                    <p class="service_desc">Поможем оформить возврат товара продавцу до его отправки в Россию.</p>
+                </div>
+                <div class="service_item">
+                    <span class="service_price">от 150 ₽</span>
+                    <h3 class="service_name">Фотофиксация</h3>
+                    <p class="service_desc">Сделаем детальные фотографии товара, ярлыков и целостности коробки.</p>
+                </div>
+                <div class="service_item">
+                    <span class="service_price">Бесплатно</span>
+                    <h3 class="service_name">Консолидация</h3>
+                    <p class="service_desc">Объединим до 10 посылок из разных магазинов в одну коробку для экономии.</p>
+                </div>
+                <div class="service_item">
+                    <span class="service_price">от 100 ₽</span>
+                    <h3 class="service_name">Усиленная упаковка</h3>
+                    <p class="service_desc">Пузырьковая пленка, угловые протекторы и плотный скотч для хрупких грузов.</p>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
-
 </main>
 
 <footer>
-  <div class="footer_container">
-    <div class="footer_links-block">
-      <div class="footer_section">
-        <p class="footer_title">ОБЩАЯ ИНФОРМАЦИЯ</p>
-        <div class="footer_links">
-          <a href="price.html" class="footer_link">стоимость услуг</a>
-          <a href="#" class="footer_link">политика конфиденциальности</a>
-          <a href="#" class="footer_link">заключение договора</a>
-          <a href="#" class="footer_link">запрещенные товары</a>
-          <a href="#" class="footer_link">правила отправки электроники</a>
+    <div class="footer_container">
+        <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans" style="width: 28px; height: 28px;">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="order.html" class="footer_link">Заявка на выкуп</a>
+                </div>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Склады</p>
+                <div class="footer_links">
+                    <a href="warehouses.html" class="footer_link">США (Делавэр)</a>
+                    <a href="warehouses.html" class="footer_link">Китай (Гуанчжоу)</a>
+                    <a href="warehouses.html" class="footer_link">Индия (Мумбаи)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
+                </div>
+            </div>
+            <div class="footer_contacts-block">
+                <p class="footer_hotline-text">Служба заботы о клиентах:</p>
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
         </div>
-      </div>
-      <div class="footer_section">
-        <p class="footer_title">ПОМОЩЬ</p>
-        <div class="footer_links">
-          <a href="#" class="footer_link">вопрос-ответ</a>
-          <a href="shop.html" class="footer_link">список магазинов</a>
-          <a href="#" class="footer_link">диагностика проблемы</a>
+        <hr class="footer_divider">
+        <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
+            <div class="footer_socials">
+                <a href="#"><img src="src/img/telegram-svgrepo-com 1.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/icons8-youtube 1.png" alt="YouTube" class="footer_social-icon"></a>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="footer_contacts-block">
-      <p class="footer_hotline-text">Горячая линия по вопросам доставки из зарубежных интернет-магазинов:</p>
-      <p class="footer_phone">+7 800 555 35 35</p>
-      <p class="footer_schedule">С 7:00 до 19:00 (MSK)</p>
-      <p class="footer_support-service">Служба поддержки</p>
-    </div>
-
-    <hr class="footer_divider">
-
-    <div class="footer_bottom-block">
-      <div class="footer_socials">
-        <a href="#"><img src="src/img/icons8-youtube%201.png" alt="YouTube" class="footer_social-icon"></a>
-        <a href="#"><img src="src/img/vk-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-        <a href="#"><img src="src/img/max-messenger-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-        <a href="#"><img src="src/img/telegram-svgrepo-com%201.png" alt="Telegram" class="footer_social-icon"></a>
-      </div>
-      <p class="footer_copyright">© 2025, Курьерская компания МультиТранс</p>
-    </div>
-
-  </div>
 </footer>
+
 </body>
 </html>

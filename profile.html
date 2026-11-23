@@ -3,201 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/profile.css">
-    <title>Профиль</title>
+    <title>Личный кабинет — MultiTrans</title>
 </head>
 <body>
+
 <header>
-    <div class="main_button">
-        <img src="src/img/logo.png" alt="логотип">
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
         <p class="logo_name">MultiTrans</p>
-    </div>
-    <a href="profile.html"><p class="header_text">Личный кабинет</p></a>
-    <a href="#"><p class="header_text">посылки</p></a>
-    <a href="#"><p class="header_text">заказать</p></a>
-    <a href="#"><p class="header_text">Доп. услуги</p></a>
-    <a href="#">
-        <div class="header_balance">
-            <img src="src/img/paper-money-two.png" alt="Баланс">
-            <p class="header_balance_text">баланс: 0 ₽</p>
-        </div>
-    </a>
-    <a href="profile.html" class="header_profile">
-        <img src="src/img/user-micro.png" alt="Профиль">
-        <p class="header_profile_name">имя</p>
     </a>
 
-    <div class="burger">
-        <img src="src/img/burger.png" alt="Бургер меню">
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text">Главная</a>
+        <a href="shop.html" class="header_text">Магазины</a>
+        <a href="price.html" class="header_text">Тарифы</a>
+        <a href="order.html" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="profile.html" class="header_login_button active" style="background: var(--color-bg-surface); font-weight: bold;">Suite #MT-84920</a>
+        <a href="index.html" class="header_registration_button" style="background: var(--color-graphite);">Выйти</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
     </div>
 </header>
 
 <main>
-    <section class="main">
-        <div class="profile_container">
-            <h1 class="profile_title">Личный кабинет</h1>
-            <div class="profile_top_blocks">
-                <div class="profile_block incoming_parcels_block">
-                    <div class="incoming_parcels_content">
-                        <div class="incoming_parcels_icon">
+    <div class="page_container">
+        <!-- USER PROFILE HEADER -->
+        <section class="profile_header_card">
+            <div class="profile_user_left">
+                <div class="profile_avatar_box">
+                    <img src="src/img/user.png" alt="Аватар">
+                </div>
+                <div class="profile_name_box">
+                    <h1 class="profile_user_name">Родион Александрович</h1>
+                    <p class="profile_suite_tag">Ваш персональный номер клиента: <strong>#MT-84920</strong></p>
+                </div>
+            </div>
+
+            <div class="profile_finance_right">
+                <div class="balance_block">
+                    <span class="balance_label">Текущий баланс:</span>
+                    <span class="balance_amount">0.00 ₽</span>
+                </div>
+                <button type="button" class="btn-primary" style="height: 48px; padding: 0 24px; font-size: 14px;">+ Пополнить</button>
+            </div>
+        </section>
+
+        <!-- STAT METRICS -->
+        <section class="dashboard_stats_grid">
+            <div class="stat_metric_card">
+                <span class="stat_metric_num">0</span>
+                <span class="stat_metric_title">Ожидаются на складе</span>
+            </div>
+            <div class="stat_metric_card">
+                <span class="stat_metric_num" style="color: var(--color-accent);">1</span>
+                <span class="stat_metric_title">В пути в Россию</span>
+            </div>
+            <div class="stat_metric_card">
+                <span class="stat_metric_num">4</span>
+                <span class="stat_metric_title">Доставлено посылок</span>
+            </div>
+            <div class="stat_metric_card">
+                <span class="stat_metric_num">500 Б</span>
+                <span class="stat_metric_title">Бонусный кешбэк</span>
+            </div>
+        </section>
+
+        <!-- DASHBOARD MAIN GRID -->
+        <section class="dashboard_main_grid">
+            <!-- LEFT: ORDERS & PARCELS -->
+            <div class="parcels_panel">
+                <div class="panel_top_row">
+                    <h2 class="panel_title">Активные заказы и посылки</h2>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="order.html" class="btn-primary" style="height: 42px; padding: 0 18px; font-size: 13px;">+ Заявка на выкуп</a>
+                    </div>
+                </div>
+
+                <!-- Package 1: In transit -->
+                <div class="parcel_item">
+                    <div class="parcel_info_left">
+                        <div class="parcel_icon">
                             <img src="src/img/box.png" alt="Посылка">
                         </div>
-                        <div class="incoming_parcels_text">
-                            <p class="incoming_parcels_subtitle">Ожидаемые на складе</p>
-                            <h2 class="incoming_parcels_title">Входящие посылки</h2>
+                        <div>
+                            <h4 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite);">Посылка #MT-904128 (Nike US)</h4>
+                            <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 2px;">Трек: MT84920US • Вес: 1.4 кг • Склад: США (Delaware)</p>
                         </div>
-                        <div class="incoming_parcels_info">
-                            <p class="incoming_parcels_description">Здесь пока нет посылок</p>
-                            <p class="incoming_parcels_description">Хороший повод что-нибудь купить!</p>
-                        </div>
-                        <a href="#" class="order-button incoming_parcels_button">
-                            <span class="button_icon">+</span>
-                            добавить ожидаемую посылку
-                        </a>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <span class="badge badge-accent">Таможня РФ</span>
+                        <a href="tracking.html" class="btn-outline" style="height: 36px; padding: 0 14px; font-size: 13px;">Подробнее</a>
                     </div>
                 </div>
 
-                <div class="profile_block order_parcel_block">
-                    <div class="order_parcel_content">
-                        <div class="order_parcel_header">
-                            <div class="order_parcel_icon">
-                                <img src="src/img/baget.png" alt="Корзина">
-                            </div>
-                            <div class="order_parcel_text">
-                                <p class="order_parcel_subtitle">купим за вас</p>
-                                <h2 class="order_parcel_title">Закажи посылку</h2>
-                            </div>
+                <!-- Package 2: Delivered -->
+                <div class="parcel_item">
+                    <div class="parcel_info_left">
+                        <div class="parcel_icon">
+                            <img src="src/img/baget.png" alt="Доставлено">
                         </div>
-                        <div class="order_parcel_info">
-                            <p class="order_parcel_description">Все сложные процедуры берем на себя</p>
-                            <p class="order_parcel_description">Воспользуйтесь услугой и закажи, а мы оформим и оплатим ваш заказ</p>
-                        </div>
-                        <div class="order_parcel_actions">
-                            <a href="#" class="order-button add_request_button">
-                                <span class="button_icon">+</span>
-                                добавить заявку на покупку
-                            </a>
-                            <a href="#" class="order_parcel_my_requests">мои заявки</a>
+                        <div>
+                            <h4 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite);">Заказ #MT-884102 (Amazon)</h4>
+                            <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 2px;">Выкуплен оператором • Доставлен 15.11.2026 в пункт выдачи CDEK</p>
                         </div>
                     </div>
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <span class="badge" style="background: #E8F5E9; color: #2E7D32;">Вручено</span>
+                        <a href="tracking.html" class="btn-outline" style="height: 36px; padding: 0 14px; font-size: 13px;">Архив</a>
+                    </div>
+                </div>
+
+                <!-- EMPTY STATE BOX -->
+                <div style="background: var(--color-bg-subtle); border-radius: var(--radius-md); padding: 28px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <p style="font-size: 15px; font-family: var(--font-semibold), sans-serif; color: var(--color-graphite);">Купили товар сами в зарубежном магазине?</p>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); max-width: 480px;">Добавьте ожидаемый трек-номер магазина, чтобы мы сразу идентифицировали вашу посылку при поступлении на склад.</p>
+                    <a href="#" class="btn-secondary" style="height: 42px; font-size: 13px; padding: 0 20px;">+ Внести трек-номер магазина</a>
                 </div>
             </div>
 
-            <div class="profile_bottom_blocks">
-                <div class="profile_block user_menu_block">
-                    <div class="user_info">
-                        <div class="user_avatar">
-                            <img src="src/img/user.png" alt="Аватар пользователя">
-                        </div>
-                        <div class="user_details">
-                            <p class="user_client_number">Номер клиента #000000</p>
-                            <h3 class="user_name">Имя пользователя</h3>
-                        </div>
-                    </div>
-
-                    <nav class="user_menu">
-                        <a href="#" class="user_menu_item">
-                            <img src="src/img/user-micro.png" alt="Профиль">
-                            <p>профиль</p>
-                        </a>
-                        <a href="#" class="user_menu_item">
-                            <img src="src/img/user-group.png" alt="Получатели">
-                            <p>получатели</p>
-                        </a>
-                        <a href="#" class="user_menu_item">
-                            <img src="src/img/house.png" alt="Адреса доставки">
-                            <p>Адреса доставки</p>
-                        </a>
-                        <a href="#" class="user_menu_item">
-                            <img src="src/img/lock-one.png" alt="Сменить пароль">
-                            <p>Сменить пароль</p>
-                        </a>
-                        <div class="user_menu_divider"></div>
-                        <a href="#" class="user_menu_item logout_item">
-                            <img src="src/img/exit.png" alt="Выход">
-                            <p>Выход</p>
-                        </a>
-                    </nav>
+            <!-- RIGHT: WAREHOUSE ADDRESSES SIDEBAR -->
+            <div class="warehouse_addresses_sidebar">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 18px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite);">Ваши склады</h3>
+                    <a href="warehouses.html" style="font-size: 13px; color: var(--color-accent); font-family: var(--font-semibold), sans-serif;">Все склады →</a>
                 </div>
 
-                <div class="profile_block_user_menu_block_left">
-
-                <div class="profile_block restricted_goods_block">
-                    <div class="restricted_goods_content">
-                        <div class="restricted_goods_icon">
-                            <img src="src/img/shildren.png" alt="Запрещено">
-                        </div>
-                        <div class="restricted_goods_text">
-                            <p class="restricted_goods_title">Запрещенные к заказу товары</p>
-                            <a href="#" class="order-button restricted_goods_button">
-                                Смотреть список
-                            </a>
-                        </div>
+                <!-- USA Warehouse -->
+                <div class="warehouse_mini_card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong style="font-size: 15px;">🇺🇸 США (Делавэр)</strong>
+                        <span class="badge-accent" style="font-size: 11px; padding: 2px 8px; border-radius: 4px;">0% tax</span>
                     </div>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        Full Name: Rodion Aleksandrovich<br>
+                        Address: 1201 Orange St, Suite MT-84920<br>
+                        City: Wilmington, DE 19801<br>
+                        Phone: +1 (302) 555-0199
+                    </p>
+                    <button type="button" class="copy_btn" onclick="alert('Адрес скопирован в буфер обмена!');">Скопировать адрес</button>
                 </div>
 
-                <div class="profile_block customs_limit_block">
-                    <div class="customs_limit_content">
-                        <img src="src/img/russia.png" alt="Флаг России" class="customs_limit_flag">
-                        <div class="customs_limit_text">
-                            <p class="customs_limit_subtitle">Таможенный лимит</p>
-                            <p class="customs_limit_value">200 € / 31 кг</p>
-                            <p class="customs_limit_info">На 1 посылку</p>
-                        </div>
+                <!-- China Warehouse -->
+                <div class="warehouse_mini_card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong style="font-size: 15px;">🇨🇳 Китай (Гуанчжоу)</strong>
+                        <span class="badge" style="background: var(--color-bg-surface); font-size: 11px; padding: 2px 8px;">Guangzhou</span>
                     </div>
-                </div>
-
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        收件人: Rodion (MT-84920)<br>
+                        广东省 广州市 白云区 88 Logistics Rd<br>
+                        Postcode: 510000 • Tel: 138-0000-8492
+                    </p>
+                    <button type="button" class="copy_btn" onclick="alert('Адрес скопирован в буфер обмена!');">Скопировать адрес</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </main>
 
 <footer>
     <div class="footer_container">
         <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans" style="width: 28px; height: 28px;">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
             <div class="footer_section">
-                <p class="footer_title">ОБЩАЯ ИНФОРМАЦИЯ</p>
+                <p class="footer_title">Навигация</p>
                 <div class="footer_links">
-                    <a href="price.html" class="footer_link">стоимость услуг</a>
-                    <a href="#" class="footer_link">политика конфиденциальности</a>
-                    <a href="#" class="footer_link">заключение договора</a>
-                    <a href="#" class="footer_link">запрещенные товары</a>
-                    <a href="#" class="footer_link">правила отправки электроники</a>
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="order.html" class="footer_link">Заявка на выкуп</a>
                 </div>
             </div>
             <div class="footer_section">
-                <p class="footer_title">ПОМОЩЬ</p>
+                <p class="footer_title">Склады</p>
                 <div class="footer_links">
-                    <a href="#" class="footer_link">вопрос-ответ</a>
-                    <a href="price.html" class="footer_link">список магазинов</a>
-                    <a href="#" class="footer_link">диагностика проблемы</a>
+                    <a href="warehouses.html" class="footer_link">США (Делавэр)</a>
+                    <a href="warehouses.html" class="footer_link">Китай (Гуанчжоу)</a>
+                    <a href="warehouses.html" class="footer_link">Индия (Мумбаи)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
                 </div>
             </div>
+            <div class="footer_contacts-block">
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
         </div>
-
-        <div class="footer_contacts-block">
-            <p class="footer_hotline-text">Горячая линия по вопросам доставки из зарубежных интернет-магазинов:</p>
-            <p class="footer_phone">+7 800 555 35 35</p>
-            <p class="footer_schedule">С 7:00 до 19:00 (MSK)</p>
-            <p class="footer_support-service">Служба поддержки</p>
-        </div>
-
         <hr class="footer_divider">
-
         <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
             <div class="footer_socials">
-                <a href="#"><img src="src/img/icons8-youtube%201.png" alt="YouTube" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/vk-horizontal-logo%201.png" alt="VK" class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/max-messenger-horizontal-logo%201.png" alt="VK"
-                                 class="footer_social-icon"></a>
-                <a href="#"><img src="src/img/telegram-svgrepo-com%201.png" alt="Telegram"
-                                 class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/telegram-svgrepo-com 1.png" alt="Telegram" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
             </div>
-            <p class="footer_copyright">© 2025, Курьерская компания МультиТранс</p>
         </div>
-
     </div>
 </footer>
+
 </body>
 </html>

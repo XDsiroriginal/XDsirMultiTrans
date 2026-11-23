@@ -22,596 +22,567 @@
     font-display: swap;
 }
 
-a, a:hover, a:focus, a:active {
-    color: black;
-    text-decoration: none;
-}
-
 :root {
-    --color-base-accent: #FF004C;
-    --color-dop-accent: #880028;
-    --color-base: #FFF5F5;
-    --color-dop: #FFDFDF;
-    --font-bold: 'montserrat alternates-bold', sans-serif;
-    --font-semibold: 'montserrat alternates-semibold', sans-serif;
-    --font-regular: 'montserrat alternates-regular', sans-serif;
+    /* 1. Основные фоновые цвета (Светлый минимализм) */
+    --color-bg-main: #FFFFFF;
+    --color-bg-subtle: #F8F8F9;
+    --color-bg-card: #FFFFFF;
+    --color-bg-surface: #F2F2F5;
+
+    /* 2. Акцентный цвет (Неоновый розовый из палитры) */
+    --color-accent: #FF77DE;
+    --color-accent-hover: #E861C7;
+    --color-accent-soft: rgba(255, 119, 222, 0.12);
+    --color-accent-glow: rgba(255, 119, 222, 0.25);
+
+    /* 3. Фирменный графит */
+    --color-graphite: #313131;
+    --color-graphite-hover: #1F1F1F;
+    --color-graphite-card: #272727;
+
+    /* 4. Типографика */
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #6E6E73;
+    --color-text-muted: #BEBEBE;
+    --color-text-inverse: #FFFFFF;
+
+    /* 5. Границы и тени */
+    --border-hairline: 1px solid #EAEAEA;
+    --border-subtle: 1px solid #DFDFE3;
+    --border-focus: 1px solid #FF77DE;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+    /* 6. Скругления */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* 7. Шрифты */
+    --font-bold: 'montserrat alternates-bold', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-semibold: 'montserrat alternates-semibold', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-regular: 'montserrat alternates-regular', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Совместимость с предыдущими переменными */
+    --color-base-accent: var(--color-accent);
+    --color-dop-accent: var(--color-graphite);
+    --color-base: var(--color-bg-main);
+    --color-dop: var(--color-bg-surface);
 }
 
-* {
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: var(--font-regular), sans-serif;
 }
 
-header {
-    width: auto;
-    height: 70px;
-    max-width: 1762px;
-    display: grid;
-    margin: auto;
-    grid-template-columns: repeat(7, auto);
-    gap: 60px;
-    align-items: center;
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
-.burger {
-    display: none;
+a, a:hover, a:focus, a:active {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* ========================================================
+   HEADER / NAVIGATION
+   ======================================================== */
+header {
+    width: 100%;
+    max-width: 1440px;
+    height: 76px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg-main);
+    border-bottom: var(--border-hairline);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .main_button {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.main_button img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .logo_name {
     font-family: var(--font-bold), sans-serif;
     font-size: 20px;
+    color: var(--color-graphite);
+    letter-spacing: -0.5px;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
 }
 
 .header_text {
-    font-size: 20px;
-    transition: 0.3s;
+    font-size: 15px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-text-secondary);
+    text-transform: capitalize;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.2s ease;
 }
 
-.header_text:hover {
-    color: var(--color-base-accent);
-    transition: 0.3s;
+.header_text:hover,
+.header_text.active {
+    color: var(--color-graphite);
+}
+
+.header_text.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+.header_auth_block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .header_login_button {
-    width: 50%;
-    max-width: 96px;
-    height: 48px;
-    border-radius: 10px;
-    border: none;
-    color: var(--color-base);
-    background-color: var(--color-base-accent);
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
+    padding: 10px 22px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-graphite);
+    background-color: var(--color-bg-surface);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
-.header_login_button:hover, .header_login_button:active, .header_login_button:focus {
-    color: var(--color-base);
-    background-color: var(--color-dop-accent);
-    transition: 0.3s;
+.header_login_button:hover {
+    background-color: #E8E8EC;
+    color: #000;
 }
 
 .header_registration_button {
-    width: 100%;
-    max-width: 194px;
-    height: 48px;
-    border: none;
-    font-size: 20px;
-    transition: 0.3s;
+    padding: 10px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: var(--font-semibold), sans-serif;
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+    box-shadow: 0 4px 14px var(--color-accent-soft);
+    transition: all 0.2s ease;
 }
 
 .header_registration_button:hover {
-    color: var(--color-base-accent);
-    transition: 0.3s;
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px var(--color-accent-glow);
+    color: #FFFFFF;
 }
 
-.order-button {
-    width: auto;
-    max-width: 509px;
-    height: 70px;
-    border-radius: 10px;
-    border: none;
-    color: var(--color-base);
-    background-color: var(--color-base-accent);
-    font-size: 36px;
-    font-family: var(--font-bold), serif;
-    display: flex;
+.burger {
+    display: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ========================================================
+   BUTTONS & UI KIT
+   ======================================================== */
+.order-button,
+.btn-primary {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    gap: 10px;
+    height: 56px;
+    padding: 0 36px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+    font-size: 18px;
+    font-family: var(--font-bold), sans-serif;
+    cursor: pointer;
+    box-shadow: 0 8px 24px var(--color-accent-soft);
+    transition: all 0.25s ease;
 }
 
-.order-button:hover, .order-button:focus, .order-button:active {
-    color: var(--color-base);
-    background-color: var(--color-dop-accent);
-    transition: 0.3s;
+.order-button:hover,
+.order-button:focus,
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px var(--color-accent-glow);
 }
 
-footer {
-    margin-top: 140px;
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 56px;
+    padding: 0 32px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    background-color: var(--color-graphite);
+    font-size: 16px;
+    font-family: var(--font-semibold), sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-graphite-hover);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--color-graphite);
+    font-size: 16px;
+    font-family: var(--font-semibold), sans-serif;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--color-graphite);
+    background: var(--color-bg-subtle);
+}
+
+/* ========================================================
+   INPUTS & FORMS
+   ======================================================== */
+.input_field,
+.input-field {
     width: 100%;
-    background-color: var(--color-dop-accent);
-    padding: 99px 0 68px;
+    height: 52px;
+    padding: 0 18px;
+    background-color: var(--color-bg-surface);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    color: var(--color-text-primary);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input_field:focus,
+.input-field:focus {
+    outline: none;
+    background-color: #FFFFFF;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.input_field::placeholder,
+.input-field::placeholder {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.radio_label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--color-text-primary);
+    user-select: none;
+}
+
+.radio_label input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DFDFE3;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.radio_label input:checked {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    box-shadow: inset 0 0 0 3px #FFFFFF;
+}
+
+/* ========================================================
+   BADGES & PILLS
+   ======================================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-family: var(--font-semibold), sans-serif;
+}
+
+.badge-accent {
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
+}
+
+.badge-graphite {
+    background-color: var(--color-graphite);
+    color: #FFFFFF;
+}
+
+.badge-neutral {
+    background-color: var(--color-bg-surface);
+    color: var(--color-text-secondary);
+}
+
+/* ========================================================
+   CARDS
+   ======================================================== */
+.card {
+    background-color: var(--color-bg-card);
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* ========================================================
+   FOOTER (Sleek Graphite Minimalist)
+   ======================================================== */
+footer {
+    width: 100%;
+    background-color: var(--color-graphite);
+    color: var(--color-text-inverse);
+    margin-top: 100px;
+    padding: 80px 0 40px;
 }
 
 .footer_container {
-    max-width: 1762px;
-    margin: auto;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
 }
 
 .footer_links-block {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 60px;
-    max-width: 1762px;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2.5fr;
+    gap: 48px;
+}
+
+.footer_brand_block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer_brand_logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer_brand_logo p {
+    font-family: var(--font-bold), sans-serif;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.footer_brand_desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 320px;
 }
 
 .footer_section {
-    grid-column: span 2;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.footer_section:nth-child(2) {
-    grid-column: 4/5;
+    gap: 16px;
 }
 
 .footer_title {
-    font-size: 24px;
-    font-family: var(--font-semibold), serif;
-    color: var(--color-dop);
+    font-size: 14px;
+    font-family: var(--font-bold), sans-serif;
+    color: #FFFFFF;
     text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .footer_links {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
 }
 
 .footer_link {
-    font-size: 20px;
-    text-decoration: none;
-    color: var(--color-dop);
-    line-height: 2;
-    padding: 2px 0;
-    transition: color 0.2s;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer_link:hover {
-    color: var(--color-base-accent);
+    color: var(--color-accent);
+    transform: translateX(2px);
 }
 
 .footer_contacts-block {
-    grid-column: 6/8;
-    text-align: right;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-left: auto;
-    margin-top: -169px;
-    position: relative;
-}
-
-.footer_hotline-text,
-.footer_schedule,
-.footer_support-service {
-    color: var(--color-dop);
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.footer_hotline-text {
-    width: 449px;
-    margin-left: auto;
+    align-items: flex-end;
+    gap: 12px;
     text-align: right;
-    padding-bottom: 2px;
 }
 
 .footer_phone {
-    font-size: 32px;
-    font-family: var(--font-bold), serif;
-    color: var(--color-dop);
-    line-height: 1.2;
-    padding: 5px 0 10px;
+    font-size: 26px;
+    font-family: var(--font-bold), sans-serif;
+    color: #FFFFFF;
 }
 
-.footer_schedule {
-    font-size: 16px;
-    padding-bottom: 30px;
-}
-
-.footer_support-service {
-    font-size: 24px;
-    font-family: var(--font-bold), serif;
-    text-transform: uppercase;
-    padding-top: 15px;
+.footer_schedule,
+.footer_hotline-text {
+    font-size: 13px;
+    color: var(--color-text-muted);
 }
 
 .footer_divider {
     border: none;
-    height: 2px;
-    background-color: var(--color-dop);
-    width: 100%;
-    margin-top: 68px;
-    margin-bottom: 35px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 48px 0 24px;
 }
 
 .footer_bottom-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 13px;
+    color: var(--color-text-muted);
 }
 
 .footer_socials {
     display: flex;
-    gap: 30px;
+    gap: 16px;
+    align-items: center;
 }
 
 .footer_social-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
 }
 
-.footer_copyright {
-    font-size: 16px;
-    color: var(--color-base);
+.footer_social-icon:hover {
+    opacity: 1;
 }
 
-.radio_label .radio {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: var(--color-dop-accent);
-}
-
-.radio_label input {
-    appearance: none;
-}
-
-.radio_label input:checked + .radio {
-    background-color: var(--color-base-accent);
-}
-
-.radio_label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 24px;
-    gap: 18px;
-}
-
-@media (max-width: 1762px) {
+/* ========================================================
+   RESPONSIVENESS & BREAKPOINTS
+   ======================================================== */
+@media (max-width: 1140px) {
     header,
-    .footer_container,
-    .footer_links-block,
-    .preview_section,
-    .countries_section,
-    .price_section,
-    .advantages_section,
-    .advantage_price_section,
-    .delivery_usa_section,
-    .advantage_offer_section,
-    .partner_usa_section,
-    .how-it-works_section,
-    .where-to-buy_section {
-        max-width: 90vw;
-        gap: 40px;
-    }
-
-    header {
-        height: 60px;
-    }
-
-    .logo_name {
-        font-size: 18px;
-    }
-
-    .header_text {
-        font-size: 18px;
-    }
-
-    .header_login_button {
-        width: 80px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .header_registration_button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 160px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .order-button {
-        height: 60px;
-        font-size: 28px;
-    }
-
-    footer {
-        padding: 80px 0 50px;
-        margin-top: 100px;
-    }
-
-    .footer_links-block {
-        gap: 40px;
-    }
-
-    .footer_title {
-        font-size: 20px;
-    }
-
-    .footer_link {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .footer_contacts-block {
-        margin-top: -120px;
-    }
-
-    .footer_hotline-text {
-        width: 350px;
-        font-size: 14px;
-    }
-
-    .footer_phone {
-        font-size: 28px;
-    }
-
-    .footer_schedule {
-        font-size: 14px;
-        padding-bottom: 20px;
-    }
-
-    .footer_support-service {
-        font-size: 20px;
-    }
-
-    .footer_divider {
-        margin-top: 50px;
-        margin-bottom: 25px;
-    }
-
-    .footer_social-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer_copyright {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 1440px) {
-    header,
-    .footer_container,
-    .footer_links-block,
-    .preview_section,
-    .countries_section,
-    .price_section,
-    .advantages_section,
-    .advantage_price_section,
-    .delivery_usa_section,
-    .advantage_offer_section,
-    .partner_usa_section,
-    .how-it-works_section,
-    .where-to-buy_section {
-        max-width: 90vw;
-        gap: 30px;
-    }
-
-    .footer_links-block {
-        gap: 30px;
-    }
-
-    .footer_contacts-block {
-        margin-top: -100px;
-    }
-
-    .footer_hotline-text {
-        width: 300px;
-    }
-}
-
-@media (max-width: 1280px) {
-    header,
-    .footer_container,
-    .footer_links-block,
-    .preview_section,
-    .countries_section,
-    .price_section,
-    .advantages_section,
-    .advantage_price_section,
-    .delivery_usa_section,
-    .advantage_offer_section,
-    .partner_usa_section,
-    .how-it-works_section,
-    .where-to-buy_section {
-        max-width: 90vw;
-        gap: 20px;
-    }
-
-    .footer_links-block {
-        gap: 20px;
-    }
-
-    .footer_contacts-block {
-        margin-top: -80px;
-    }
-
-    .footer_hotline-text {
-        width: 250px;
-    }
-}
-
-@media (max-width: 1024px) {
-    header {
-        height: 60px;
-        grid-template-columns: auto auto;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 0 20px;
-        max-width: 100%;
-    }
-
-    .header_text,
-    header p:nth-child(5) {
-        display: none;
-    }
-
-    .logo_name {
-        font-size: 18px;
-    }
-
-
-    .header_login_button,
-    .header_registration_button {
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .header_login_button {
-        max-width: 80px;
-    }
-
-    .header_registration_button {
-        max-width: 120px;
-    }
-
-    footer {
-        padding: 50px 20px 30px;
-        margin-top: 80px;
-    }
-
     .footer_container {
-        max-width: 100%;
+        padding: 0 24px;
     }
 
     .footer_links-block {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 40px 20px;
-    }
-
-    .footer_section {
-        grid-column: span 2;
-    }
-
-    .footer_section:nth-child(2) {
-        grid-column: 3/5;
-    }
-
-    .footer_title {
-        font-size: 20px;
-    }
-
-    .footer_link {
-        font-size: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
 
     .footer_contacts-block {
-        margin-top: 50px;
-        margin-right: 0;
+        align-items: flex-start;
         text-align: left;
-    }
-
-    .footer_hotline-text {
-        width: auto;
-        text-align: left;
-        font-size: 16px;
-    }
-
-    .footer_phone {
-        font-size: 28px;
-    }
-
-    .footer_schedule {
-        font-size: 14px;
-    }
-
-    .footer_support-service {
-        font-size: 20px;
-    }
-
-    .footer_divider {
-        margin-top: 40px;
-        margin-bottom: 25px;
-        width: 100%;
-    }
-
-    .footer_copyright {
-        font-size: 14px;
     }
 }
 
 @media (max-width: 768px) {
     header {
-        display: flex;
-        margin-top: 15px;
-        height: 50px;
-        padding: 0 15px;
+        height: 64px;
+        padding: 0 20px;
     }
 
-    .where-to-buy_section_button-content {
-        width: 100%;
-    }
-
-    .logo_name {
-        font-size: 16px;
-    }
-
-    .header_login_button {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
-    }
-
+    .nav_menu,
+    .header_login_button,
     .header_registration_button {
         display: none;
     }
 
+    .burger {
+        display: block;
+    }
+
+    .order-button,
+    .btn-primary {
+        height: 50px;
+        font-size: 16px;
+        padding: 0 24px;
+        width: 100%;
+    }
+
+    footer {
+        padding: 60px 0 30px;
+        margin-top: 60px;
+    }
+
     .footer_links-block {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer_section {
-        grid-column: span 1;
-    }
-
-    .footer_section:nth-child(2) {
-        grid-column: auto;
-    }
-
-    .footer_contacts-block {
-        margin-top: 30px;
-    }
-
-    .footer_phone {
-        font-size: 24px;
+        gap: 32px;
     }
 
     .footer_bottom-block {
         flex-direction: column;
-        gap: 15px;
+        gap: 16px;
         align-items: flex-start;
     }
 }

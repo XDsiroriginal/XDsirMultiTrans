@@ -1,0 +1,6 @@
+# Local rules and agent files (do not commit to GitHub)
+GEMINI.md
+AGENTS.md
+.agents/
+.gemini/
+image_hashes.json
