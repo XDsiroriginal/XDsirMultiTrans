@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <title>MultiTrans - Доставка из интернет-магазинов США, Китая и Индии</title>
+</head>
+<body>
+
+<header>
+    <a href="{{ route('home') }}" class="main_button">
+        <img src="{{ asset('img/logo.png') }}" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="{{ route('home') }}" class="header_text active">Главная</a>
+        <a href="{{ route('shop') }}" class="header_text">Магазины</a>
+        <a href="{{ route('price') }}" class="header_text">Тарифы</a>
+        <a href="{{ route('order') }}" class="header_text">Выкуп товаров</a>
+        <a href="{{ route('tracking') }}" class="header_text">Трекинг</a>
+        <a href="{{ route('warehouses') }}" class="header_text">Склады</a>
+        <a href="{{ route('faq') }}" class="header_text">FAQ</a>
+    </nav>
+
+        <div class="header_auth_block">
+        @auth
+            <a href="{{ route('profile') }}" class="header_login_button" style="background: var(--color-bg-surface); font-weight: bold;">{{ Auth::user()->first_name }}</a>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="header_registration_button" style="background: var(--color-graphite); border: none; cursor: pointer;">Выйти</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}" class="header_login_button">Войти</a>
+            <a href="{{ route('register') }}" class="header_registration_button">Регистрация</a>
+        @endauth
+        <div class="burger">
+            <img src="{{ asset('img/burger.png') }}" alt="Меню">
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <div class="page_container">
+        <section class="hero_section">
+            <div class="hero_content">
+                <div class="hero_badge">
+                    <span class="hero_badge_dot"></span>
+                    Склады в США, Китае и Индии • Без налога штата
+                </div>
+                <h1 class="hero_title">
+                    Заказывайте с зарубежных рынков <span>без наценок перекупов</span>
+                </h1>
+                <p class="hero_desc">
+                    MultiTrans предоставляет вам персональный адрес за границей, выкупает товары картами зарубежных банков и безопасно доставляет покупки в любой город России.
+                </p>
+                <div class="hero_actions">
+                    <a href="{{ route('order') }}" class="order-button">Оформить выкуп</a>
+                    <a href="{{ route('price') }}" class="btn-outline">Калькулятор тарифов</a>
+                </div>
+                <div class="hero_metrics">
+                    <div class="metric_item">
+                        <span class="metric_val">0%</span>
+                        <span class="metric_label">Налог с продаж в США (Delaware)</span>
+                    </div>
+                    <div class="metric_item">
+                        <span class="metric_val">от 12 дней</span>
+                        <span class="metric_label">Быстрая авиадоставка</span>
+                    </div>
+                    <div class="metric_item">
+                        <span class="metric_val">100%</span>
+                        <span class="metric_label">Страхование и проверка</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero_image_wrap">
+                <div class="hero_image_card">
+                    <img src="{{ asset('img/preview.png') }}" alt="Доставка MultiTrans">
+                </div>
+            </div>
+        </section>
+
+        <section class="calc_widget">
+            <h2 class="calc_widget_title">Быстрый расчет стоимости доставки</h2>
+            <form class="calc_widget_form" onsubmit="event.preventDefault();">
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-country">Страна отправления</label>
+                    <select id="calc-country" class="calc_select">
+                        <option value="usa">США (склад в Делавэре)</option>
+                        <option value="china">Китай (склад в Гуанчжоу)</option>
+                        <option value="india">Индия (склад в Мумбаи)</option>
+                    </select>
+                </div>
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-city">Город назначения в РФ</label>
+                    <select id="calc-city" class="calc_select">
+                        <option value="moscow" selected>Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="ekb">Екатеринбург</option>
+                        <option value="nsk">Новосибирск</option>
+                        <option value="kzn">Казань</option>
+                        <option value="nn">Нижний Новгород</option>
+                        <option value="krd">Краснодар</option>
+                        <option value="other">Другой город РФ</option>
+                    </select>
+                </div>
+                <div class="calc_field_group">
+                    <label class="calc_field_label" for="calc-weight">Вес посылки (кг)</label>
+                    <input type="number" id="calc-weight" class="input_field" placeholder="Например, 1.5" step="0.1" value="1.5">
+                </div>
+                <a href="{{ route('price') }}" class="btn-primary" style="height: 52px;">Рассчитать</a>
+            </form>
+        </section>
+
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">География доставки</span>
+                <h2 class="section_title">Наши зарубежные склады</h2>
+                <p class="section_desc">Доступны сразу после бесплатной регистрации. Хранение посылок до 60 дней бесплатно.</p>
+            </div>
+
+            <div class="countries_grid">
+
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="{{ asset('img/america-flag.png') }}" alt="Флаг США" class="country_flag">
+                        <span class="country_tag badge-accent">Безналоговый склад</span>
+                    </div>
+                    <h3 class="country_name">США (Делавэр)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Wilmington, Delaware. Покупки на Amazon, eBay, Nike, Apple без налога штата.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 12 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от $20</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Выкуп картой:</span>
+                            <span class="country_spec_val">Да (+10%)</span>
+                        </div>
+                    </div>
+                    <a href="{{ route('warehouses') }}" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
+                </div>
+
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="{{ asset('img/cina-flag-mini.png') }}" alt="Флаг Китая" class="country_flag">
+                        <span class="country_tag">Хаб электроники</span>
+                    </div>
+                    <h3 class="country_name">Китай (Гуанчжоу)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Baiyun District, Guangzhou. Заказы с Taobao, 1688, Poizon и прямых фабрик.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 17 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от 40 ¥</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Выкуп WeChat/Alipay:</span>
+                            <span class="country_spec_val">Да</span>
+                        </div>
+                    </div>
+                    <a href="{{ route('warehouses') }}" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
+                </div>
+
+                <div class="country_card">
+                    <div class="country_card_top">
+                        <img src="{{ asset('img/india-flag-mini.png') }}" alt="Флаг Индии" class="country_flag">
+                        <span class="country_tag">Аюрведа и текстиль</span>
+                    </div>
+                    <h3 class="country_name">Индия (Мумбаи)</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 14px;">Maharashtra, Mumbai. Натуральная косметика, одежда, оригинальные специи.</p>
+                    <div class="country_specs">
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Срок доставки:</span>
+                            <span class="country_spec_val">от 15 дней</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Тариф:</span>
+                            <span class="country_spec_val">от 2000 ₹</span>
+                        </div>
+                        <div class="country_spec_row">
+                            <span class="country_spec_label">Проверка качества:</span>
+                            <span class="country_spec_val">Включена</span>
+                        </div>
+                    </div>
+                    <a href="{{ route('warehouses') }}" class="btn-outline" style="height: 44px; font-size: 14px; margin-top: 10px;">Посмотреть адрес</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="advantages_section">
+        <div class="page_container">
+            <div class="section_header" style="margin-bottom: 40px;">
+                <span class="section_subtitle">Наши преимущества</span>
+                <h2 class="section_title">Шопинг без границ и рисков</h2>
+            </div>
+
+            <div class="advantages_grid">
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="{{ asset('img/protect.png') }}" alt="Страховка">
+                    </div>
+                    <h3 class="adv_title">0.75% Страховка товара</h3>
+                    <p class="adv_desc">Полная защита посылки на всем пути от склада отправления до пункта выдачи в вашем городе.</p>
+                </div>
+
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="{{ asset('img/eyes.png') }}" alt="Трекинг">
+                    </div>
+                    <h3 class="adv_title">Прозрачный трекинг 24/7</h3>
+                    <p class="adv_desc">Контролируйте перемещение груза на каждом этапе: приемка, упаковка, таможня и доставка курьером.</p>
+                </div>
+
+                <div class="adv_card">
+                    <div class="adv_icon_wrap">
+                        <img src="{{ asset('img/cooperative-handshake.png') }}" alt="B2B">
+                    </div>
+                    <h3 class="adv_title">B2B и оптовые партии</h3>
+                    <p class="adv_desc">Специальные тарифы и индивидуальное сопровождение для интернет-магазинов и селлеров маркетплейсов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page_container">
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Реальная выгода</span>
+                <h2 class="section_title">Сравните цены и убедитесь сами</h2>
+                <p class="section_desc">Разница стоимости оригинальных брендовых товаров в РФ и США даже с учетом доставки.</p>
+            </div>
+
+            <div class="compare_grid">
+
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="{{ asset('img/nike.png') }}" alt="Кроссовки Nike Air Max 1">
+                    </div>
+                    <h4 class="compare_title">Nike Air Max 1 Premium</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">22 990 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">8 530 ₽</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="{{ asset('img/lacost.png') }}" alt="Поло Lacoste Classic">
+                    </div>
+                    <h4 class="compare_title">Поло Lacoste Classic Fit</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">15 900 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">7 777 ₽</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="compare_card">
+                    <div class="compare_img_box">
+                        <img src="{{ asset('img/rolex.png') }}" alt="Часы Tissot Classic">
+                    </div>
+                    <h4 class="compare_title">Часы Tissot Swiss Quartz</h4>
+                    <div class="compare_prices">
+                        <div class="price_block_ru">
+                            <span>В России</span>
+                            <p class="price_val_ru">54 400 ₽</p>
+                        </div>
+                        <div class="price_block_usa">
+                            <span>В США с нами</span>
+                            <p class="price_val_usa">21 943 ₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Простой процесс</span>
+                <h2 class="section_title">Как работает MultiTrans</h2>
+            </div>
+
+            <div class="steps_grid">
+                <div class="step_card">
+                    <span class="step_num">01</span>
+                    <h3 class="step_title">Зарегистрируйтесь</h3>
+                    <p class="step_desc">Получите персональный Suite ID и адреса наших складов в США, Китае и Индии бесплатно за 1 минуту.</p>
+                </div>
+                <div class="step_card">
+                    <span class="step_num">02</span>
+                    <h3 class="step_title">Купите или закажите выкуп</h3>
+                    <p class="step_desc">Покупайте самостоятельно с указанием адреса нашего склада или пришлите ссылку на товар - мы выкупим его за рубли.</p>
+                </div>
+                <div class="step_card">
+                    <span class="step_num">03</span>
+                    <h3 class="step_title">Получите заказ</h3>
+                    <p class="step_desc">Мы бережно упакуем, снимем фотоотчет и доставим посылку прямо к вашей двери или в ближайший пункт выдачи.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section_header">
+                <span class="section_subtitle">Партнеры</span>
+                <h2 class="section_title">Где покупать товары</h2>
+            </div>
+
+            <div class="shops_strip">
+                <a href="{{ route('shop') }}" class="shop_pill">
+                    <img src="{{ asset('img/ebay.png') }}" alt="Ebay">
+                    <div>
+                        <p class="shop_pill_name">Ebay</p>
+                        <p class="shop_pill_cat">Маркетплейс • США</p>
+                    </div>
+                </a>
+                <a href="{{ route('shop') }}" class="shop_pill">
+                    <img src="{{ asset('img/amazon.png') }}" alt="Amazon">
+                    <div>
+                        <p class="shop_pill_name">Amazon</p>
+                        <p class="shop_pill_cat">Мировой каталог • США</p>
+                    </div>
+                </a>
+                <a href="{{ route('shop') }}" class="shop_pill">
+                    <img src="{{ asset('img/walmart.png') }}" alt="Walmart">
+                    <div>
+                        <p class="shop_pill_name">Walmart</p>
+                        <p class="shop_pill_cat">Гипермаркет • США</p>
+                    </div>
+                </a>
+                <a href="{{ route('shop') }}" class="shop_pill">
+                    <img src="{{ asset('img/stockx.png') }}" alt="StockX">
+                    <div>
+                        <p class="shop_pill_name">StockX</p>
+                        <p class="shop_pill_cat">Аутентичный стритвер</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="promo_banner">
+            <div class="promo_text">
+                <h2 class="promo_title">Готовы начать шопинг без границ?</h2>
+                <p class="promo_desc">Создайте бесплатный аккаунт и получите адреса зарубежных складов уже через минуту.</p>
+            </div>
+            <a href="{{ route('register') }}" class="order-button" style="white-space: nowrap;">Зарегистрироваться</a>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="{{ asset('img/logo.png') }}" alt="MultiTrans">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров из США, Китая и Индии без наценок посредников.</p>
+            </div>
+
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="{{ route('home') }}" class="footer_link">Главная</a>
+                    <a href="{{ route('shop') }}" class="footer_link">Каталог магазинов</a>
+                    <a href="{{ route('price') }}" class="footer_link">Тарифы доставки</a>
+                    <a href="{{ route('order') }}" class="footer_link">Заявка на выкуп</a>
+                    <a href="{{ route('tracking') }}" class="footer_link">Отслеживание посылок</a>
+                </div>
+            </div>
+
+            <div class="footer_section">
+                <p class="footer_title">Информация</p>
+                <div class="footer_links">
+                    <a href="{{ route('warehouses') }}" class="footer_link">Адреса складов</a>
+                    <a href="{{ route('faq') }}" class="footer_link">Частые вопросы (FAQ)</a>
+                    <a href="{{ route('faq') }}" class="footer_link">Таможенные правила</a>
+                    <a href="{{ route('faq') }}" class="footer_link">Запрещенные товары</a>
+                </div>
+            </div>
+
+            <div class="footer_contacts-block">
+                <p class="footer_hotline-text">Служба заботы о клиентах:</p>
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+                <a href="{{ route('order') }}" class="header_registration_button" style="margin-top: 8px;">Оставить заявку</a>
+            </div>
+        </div>
+
+        <hr class="footer_divider">
+
+        <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
+            <div class="footer_socials">
+                <a href="#"><img src="{{ asset('img/max-messenger-horizontal-logo 1.png') }}" alt="MAX" class="footer_social-icon"></a>
+                <a href="#"><img src="{{ asset('img/vk-horizontal-logo 1.png') }}" alt="VK" class="footer_social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

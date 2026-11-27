@@ -1,0 +1,166 @@
+
+
+.page_header_banner {
+    padding: 60px 0 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-subtle) 100%);
+    border-bottom: var(--border-hairline);
+    margin-bottom: 60px;
+}
+
+.calc_container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.calc_box {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.calc_tabs {
+    display: flex;
+    gap: 10px;
+    background: var(--color-bg-surface);
+    padding: 4px;
+    border-radius: var(--radius-sm);
+}
+
+.calc_tab_btn {
+    flex: 1;
+    height: 44px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 14px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calc_tab_btn.active {
+    background: #FFFFFF;
+    color: var(--color-graphite);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.calc_result_card {
+    background: var(--color-graphite);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.calc_price_val {
+    font-size: 42px;
+    font-family: var(--font-bold), sans-serif;
+    color: #FFFFFF;
+}
+
+.calc_price_val span {
+    color: var(--color-accent);
+}
+
+.rates_table_section {
+    margin-bottom: 80px;
+}
+
+.rates_table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.rates_table th {
+    background-color: var(--color-bg-surface);
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 14px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+    border-bottom: var(--border-hairline);
+}
+
+.rates_table td {
+    padding: 18px 24px;
+    font-size: 14px;
+    border-bottom: var(--border-hairline);
+    color: var(--color-text-primary);
+}
+
+.rates_table tr:last-child td {
+    border-bottom: none;
+}
+
+.services_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.service_item {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease;
+}
+
+.service_item:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.service_price {
+    font-size: 18px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-accent);
+}
+
+.service_name {
+    font-size: 17px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
+
+.service_desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 1140px) {
+    .calc_container {
+        grid-template-columns: 1fr;
+    }
+    .services_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services_grid {
+        grid-template-columns: 1fr;
+    }
+}

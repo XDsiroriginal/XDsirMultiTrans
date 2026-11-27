@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/shop.css">
+    <title>Каталог зарубежных магазинов - MultiTrans</title>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text">Главная</a>
+        <a href="shop.html" class="header_text active">Магазины</a>
+        <a href="price.html" class="header_text">Тарифы</a>
+        <a href="resources/views/pages/order.blade.php" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="login.html" class="header_login_button">Войти</a>
+        <a href="registration.html" class="header_registration_button">Регистрация</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="page_header_banner">
+        <div class="page_container" style="text-align: center;">
+            <span class="badge badge-accent" style="margin-bottom: 12px;">Официальные ритейлеры</span>
+            <h1 class="hero_title" style="font-size: 38px; margin-bottom: 12px;">Популярные зарубежные магазины</h1>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">Выбирайте товары в онлайн-магазинах США, Китая и Индии. Мы выкупим их и доставим прямо вам.</p>
+        </div>
+    </div>
+
+    <div class="page_container">
+
+        <section class="shop_filter_bar">
+            <div class="shop_search_row">
+                <input type="text" class="shop_search_input" placeholder="Поиск магазина или бренда (например, Nike, Apple, Amazon, Zara)...">
+                <a href="resources/views/pages/order.blade.php" class="btn-primary" style="height: 50px; font-size: 15px; white-space: nowrap;">Заказать по ссылке</a>
+            </div>
+
+            <div class="filter_pills_row">
+                <span class="filter_pill active">Все категории</span>
+                <span class="filter_pill">Маркетплейсы</span>
+                <span class="filter_pill">Одежда и Обувь</span>
+                <span class="filter_pill">Электроника</span>
+                <span class="filter_pill">Премиум & Часы</span>
+                <span class="filter_pill">Спорт</span>
+                <span class="filter_pill">Косметика и БАДы</span>
+            </div>
+
+            <div class="filter_pills_row" style="border-top: var(--border-hairline); padding-top: 14px;">
+                <span style="font-size: 13px; color: var(--color-text-muted); align-self: center; margin-right: 6px;">Страна:</span>
+                <span class="filter_pill active">Все страны</span>
+                <span class="filter_pill"><img src="src/img/america-flag.png" class="flag_icon_sm" alt="США"> США</span>
+                <span class="filter_pill"><img src="src/img/china_price_flag.png" class="flag_icon_sm" alt="Китай"> Китай</span>
+                <span class="filter_pill"><img src="src/img/india_price_flag.png" class="flag_icon_sm" alt="Индия"> Индия</span>
+            </div>
+        </section>
+
+        <section class="stores_catalog_grid">
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/amazon.png" alt="Amazon">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Amazon</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Маркетплейс</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Крупнейший мировой интернет-магазин: электроника, книги, одежда, товары для дома и редкие новинки.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">Выкуп картой РФ</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/ebay.png" alt="Ebay">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">eBay</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Аукцион & Сток</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Миллионы предложений от официальных дилеров и частных продавцов по оптовым ценам и аукционам.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">Выкуп картой РФ</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/walmart.png" alt="Walmart">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Walmart</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Гипермаркет</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Низкие цены на бытовую технику, видеоигры, игрушки, одежду базовых брендов и спорттовары.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">Скидки до 70%</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/nike.png" alt="Nike">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Nike US</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Спорт & Обувь</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Официальный магазин Nike в США: эксклюзивные расцветки Jordan, Air Max, беговая и тренинговая экипировка.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">Оригиналы 100%</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/lacost.png" alt="Lacoste">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">Lacoste</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Одежда & Обувь</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Классические поло, толстовки, обувь и кожаные аксессуары легендарного французского бренда.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">В 2 раза дешевле РФ</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+
+            <div class="store_item_card">
+                <div>
+                    <div class="store_card_header">
+                        <div class="store_logo_box">
+                            <img src="src/img/stockx.png" alt="StockX">
+                        </div>
+                        <div class="store_header_text">
+                            <h3 class="store_title">StockX</h3>
+                            <div class="store_meta">
+                                <span>США</span> • <span>Стритвер & Сникеры</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="store_desc" style="margin-top: 16px;">Биржа аутентичной обуви, одежды Supreme, сумок и коллекционной электроники со строгой проверкой подлинности.</p>
+                </div>
+                <div class="store_card_footer">
+                    <span class="store_badge_tag">Проверка подлинности</span>
+                    <a href="resources/views/pages/order.blade.php" class="btn-outline" style="height: 38px; padding: 0 16px; font-size: 13px;">Заказать</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="resources/views/pages/order.blade.php" class="footer_link">Заявка на выкуп</a>
+                </div>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Склады</p>
+                <div class="footer_links">
+                    <a href="warehouses.html" class="footer_link">США (Делавэр)</a>
+                    <a href="warehouses.html" class="footer_link">Китай (Гуанчжоу)</a>
+                    <a href="warehouses.html" class="footer_link">Индия (Мумбаи)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
+                </div>
+            </div>
+            <div class="footer_contacts-block">
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
+        </div>
+        <hr class="footer_divider">
+        <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
+            <div class="footer_socials">
+                <a href="#"><img src="src/img/max-messenger-horizontal-logo 1.png" alt="MAX" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

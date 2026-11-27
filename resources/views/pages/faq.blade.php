@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/faq.css') }}">
+    <title>База знаний и частые вопросы (FAQ) - MultiTrans</title>
+</head>
+<body>
+
+<header>
+    <a href="{{ route('home') }}" class="main_button">
+        <img src="{{ asset('img/logo.png') }}" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="{{ route('home') }}" class="header_text">Главная</a>
+        <a href="{{ route('shop') }}" class="header_text">Магазины</a>
+        <a href="{{ route('price') }}" class="header_text">Тарифы</a>
+        <a href="{{ route('order') }}" class="header_text">Выкуп товаров</a>
+        <a href="{{ route('tracking') }}" class="header_text">Трекинг</a>
+        <a href="{{ route('warehouses') }}" class="header_text">Склады</a>
+        <a href="{{ route('faq') }}" class="header_text active">FAQ</a>
+    </nav>
+
+        <div class="header_auth_block">
+        @auth
+            <a href="{{ route('profile') }}" class="header_login_button" style="background: var(--color-bg-surface); font-weight: bold;">{{ Auth::user()->first_name }}</a>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="header_registration_button" style="background: var(--color-graphite); border: none; cursor: pointer;">Выйти</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}" class="header_login_button">Войти</a>
+            <a href="{{ route('register') }}" class="header_registration_button">Регистрация</a>
+        @endauth
+        <div class="burger">
+            <img src="{{ asset('img/burger.png') }}" alt="Меню">
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="faq_header_section">
+        <div style="max-width: 1440px; margin: 0 auto; padding: 0 40px; text-align: center;">
+            <span class="badge badge-accent" style="margin-bottom: 12px;">Справочный центр</span>
+            <h1 class="hero_title" style="font-size: 38px; margin-bottom: 12px;">Часто задаваемые вопросы</h1>
+            <p style="color: var(--color-text-secondary); max-width: 640px; margin: 0 auto;">
+                Собрали ответы на самые важные вопросы о покупках за рубежом, таможенных лимитах, оплате картами банков РФ и складских услугах.
+            </p>
+
+            <div class="faq_search_box">
+                <span class="faq_search_icon">
+                    <img src="{{ asset('img/icon-search.svg') }}" alt="" width="18" height="18">
+                </span>
+                <input type="text" id="faq-search" class="faq_search_input" placeholder="Поиск по вопросам: например, пошлина, лимит, выкуп картой, запрещенные товары..." oninput="filterFaq()">
+            </div>
+        </div>
+    </section>
+
+    <div style="max-width: 1440px; margin: 0 auto; padding: 0 40px;">
+        <div class="faq_nav_pills">
+            <span class="faq_pill active" onclick="setCategory('all', this)">Все вопросы</span>
+            <span class="faq_pill" onclick="setCategory('customs', this)">Таможня и пошлины</span>
+            <span class="faq_pill" onclick="setCategory('buyout', this)">Выкуп и оплата</span>
+            <span class="faq_pill" onclick="setCategory('shipping', this)">Сроки и трекинг</span>
+            <span class="faq_pill" onclick="setCategory('prohibited', this)">Ограничения</span>
+            <span class="faq_pill" onclick="setCategory('warehouse', this)">Склад и упаковка</span>
+        </div>
+    </div>
+
+    <div class="faq_container" id="faq-list">
+
+        <div class="faq_card open" data-category="customs">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Какой беспошлинный лимит действует на посылки в 2026 году?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>
+                    Беспошлинный порог для ввоза товаров для личного пользования в страны ЕАЭС составляет <strong>200 евро и 31 кг</strong> на одно почтовое отправление.
+                </p>
+                <p>
+                    Если посылка превышает указанные нормы, начисляется таможенная пошлина в размере <strong>15% от суммы превышения</strong> (но не менее 2 евро за каждый килограмм веса сверх 31 кг). Наши брокеры оформляют декларацию заблаговременно, поэтому оплатить пошлину при необходимости можно быстро онлайн через приложение перевозчика.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="buyout">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Как оплатить товар, если зарубежный магазин не принимает карты РФ?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>
+                    Для этого у нас работает услуга <a href="{{ route('order') }}" style="color: var(--color-accent); font-weight: bold;">«Выкуп товаров»</a>. Вам не нужно оформлять зарубежные банковские карты:
+                </p>
+                <ul>
+                    <li>Вы копируете ссылку на товар из любого интернет-магазина (Nike, Amazon, Taobao, eBay, ASOS).</li>
+                    <li>Вставляете в форму заказа и указываете размер или цвет.</li>
+                    <li>Мы проверяем наличие и выставляем счет в рублях (оплата через СБП или картой любого банка РФ без скрытых комиссий).</li>
+                    <li>Наш байер выкупает товар зарубежной картой с доставкой на наш склад.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="shipping">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Сколько времени занимает доставка из США, Китая и Индии?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>Ориентировочные сроки доставки с момента отправки со склада:</p>
+                <ul>
+                    <li><strong>США (Делавэр) → Москва:</strong> 8–14 рабочих дней (прямые еженедельные грузовые авиарейсы).</li>
+                    <li><strong>Китай (Гуанчжоу) → Москва:</strong> 6–10 рабочих дней.</li>
+                    <li><strong>Индия (Мумбаи) → Москва:</strong> 10–16 рабочих дней.</li>
+                </ul>
+                <p>Доставка в регионы России осуществляется курьерскими службами СДЭК и Boxberry (+2–5 дней). Текущий статус всегда доступен на странице <a href="{{ route('tracking') }}" style="color: var(--color-accent); font-weight: bold;">«Трекинг»</a>.</p>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="prohibited">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Какие товары запрещено отправлять через сервис?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>В соответствии с таможенными регламентами и правилами авиаперевозок строго запрещены к пересылке:</p>
+                <ul>
+                    <li>Любые виды оружия, патроны, составные части оружия, страйкбольные приводы и прицелы.</li>
+                    <li>Аккумуляторы и внешние АКБ (Powerbank) емкостью свыше 100 Втч отдельно от техники.</li>
+                    <li>Легковоспламеняющиеся вещества, аэрозольные баллоны под давлением, спиртосодержащий парфюм объемом свыше 50 мл.</li>
+                    <li>Скоропортящиеся продукты питания, живые растения, саженцы, семена и образцы грунта.</li>
+                    <li>Драгоценные металлы, монеты и наличная валюта.</li>
+                    <li>Товары двойного назначения, дроны и тепловизоры.</li>
+                </ul>
+                <p>Если сомневаетесь насчет конкретного товара, отправьте ссылку нашему оператору в поддержке перед покупкой.</p>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="warehouse">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Сколько времени посылки могут храниться на складе?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>
+                    Все входящие посылки хранятся на наших складах <strong>бесплатно в течение 45 календарных дней</strong>.
+                </p>
+                <p>
+                    Это дает вам возможность делать покупки в разных магазинах, дожидаться поступления всех заказов и бесплатно объединять их в одну большую посылку (услуга <em>консолидации</em>). Консолидация уменьшает общий объемный вес и экономит до 40% стоимости международной пересылки.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="warehouse">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Как проверить качество и размер до отправки в Россию?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>
+                    В личном кабинете при формировании посылки вы можете выбрать услугу «Фотофиксация». Наш сотрудник аккуратно вскроет заводскую упаковку и сделает 3 детальных снимка: лейблы с размером, общий вид изделия и подошву/фурнитуру.
+                </p>
+                <p>
+                    Если продавец прислал не тот размер или вещь с дефектом, мы поможем вернуть заказ обратно в магазин по США или Китаю до того, как посылка пересечет границу.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq_card" data-category="shipping">
+            <div class="faq_question" onclick="toggleFaq(this)">
+                <span class="faq_question_text">Что будет, если посылка потеряется или повредится в пути?</span>
+                <span class="faq_chevron">▼</span>
+            </div>
+            <div class="faq_answer">
+                <p>
+                    Базовая страховка до $100 уже включена в стоимость каждого тарифа. Для дорогостоящей электроники и брендовых вещей мы рекомендуем оформить полную расширенную страховку (стоимость 2.5% от заявленной стоимости). Она компенсирует 100% стоимости товара и пересылки в случае повреждения коробки или утраты рейса.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq_support_card">
+            <div>
+                <h3 style="font-size: 22px; font-family: var(--font-bold), sans-serif; margin-bottom: 8px;">Не нашли ответ на свой вопрос?</h3>
+                <p style="font-size: 14px; color: var(--color-text-muted); max-width: 540px;">
+                    Служба заботы о клиентах MultiTrans отвечает ежедневно с 7:00 до 21:00 по московскому времени.
+                </p>
+            </div>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="#" class="btn-primary" style="height: 48px; font-size: 14px; padding: 0 24px;">Написать в MAX</a>
+                <a href="tel:+78005553535" class="btn-outline-white" style="height: 48px; font-size: 14px; padding: 0 24px;">+7 (800) 555-35-35</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="{{ asset('img/logo.png') }}" alt="MultiTrans">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="{{ route('home') }}" class="footer_link">Главная</a>
+                    <a href="{{ route('shop') }}" class="footer_link">Каталог магазинов</a>
+                    <a href="{{ route('price') }}" class="footer_link">Тарифы доставки</a>
+                    <a href="{{ route('order') }}" class="footer_link">Заявка на выкуп</a>
+                </div>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Информация</p>
+                <div class="footer_links">
+                    <a href="{{ route('warehouses') }}" class="footer_link">Адреса складов</a>
+                    <a href="{{ route('faq') }}" class="footer_link">Частые вопросы (FAQ)</a>
+                    <a href="{{ route('faq') }}" class="footer_link">Таможенные правила</a>
+                </div>
+            </div>
+            <div class="footer_contacts-block">
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
+        </div>
+        <hr class="footer_divider">
+        <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
+            <div class="footer_socials">
+                <a href="#"><img src="{{ asset('img/max-messenger-horizontal-logo 1.png') }}" alt="MAX" class="footer_social-icon"></a>
+                <a href="#"><img src="{{ asset('img/vk-horizontal-logo 1.png') }}" alt="VK" class="footer_social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleFaq(questionElem) {
+    var card = questionElem.parentElement;
+    card.classList.toggle('open');
+}
+
+function setCategory(category, pillElem) {
+    var pills = document.querySelectorAll('.faq_pill');
+    pills.forEach(function(p) { p.classList.remove('active'); });
+    pillElem.classList.add('active');
+
+    var cards = document.querySelectorAll('.faq_card');
+    cards.forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function filterFaq() {
+    var query = document.getElementById('faq-search').value.toLowerCase().trim();
+    var cards = document.querySelectorAll('.faq_card');
+    cards.forEach(function(card) {
+        var text = card.innerText.toLowerCase();
+        if (!query || text.indexOf(query) !== -1) {
+            card.style.display = 'block';
+            if (query) {
+                card.classList.add('open');
+            }
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
+
+</body>
+</html>

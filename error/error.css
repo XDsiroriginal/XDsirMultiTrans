@@ -1,0 +1,34 @@
+.body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    gap: 35px;
+}
+
+.error h1 {
+    font-size: 40px;
+    color: var(--color-base-accent);
+
+}
+
+.error p {
+    font-size: 24px;
+    color: var(--color-base-accent);
+    text-align: center;
+}
+
+.error a{
+    font-size: 24px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-dop-accent)
+}

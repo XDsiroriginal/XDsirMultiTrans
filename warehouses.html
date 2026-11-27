@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/warehouses.css">
+    <title>Адреса зарубежных складов - MultiTrans</title>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="main_button">
+        <img src="src/img/logo.png" alt="MultiTrans Logo">
+        <p class="logo_name">MultiTrans</p>
+    </a>
+
+    <nav class="nav_menu">
+        <a href="index.html" class="header_text">Главная</a>
+        <a href="shop.html" class="header_text">Магазины</a>
+        <a href="price.html" class="header_text">Тарифы</a>
+        <a href="resources/views/pages/order.blade.php" class="header_text">Выкуп товаров</a>
+        <a href="tracking.html" class="header_text">Трекинг</a>
+        <a href="warehouses.html" class="header_text active">Склады</a>
+        <a href="faq.html" class="header_text">FAQ</a>
+    </nav>
+
+    <div class="header_auth_block">
+        <a href="login.html" class="header_login_button">Войти</a>
+        <a href="registration.html" class="header_registration_button">Регистрация</a>
+        <div class="burger">
+            <img src="src/img/burger.png" alt="Меню">
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="warehouses_header_section">
+        <div class="page_container" style="text-align: center;">
+            <span class="badge badge-accent" style="margin-bottom: 12px;">Собственная логистическая сеть</span>
+            <h1 class="hero_title" style="font-size: 38px; margin-bottom: 12px;">Адреса зарубежных складов MultiTrans</h1>
+            <p style="color: var(--color-text-secondary); max-width: 680px; margin: 0 auto;">
+                Используйте персональные адреса наших хабов в США, Китае и Индии для оформления покупок в онлайн-магазинах по всему миру.
+            </p>
+        </div>
+    </section>
+
+    <div class="page_container">
+        <div class="suite_id_card">
+            <div>
+                <h3 style="font-size: 18px; font-family: var(--font-bold), sans-serif; margin-bottom: 6px;">Ваш персональный номер ячейки (Suite ID):</h3>
+                <p style="font-size: 13px; color: var(--color-text-muted); max-width: 650px;">
+                    Обязательно указывайте номер ячейки во второй строке адреса (Address Line 2 или Apt/Ste). По нему наши сотрудники мгновенно распознают вашу посылку и внесут в личный кабинет.
+                </p>
+            </div>
+            <div class="suite_id_box">
+                <span>Suite #MT-84920</span>
+                <button class="btn_copy_field" onclick="navigator.clipboard.writeText('Suite #MT-84920'); alert('Suite ID скопирован!');">Копировать</button>
+            </div>
+        </div>
+
+        <div class="warehouses_grid">
+
+            <div class="warehouse_card">
+                <div class="warehouse_card_top">
+                    <img src="src/img/america-flag.png" alt="США" class="flag_icon_md">
+                    <span class="badge badge-accent">0% Sales Tax</span>
+                </div>
+                <h2 class="warehouse_country">США (Делавэр)</h2>
+                <div class="warehouse_city">New Castle, Delaware • Безналоговый штат</div>
+
+            <div class="address_field_list">
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">First / Last Name</span>
+                        <span class="address_field_val" id="us-name">Ivan Ivanov (ваше имя)</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-name')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Address Line 1</span>
+                        <span class="address_field_val" id="us-addr1">1515 N DuPont Hwy</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-addr1')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Address Line 2 (Suite)</span>
+                        <span class="address_field_val" id="us-addr2">Suite #MT-84920</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-addr2')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">City</span>
+                        <span class="address_field_val" id="us-city">New Castle</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-city')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">State</span>
+                        <span class="address_field_val" id="us-state">Delaware (DE)</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-state')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">ZIP Code</span>
+                        <span class="address_field_val" id="us-zip">19720</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-zip')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Phone</span>
+                        <span class="address_field_val" id="us-phone">+1 (302) 414-8890</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('us-phone')">Копировать</button>
+                </div>
+            </div>
+
+            <div class="warehouse_perks">
+                <div class="warehouse_perk_item">Экономия до 10% за счет безналогового штата</div>
+                <div class="warehouse_perk_item">45 дней бесплатного хранения на складе</div>
+                <div class="warehouse_perk_item">Ежедневная отправка рейсов в РФ</div>
+            </div>
+        </div>
+
+        <div class="warehouse_card">
+            <div class="warehouse_card_top">
+                <img src="src/img/china_price_flag.png" alt="Китай" class="flag_icon_md">
+                <span class="badge badge-accent">Хаб Taobao & Poizon</span>
+            </div>
+            <h2 class="warehouse_country">Китай (Гуанчжоу)</h2>
+            <div class="warehouse_city">Guangzhou, Baiyun • Экспресс-приемка</div>
+
+            <div class="address_field_list">
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">收件人 (Получатель)</span>
+                        <span class="address_field_val" id="cn-name">MultiTrans (MT-84920) 罗德里</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('cn-name')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">所在地区 (Провинция/Город)</span>
+                        <span class="address_field_val" id="cn-region">广东省 广州市 白云区</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('cn-region')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">详细地址 (Улица, дом, ячейка)</span>
+                        <span class="address_field_val" id="cn-addr">鹤龙街道鹤边路88号 MultiTrans #MT-84920</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('cn-addr')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">邮政编码 (ZIP Code)</span>
+                        <span class="address_field_val" id="cn-zip">510440</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('cn-zip')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">电话号码 (Телефон)</span>
+                        <span class="address_field_val" id="cn-phone">+86 138 2619 4482</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('cn-phone')">Копировать</button>
+                </div>
+            </div>
+
+            <div class="warehouse_perks">
+                <div class="warehouse_perk_item">Приемка с Poizon с сертификатами подлинности</div>
+                <div class="warehouse_perk_item">Проверка электроники и замеры одежды</div>
+                <div class="warehouse_perk_item">Быстрая авиадоставка за 6–9 дней</div>
+            </div>
+        </div>
+
+        <div class="warehouse_card">
+            <div class="warehouse_card_top">
+                <img src="src/img/india_price_flag.png" alt="Индия" class="flag_icon_md">
+                <span class="badge badge-accent">Аюрведа & Текстиль</span>
+            </div>
+            <h2 class="warehouse_country">Индия (Мумбаи)</h2>
+            <div class="warehouse_city">Mumbai, Maharashtra • Прямой логистический коридор</div>
+
+            <div class="address_field_list">
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Full Name</span>
+                        <span class="address_field_val" id="in-name">Ivan Ivanov / MultiTrans MT-84920</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-name')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Address Line 1</span>
+                        <span class="address_field_val" id="in-addr1">Unit 402, Trade World B-Wing</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-addr1')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Address Line 2 (Suite)</span>
+                        <span class="address_field_val" id="in-addr2">Senapati Bapat Marg, Suite #MT-84920</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-addr2')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">City / State</span>
+                        <span class="address_field_val" id="in-city">Mumbai, Maharashtra</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-city')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">PIN Code</span>
+                        <span class="address_field_val" id="in-zip">400013</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-zip')">Копировать</button>
+                </div>
+
+                <div class="address_field_item">
+                    <div class="address_field_meta">
+                        <span class="address_field_label">Phone</span>
+                        <span class="address_field_val" id="in-phone">+91 22 6123 9000</span>
+                    </div>
+                    <button class="btn_copy_field" onclick="copyText('in-phone')">Копировать</button>
+                </div>
+            </div>
+
+            <div class="warehouse_perks">
+                <div class="warehouse_perk_item">Температурный контроль для БАДов и косметики</div>
+                <div class="warehouse_perk_item">Сертифицированное таможенное сопровождение</div>
+                <div class="warehouse_perk_item">Усиленная влагозащитная упаковка</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <section class="guide_section">
+        <div class="page_container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <span class="badge badge-accent" style="margin-bottom: 12px;">Пошаговая инструкция</span>
+                <h2 style="font-size: 32px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 12px;">Как заполнить адрес в магазине</h2>
+                <p style="color: var(--color-text-secondary); font-size: 15px;">Простой 4-шаговый алгоритм для Amazon, eBay, Taobao и любого зарубежного онлайн-магазина.</p>
+            </div>
+
+            <div class="guide_grid">
+                <div class="guide_card">
+                    <div class="guide_num">1</div>
+                    <h3 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 8px;">Выберите товар</h3>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        Добавьте нужные позиции в корзину на зарубежном сайте и перейдите на страницу оформления заказа (Checkout).
+                    </p>
+                </div>
+
+                <div class="guide_card">
+                    <div class="guide_num">2</div>
+                    <h3 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 8px;">Скопируйте адрес</h3>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        Используйте кнопки «Копировать» на этой странице, чтобы без ошибок перенести адрес нашего склада в форму доставки магазина.
+                    </p>
+                </div>
+
+                <div class="guide_card">
+                    <div class="guide_num">3</div>
+                    <h3 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 8px;">Укажите Suite ID</h3>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        Обязательно добавьте <code>Suite #MT-84920</code> в поле Apt/Suite или рядом с вашей фамилией.
+                    </p>
+                </div>
+
+                <div class="guide_card">
+                    <div class="guide_num">4</div>
+                    <h3 style="font-size: 16px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 8px;">Ожидайте трек</h3>
+                    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.5;">
+                        После отправки магазином добавьте трек-номер в личный кабинет, либо просто дождитесь автоматического уведомления на почту.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page_container" style="margin-bottom: 80px;">
+        <div class="card" style="display: flex; justify-content: space-between; align-items: center; gap: 32px; background: var(--color-bg-subtle); border-left: 4px solid var(--color-accent); flex-wrap: wrap;">
+            <div>
+                <h3 style="font-size: 18px; font-family: var(--font-bold), sans-serif; color: var(--color-graphite); margin-bottom: 6px;">Что запрещено доставлять?</h3>
+                <p style="font-size: 14px; color: var(--color-text-secondary); max-width: 760px;">
+                    Ознакомьтесь с актуальным списком ограничений таможни: литий-ионные аккумуляторы свыше 100 Втч, оружие, аэрозоли под давлением, скоропортящиеся продукты питания.
+                </p>
+            </div>
+            <a href="faq.html" class="btn-outline" style="height: 46px; font-size: 14px;">Читать правила таможни →</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer_container">
+        <div class="footer_links-block">
+            <div class="footer_brand_block">
+                <div class="footer_brand_logo">
+                    <img src="src/img/logo.png" alt="MultiTrans">
+                    <p>MultiTrans</p>
+                </div>
+                <p class="footer_brand_desc">Сервис международной доставки и выкупа товаров без наценок посредников.</p>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Навигация</p>
+                <div class="footer_links">
+                    <a href="index.html" class="footer_link">Главная</a>
+                    <a href="shop.html" class="footer_link">Каталог магазинов</a>
+                    <a href="price.html" class="footer_link">Тарифы доставки</a>
+                    <a href="resources/views/pages/order.blade.php" class="footer_link">Заявка на выкуп</a>
+                </div>
+            </div>
+            <div class="footer_section">
+                <p class="footer_title">Информация</p>
+                <div class="footer_links">
+                    <a href="warehouses.html" class="footer_link">Адреса складов</a>
+                    <a href="faq.html" class="footer_link">Частые вопросы (FAQ)</a>
+                    <a href="faq.html" class="footer_link">Таможенные правила</a>
+                </div>
+            </div>
+            <div class="footer_contacts-block">
+                <p class="footer_phone">+7 (800) 555-35-35</p>
+                <p class="footer_schedule">Ежедневно с 7:00 до 21:00 (МСК)</p>
+            </div>
+        </div>
+        <hr class="footer_divider">
+        <div class="footer_bottom-block">
+            <p>© 2026 MultiTrans Logistics. Все права защищены.</p>
+            <div class="footer_socials">
+                <a href="#"><img src="src/img/max-messenger-horizontal-logo 1.png" alt="MAX" class="footer_social-icon"></a>
+                <a href="#"><img src="src/img/vk-horizontal-logo 1.png" alt="VK" class="footer_social-icon"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function copyText(elemId) {
+    var text = document.getElementById(elemId).innerText;
+    navigator.clipboard.writeText(text);
+    alert('Скопировано: ' + text);
+}
+</script>
+
+</body>
+</html>

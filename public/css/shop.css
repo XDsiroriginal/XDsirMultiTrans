@@ -1,0 +1,256 @@
+
+
+.page_header_banner {
+    padding: 60px 0 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-subtle) 100%);
+    border-bottom: var(--border-hairline);
+    margin-bottom: 60px;
+}
+
+.shop_filter_bar {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shop_search_row {
+    display: flex;
+    gap: 16px;
+}
+
+.shop_search_input {
+    flex: 1;
+    height: 50px;
+    padding: 0 20px;
+    background-color: var(--color-bg-surface);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    color: var(--color-text-primary);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.filter_pills_country_row {
+    border-top: var(--border-hairline);
+    padding-top: 14px;
+}
+
+.filter_country_label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    align-self: center;
+    margin-right: 6px;
+}
+
+.store_order_btn {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stores_empty_box {
+    display: none;
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-lg);
+    padding: 60px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    margin-top: 20px;
+}
+
+.stores_empty_title {
+    font-size: 20px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+    margin-bottom: 8px;
+}
+
+.stores_empty_desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    max-width: 500px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+}
+
+.shop_search_input:focus {
+    background: #FFFFFF;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.filter_pills_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter_pill {
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-family: var(--font-semibold), sans-serif;
+    background: var(--color-bg-surface);
+    color: var(--color-text-secondary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter_pill:hover {
+    color: var(--color-graphite);
+    background: #E8E8ED;
+}
+
+.filter_pill.active {
+    background: var(--color-graphite);
+    color: #FFFFFF;
+}
+
+.stores_catalog_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 80px;
+}
+
+.store_item_card {
+    background: #FFFFFF;
+    border: var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.25s ease;
+}
+
+.store_item_card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.store_card_header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.store_logo_box {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.store_logo_box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.store_header_text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.store_title {
+    font-size: 19px;
+    font-family: var(--font-bold), sans-serif;
+    color: var(--color-graphite);
+}
+
+.store_meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.store_desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.store_card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: var(--border-hairline);
+}
+
+.store_badge_tag {
+    font-size: 12px;
+    font-family: var(--font-semibold), sans-serif;
+    color: var(--color-accent);
+}
+
+@media (max-width: 1140px) {
+    .stores_catalog_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stores_catalog_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop_filter_bar {
+        padding: 20px;
+    }
+}
+
+.shop_banner_inner {
+    text-align: center;
+}
+
+.shop_banner_badge {
+    margin-bottom: 12px;
+}
+
+.shop_hero_title {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.shop_hero_desc {
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.shop_order_link_btn {
+    height: 50px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.stores_empty_reset_btn {
+    height: 44px;
+    padding: 0 24px;
+    font-size: 14px;
+}
+
