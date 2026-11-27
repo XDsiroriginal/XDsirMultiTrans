@@ -12,20 +12,20 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.perform');
+Route::post('/register', [AuthController::class, 'register'])->name('register.perform')->middleware('throttle:auth');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
+Route::post('/login', [AuthController::class, 'login'])->name('login.perform')->middleware('throttle:auth');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
-Route::post('/profile/topup', [AuthController::class, 'topup'])->name('profile.topup');
-Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
-Route::post('/profile/password', [AuthController::class, 'updatePassword'])->name('profile.password');
+Route::post('/profile/topup', [AuthController::class, 'topup'])->name('profile.topup')->middleware('throttle:forms');
+Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update')->middleware('throttle:forms');
+Route::post('/profile/password', [AuthController::class, 'updatePassword'])->name('profile.password')->middleware('throttle:forms');
 
 Route::get('/order', [OrderController::class, 'create'])->name('order');
-Route::post('/order', [OrderController::class, 'store'])->name('order.store');
-Route::post('/order/{order}/cancel', [OrderController::class, 'cancel'])->name('order.cancel');
+Route::post('/order', [OrderController::class, 'store'])->name('order.store')->middleware('throttle:forms');
+Route::post('/order/{order}/cancel', [OrderController::class, 'cancel'])->name('order.cancel')->middleware('throttle:forms');
 
 Route::get('/warehouses', function () {
     return view('pages.warehouses');
@@ -45,10 +45,10 @@ Route::get('/faq', function () {
 
 Route::get('/tracking', [TrackingController::class, 'index'])->name('tracking');
 
-Route::post('/payment/create', [PaymentController::class, 'create'])->name('payment.create');
+Route::post('/payment/create', [PaymentController::class, 'create'])->name('payment.create')->middleware('throttle:forms');
 Route::get('/payment/confirm/{uuid}', [PaymentController::class, 'confirm'])->name('payment.confirm');
 
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    Route::post('/orders/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.orders.status');
+    Route::post('/orders/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.orders.status')->middleware('throttle:forms');
 });

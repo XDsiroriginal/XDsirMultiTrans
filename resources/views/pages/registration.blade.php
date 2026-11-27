@@ -36,22 +36,34 @@
                 @endif
                 <div class="form_group">
                     <label class="form_label" for="reg-name">Имя</label>
-                    <input name="first_name" type="text" id="reg-name" class="input_field" placeholder="Иван" required>
+                    <input name="first_name" type="text" id="reg-name" class="input_field" placeholder="Иван" value="{{ old('first_name') }}" required>
+                    @error('first_name')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form_group">
                     <label class="form_label" for="reg-email">Электронная почта</label>
-                    <input name="email" type="email" id="reg-email" class="input_field" placeholder="name@example.com" required>
+                    <input name="email" type="email" id="reg-email" class="input_field" placeholder="name@example.com" value="{{ old('email') }}" required>
+                    @error('email')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form_group">
                     <label class="form_label" for="reg-phone">Номер телефона</label>
                     <input name="phone" type="tel" id="reg-phone" class="input_field" placeholder="79990000000" maxlength="11" pattern="[78][0-9]{10}" title="11 цифр, начиная с 7 или 8" value="{{ old('phone') }}" required>
+                    @error('phone')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form_group">
                     <label class="form_label" for="reg-password">Придумайте пароль</label>
-                    <input name="password" type="password" id="reg-password" class="input_field" placeholder="Минимум 3 символов" required>
+                    <input name="password" type="password" id="reg-password" class="input_field" placeholder="Минимум 8 символов, буквы и цифры" minlength="8" pattern="(?=.*[A-Za-zА-Яа-яЁё]).*(?=.*\d).{8,}" title="Минимум 8 символов, должен содержать буквы и цифры" required>
+                    @error('password')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <label class="checkbox_label">

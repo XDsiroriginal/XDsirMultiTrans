@@ -56,7 +56,7 @@ class AuthController extends Controller
                 'regex:/^[78]\d{10}$/',
                 'unique:users,phone',
             ],
-            'password'   => 'required|string|min:3',
+            'password'   => ['required', 'string', 'min:8', 'regex:/^(?=.*\p{L})(?=.*\d).{8,}$/u'],
         ], [
             'first_name.required' => 'Укажите ваше имя',
             'email.required'      => 'Введите адрес электронной почты',
@@ -66,7 +66,8 @@ class AuthController extends Controller
             'phone.regex'         => 'Номер телефона должен состоять ровно из 11 цифр и начинаться с 7 или 8 (например: 79991234567)',
             'phone.unique'        => 'Этот номер телефона уже используется',
             'password.required'   => 'Придумайте пароль',
-            'password.min'        => 'Пароль должен быть не короче 3 символов',
+            'password.min'        => 'Пароль должен быть не короче 8 символов',
+            'password.regex'      => 'Пароль должен содержать буквы и цифры',
         ]);
 
         $user = User::create([
@@ -189,11 +190,12 @@ class AuthController extends Controller
 
         $validated = $request->validate([
             'current_password' => 'required|string',
-            'password' => 'required|string|min:3|confirmed',
+            'password' => ['required', 'string', 'min:8', 'regex:/^(?=.*\p{L})(?=.*\d).{8,}$/u', 'confirmed'],
         ], [
             'current_password.required' => 'Введите текущий пароль',
             'password.required' => 'Введите новый пароль',
-            'password.min' => 'Пароль должен быть не короче 3 символов',
+            'password.min' => 'Пароль должен быть не короче 8 символов',
+            'password.regex' => 'Пароль должен содержать буквы и цифры',
             'password.confirmed' => 'Пароли не совпадают',
         ]);
 

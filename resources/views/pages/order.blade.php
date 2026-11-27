@@ -70,30 +70,45 @@
                     <div class="form_group">
                         <label class="form_label" for="order-url">Ссылка на товар в магазине *</label>
                         <input name="product_url" type="url" id="order-url" class="input_field" placeholder="https://www.nike.com/t/air-max-1-..." value="{{ old('product_url') }}" required>
+                        @error('product_url')
+                            <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form_group">
                         <label class="form_label" for="order-name">Название товара и артикул</label>
                         <input name="product_name" type="text" id="order-name" class="input_field" placeholder="Например: Nike Air Max 1, размер US 10.5, цвет Triple White" value="{{ old('product_name') }}" required>
+                        @error('product_name')
+                            <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
                         <div class="form_group">
                             <label class="form_label" for="order-price">Цена в валюте *</label>
-                            <input name="price" type="number" id="order-price" class="input_field" placeholder="120" step="0.01" value="{{ old('price') }}" required>
+                            <input name="price" type="number" id="order-price" class="input_field" placeholder="120" step="0.01" min="0.01" value="{{ old('price') }}" required>
+                            @error('price')
+                                <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form_group">
                             <label class="form_label" for="order-currency">Валюта</label>
                             <select name="currency" id="order-currency" class="input_field" style="cursor: pointer;">
-                                <option value="USD">USD ($ США)</option>
-                                <option value="CNY">CNY (¥ Китай)</option>
-                                <option value="INR">INR (₹ Индия)</option>
-                                <option value="EUR">EUR (€ Европа)</option>
+                                <option value="USD" {{ old('currency') === 'USD' ? 'selected' : '' }}>USD ($ США)</option>
+                                <option value="CNY" {{ old('currency') === 'CNY' ? 'selected' : '' }}>CNY (¥ Китай)</option>
+                                <option value="INR" {{ old('currency') === 'INR' ? 'selected' : '' }}>INR (₹ Индия)</option>
+                                <option value="EUR" {{ old('currency') === 'EUR' ? 'selected' : '' }}>EUR (€ Европа)</option>
                             </select>
+                            @error('currency')
+                                <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form_group">
                             <label class="form_label" for="order-qty">Количество</label>
-                            <input name="quantity" type="number" id="order-qty" class="input_field" value="{{ old('quantity', 1) }}" min="1">
+                            <input name="quantity" type="number" id="order-qty" class="input_field" value="{{ old('quantity', 1) }}" min="1" required>
+                            @error('quantity')
+                                <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 

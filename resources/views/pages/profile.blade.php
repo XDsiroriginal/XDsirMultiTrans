@@ -316,11 +316,12 @@
                         </div>
                         <div>
                             <label class="form_label" for="new-password" style="font-size: 12px; margin-bottom: 4px; display: block;">Новый пароль</label>
-                            <input type="password" name="password" id="new-password" class="input_field" required>
+                            <input type="password" name="password" id="new-password" class="input_field" minlength="8" pattern="(?=.*[A-Za-zА-Яа-яЁё]).*(?=.*\d).{8,}" title="Минимум 8 символов, должен содержать буквы и цифры" required>
+                            <p style="font-size: 12px; color: var(--color-text-secondary); margin-top: 4px;">Минимум 8 символов, буквы и цифры</p>
                         </div>
                         <div>
                             <label class="form_label" for="new-password-confirmation" style="font-size: 12px; margin-bottom: 4px; display: block;">Подтверждение пароля</label>
-                            <input type="password" name="password_confirmation" id="new-password-confirmation" class="input_field" required>
+                            <input type="password" name="password_confirmation" id="new-password-confirmation" class="input_field" minlength="8" required>
                         </div>
                         <button type="submit" class="btn-outline" style="height: 42px; font-size: 13px;">Обновить пароль</button>
                     </form>

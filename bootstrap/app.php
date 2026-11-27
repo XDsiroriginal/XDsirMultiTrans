@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => AdminMiddleware::class,
         ]);
+        $middleware->web(append: [
+            'throttle:global',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
     })->create();

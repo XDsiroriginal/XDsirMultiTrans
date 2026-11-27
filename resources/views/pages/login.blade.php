@@ -37,6 +37,9 @@
                 <div class="form_group">
                     <label class="form_label" for="login-email">Электронная почта</label>
                     <input name="email" type="email" id="login-email" class="input_field" placeholder="name@example.com" value="{{ old('email') }}" required>
+                    @error('email')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form_group">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -44,6 +47,9 @@
                         <a href="{{ route('faq') }}" style="font-size: 12px; color: var(--color-text-secondary);">Забыли пароль?</a>
                     </div>
                     <input name="password" type="password" id="login-password" class="input_field" placeholder="ваш пароль" required>
+                    @error('password')
+                        <p style="color: #ff4d4f; font-size: 12px; margin-top: 6px;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%; height: 52px; font-size: 16px;">Войти</button>
             </form>
